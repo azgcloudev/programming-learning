@@ -38,6 +38,22 @@ namespace Basics
                 arg1: methodCount,
                 arg2: r.Name);
             }
+
+
+            // --------- NAMING THINGS AND ASSIGNING VALUES ----------------
+            // let the heightInMetres variable become equal to the value 1.88
+            double heightInMetres = 1.88;
+            Console.WriteLine($"The variable {nameof(heightInMetres)} has thevalue {heightInMetres}.");
+
+            // ---------- STORING TEXT -------------------------------
+            string firstName = "Bob"; // assigning literal stri
+            Console.WriteLine(firstName);
+
+
+            // ----------- VERBATIM STRINGS ----------
+            string filePath = @"C\televisions\sony\bravia.txt"; // prevents the \t to be read as an escape sequence
+            Console.WriteLine(filePath);
+
         }   // end of a block
     }
 }
