@@ -44,9 +44,20 @@ namespace NullHandling
             if (thisCouldBeNull != null)
             {
                 // access a memember of thisCouldBeNull
-                int length = thisCouldBeNull.Length; //could thrown an exception
+                // int length = thisCouldBeNull.Length; //could thrown an exception
             }
 
+            string authorName = null;
+
+            // the following throws a NullReferenceException
+            // int x = authorName.Length;
+
+            // instead of throwing an exception, null is assigned to y
+            // int? y = authorName.Length;
+
+            // result will be 3 if authorName?.Length is null
+            var result = authorName?.Length ?? 3;
+            Console.WriteLine(result);
         }
     }
 }
