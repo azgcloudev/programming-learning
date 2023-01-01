@@ -11,6 +11,30 @@
 		},
 		{
 			"path": "SelectionStatements"
+		},
+		{
+			"path": "IterationStatements"
+		},
+		{
+			"path": "CastingConverting"
+		},
+		{
+			"path": "HandingExceptions"
+		},
+		{
+			"path": "CheckingForOverflow"
+		},
+		{
+			"path": "Exercise01"
+		},
+		{
+			"path": "Exercise02"
+		},
+		{
+			"path": "Exercise03"
+		},
+		{
+			"path": "Exercise04"
 		}
 	],
 	"settings": {}
