@@ -47,6 +47,26 @@ namespace Exercise04
                 }
 
             }
+
+            // ------ TEST -----
+            // guess the result
+            int x = 3;
+            int y = 2 + ++x;
+            Console.WriteLine($"y is {y}"); // 6
+            
+            // 128 64 32 16   8 4 2 1
+            // 3 = 0000 00011
+            // 10 = 0000 1010
+            x = 3 << 2; // 1100 = 12
+            Console.WriteLine($"3 << 2 = {x}"); // 12
+            y = 10 >> 1; // 0101
+            Console.WriteLine($"10 >> 1 = {y}");  //5
+
+
+            x = 10 & 8;
+            Console.WriteLine($"10 & 8 = {10 & 8}");
+            y = 10 | 7;
+            Console.WriteLine($"10 | 7 = {10 | 7}");
         }
     }
 }
