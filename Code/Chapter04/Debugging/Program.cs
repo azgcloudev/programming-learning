@@ -8,7 +8,7 @@ namespace Debugging
 
         static double Add(double a, double b)
         {
-            return a * b; //deliberate bug
+            return a + b; //deliberate bug
         }
 
         static void Main(string[] args)
