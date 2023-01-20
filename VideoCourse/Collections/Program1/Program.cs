@@ -22,8 +22,9 @@ namespace Program1
 
         static void Main(string[] args)
         {
+            string valueInput = string.Empty;
             Console.Write("Enter a value: ");
-            string valueInput = Console.ReadLine();
+            valueInput = Console.ReadLine();
 
             Console.WriteLine("\nSelect the Data Type to validate the input you have entered.");
             Console.WriteLine("Press 1 for String");
@@ -31,7 +32,6 @@ namespace Program1
             Console.WriteLine("Press 3 for Boolean");
             Console.Write(": ");
             int type = int.Parse(Console.ReadLine());
-
 
 
             if (type == 3)

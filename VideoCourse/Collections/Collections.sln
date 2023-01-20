@@ -5,7 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays", "Arrays\Arrays.csproj", "{B9B6CB4E-028C-4E97-8D5F-7F532EFFBE47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program1", "Program1\Program1.csproj", "{7735A7B7-7C13-4D19-AF67-0BBCACD12DCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program1", "Program1\Program1.csproj", "{7735A7B7-7C13-4D19-AF67-0BBCACD12DCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultidimensionalArrays", "MultidimensionalArrays\MultidimensionalArrays.csproj", "{618CB34F-DEBD-4500-997E-D17FB8922DAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallangeTicTacToe", "ChallangeTicTacToe\ChallangeTicTacToe.csproj", "{0ABE3155-7A94-415F-9A6D-0F5D7EC5C607}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{7735A7B7-7C13-4D19-AF67-0BBCACD12DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7735A7B7-7C13-4D19-AF67-0BBCACD12DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7735A7B7-7C13-4D19-AF67-0BBCACD12DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618CB34F-DEBD-4500-997E-D17FB8922DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618CB34F-DEBD-4500-997E-D17FB8922DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618CB34F-DEBD-4500-997E-D17FB8922DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618CB34F-DEBD-4500-997E-D17FB8922DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABE3155-7A94-415F-9A6D-0F5D7EC5C607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABE3155-7A94-415F-9A6D-0F5D7EC5C607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABE3155-7A94-415F-9A6D-0F5D7EC5C607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABE3155-7A94-415F-9A6D-0F5D7EC5C607}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
