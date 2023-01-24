@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace ChallangeTicTacToe
 {
     class Program
@@ -48,7 +47,7 @@ namespace ChallangeTicTacToe
             Console.Write("\n");
         }
 
-        static int InputPosition(string player)
+        static int InputPosition(string player, string[,] board)
         {
             Console.Write("{0}: Choose your field: ", player);
             string input = Console.ReadLine();
