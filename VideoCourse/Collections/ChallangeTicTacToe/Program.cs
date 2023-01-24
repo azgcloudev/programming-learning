@@ -54,6 +54,16 @@ namespace ChallangeTicTacToe
             return int.Parse(input);
         }
 
+        static bool CheckIfSelected(string symbol, string[,] board, int row, int column, bool isValid)
+        {
+            if (board[row, column] == symbol)
+            {
+                Console.WriteLine("Test");
+                return false;
+            }
+            return true;
+        }
+
         static string[,] ModifyBoard(int position, string player, string[,] array)
         {
             string[,] newArray = array;
@@ -63,7 +73,15 @@ namespace ChallangeTicTacToe
                 switch (position)
                 {
                     case 1:
-                        newArray[1, 1] = "X";
+                        CheckIfSelected("X", newArray, 1, 1);
+                        // if (array[1, 1] == "X" || array[1, 1] == "O")
+                        // {
+                        //     Console.WriteLine("This has been already selected. Choose again");
+                        // }
+                        // else
+                        // {
+                        //     newArray[1, 1] = "X";
+                        // }
                         break;
                     case 2:
                         newArray[1, 5] = "X";
@@ -173,11 +191,17 @@ namespace ChallangeTicTacToe
             for (int i = 0; i < 9; i++)
             {
                 PrintBoard(board);
+                bool isEntryValid = true;
 
                 if (i % 2 == 0)
                 {
-                    input = InputPosition(player1);
-                    board = ModifyBoard(input, player1, board);
+                    while (!isEntryValid)
+                    {
+                        input = InputPosition(player1);
+                        board = ModifyBoard(input, player1, board);
+                        
+                    }
+
                     if (Winner(board, player1))
                     {
                         Console.Clear();
