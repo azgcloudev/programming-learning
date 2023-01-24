@@ -4,32 +4,12 @@ namespace ChallangeTicTacToe
 {
     class Program
     {
-        static bool CheckWinner(int[] array)
-        {
-            return false;
-        }
-
-        static string[,] Board()
-        {
-            string[,] TicTacBoard = new string[9, 11]
-            {
-                {" "," "," ","|"," "," "," ","|"," "," "," "},
-                {" ","1"," ","|"," ","2"," ","|"," ","3"," "},
-                {"_","_","_","|","_","_","_","|","_","_","_"},
-                {" "," "," ","|"," "," "," ","|"," "," "," "},
-                {" ","4"," ","|"," ","5"," ","|"," ","6"," "},
-                {"_","_","_","|","_","_","_","|","_","_","_"},
-                {" "," "," ","|"," "," "," ","|"," "," "," "},
-                {" ","7"," ","|"," ","8"," ","|"," ","9"," "},
-                {" "," "," ","|"," "," "," ","|"," "," "," "}
-            };
-
-            return TicTacBoard;
-        }
-
+        /// <summary>
+        /// Prints in the console any board composed of 2D arrays
+        /// </summary>
+        /// <param name="array">2D array</param>
         static void PrintBoard(string[,] array)
         {
-            Console.Write("\n");
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -47,186 +27,244 @@ namespace ChallangeTicTacToe
             Console.Write("\n");
         }
 
-        static int InputPosition(string player, string[,] board)
+        static string AskName(int playerNumber)
         {
-            Console.Write("{0}: Choose your field: ", player);
-            string input = Console.ReadLine();
-            return int.Parse(input);
-        }
+            string? name;
 
-        static bool CheckIfSelected(string symbol, string[,] board, int row, int column, bool isValid)
-        {
-            if (board[row, column] == symbol)
+            if (playerNumber == 1)
             {
-                Console.WriteLine("Test");
-                return false;
-            }
-            return true;
-        }
-
-        static string[,] ModifyBoard(int position, string player, string[,] array)
-        {
-            string[,] newArray = array;
-
-            if (player == "Player 1")
-            {
-                switch (position)
-                {
-                    case 1:
-                        CheckIfSelected("X", newArray, 1, 1);
-                        // if (array[1, 1] == "X" || array[1, 1] == "O")
-                        // {
-                        //     Console.WriteLine("This has been already selected. Choose again");
-                        // }
-                        // else
-                        // {
-                        //     newArray[1, 1] = "X";
-                        // }
-                        break;
-                    case 2:
-                        newArray[1, 5] = "X";
-                        break;
-                    case 3:
-                        newArray[1, 9] = "X";
-                        break;
-                    case 4:
-                        newArray[4, 1] = "X";
-                        break;
-                    case 5:
-                        newArray[4, 5] = "X";
-                        break;
-                    case 6:
-                        newArray[4, 9] = "X";
-                        break;
-                    case 7:
-                        newArray[7, 1] = "X";
-                        break;
-                    case 8:
-                        newArray[7, 5] = "X";
-                        break;
-                    case 9:
-                        newArray[7, 9] = "X";
-                        break;
-                    default:
-                        Console.WriteLine("Incorrect value");
-                        break;
-                }
+                Console.Write("Player 1 what is your name? ");
+                name = Console.ReadLine();
             }
             else
             {
-                switch (position)
-                {
-                    case 1:
-                        newArray[1, 1] = "O";
-                        break;
-                    case 2:
-                        newArray[1, 5] = "O";
-                        break;
-                    case 3:
-                        newArray[1, 9] = "O";
-                        break;
-                    case 4:
-                        newArray[4, 1] = "O";
-                        break;
-                    case 5:
-                        newArray[4, 5] = "O";
-                        break;
-                    case 6:
-                        newArray[4, 9] = "O";
-                        break;
-                    case 7:
-                        newArray[7, 1] = "O";
-                        break;
-                    case 8:
-                        newArray[7, 5] = "O";
-                        break;
-                    case 9:
-                        newArray[7, 9] = "O";
-                        break;
-                    default:
-                        Console.WriteLine("Incorrect value");
-                        break;
-                }
+                Console.Write("Player 2 what is your name? ");
+                name = Console.ReadLine();
             }
-            return newArray;
+
+            return name;
         }
 
-        static bool Winner(string[,] array, string player)
-        {
-            string symbol;
 
-            if (player == "Player 1")
+        /// <summary>
+        /// Ask for a board number to the player
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns>Returns an int. If input cannot be parsed to int will return -1</returns>
+        static int PlayerInput(string player)
+        {
+            Console.Write("{0} is your turn, choose your position number: ", player);
+            string? inputNotParse = Console.ReadLine();
+            if (int.TryParse(inputNotParse, out int input))
             {
-                symbol = "X";
+                return input;
             }
+            // return -1 in case the input cannot be parse to an int
             else
             {
-                symbol = "O";
+                return -1;
             }
 
-            {
-                for (int i = 0; i < array.GetLength(0); i++)
-                {
-                    for (int j = 0; j < array.GetLength(1); j++)
-                    {
-                        if (array[1, 1] == symbol && array[1, 5] == symbol && array[1, 9] == symbol)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
         }
 
-        static void StartGame(string[,] board)
+        static bool ValidateIfUse(string[,] array, int position)
         {
-            string player1 = "Player 1";
-            string player2 = "Player 2";
-            int input;
-
-            Console.Write("Welcome to azgcloudev Tic Tac Toe Game!");
-
-            // game has only a maximum o 9 tries
-            for (int i = 0; i < 9; i++)
+            switch (position)
             {
-                PrintBoard(board);
-                bool isEntryValid = true;
-
-                if (i % 2 == 0)
-                {
-                    while (!isEntryValid)
+                case 1:
+                    if (array[1, 1] == "X" || array[1, 1] == "O")
                     {
-                        input = InputPosition(player1);
-                        board = ModifyBoard(input, player1, board);
-                        
+                        return true;
                     }
+                    return false;
 
-                    if (Winner(board, player1))
+                case 2:
+                    if (array[1, 5] == "X" || array[1, 5] == "O")
                     {
-                        Console.Clear();
-                        Console.WriteLine("{0} won the game!", player1);
-                        break;
+                        return true;
                     }
-                    Console.Clear();
-                }
-                else
-                {
-                    input = InputPosition(player2);
-                    board = ModifyBoard(input, player2, board);
-                    Console.Clear();
-                }
-
+                    return false;
+                case 3:
+                    if (array[1, 9] == "X" || array[1, 9] == "O")
+                    {
+                        return true;
+                    }
+                    return false;
+                case 4:
+                    if (array[4, 1] == "X" || array[4, 1] == "O")
+                    {
+                        return true;
+                    }
+                    return false;
+                case 5:
+                    if (array[4, 5] == "X" || array[4, 5] == "O")
+                    {
+                        return true;
+                    }
+                    return false;
+                case 6:
+                    if (array[4, 9] == "X" || array[4, 9] == "O")
+                    {
+                        return true;
+                    }
+                    return false;
+                case 7:
+                    if (array[7, 1] == "X" || array[7, 1] == "O")
+                    {
+                        return true;
+                    }
+                    return false;
+                case 8:
+                    if (array[7, 5] == "X" || array[7, 5] == "O")
+                    {
+                        return true;
+                    }
+                    return false;
+                case 9:
+                    if (array[7, 9] == "X" || array[7, 9] == "O")
+                    {
+                        return true;
+                    }
+                    return false;
+                default:
+                    return false;
             }
         }
+
+
+
+        static void ModifyBoard(string[,] board, int position, string symbol)
+        {
+            switch (position)
+            {
+                case 1:
+                    board[1, 1] = symbol;
+                    break;
+                case 2:
+                    board[1, 5] = symbol;
+                    break;
+                case 3:
+                    board[1, 9] = symbol;
+                    break;
+                case 4:
+                    board[4, 1] = symbol;
+                    break;
+                case 5:
+                    board[4, 5] = symbol;
+                    break;
+                case 6:
+                    board[4, 9] = symbol;
+                    break;
+                case 7:
+                    board[7, 1] = symbol;
+                    break;
+                case 8:
+                    board[7, 5] = symbol;
+                    break;
+                case 9:
+                    board[7, 9] = symbol;
+                    break;
+                default:
+                    break;
+            }
+        }
+
 
         static void Main(string[] args)
         {
-            // game 
-            StartGame(Board());
+            // ---- main scope variables ----
+            // game board variable
+            string[,] TicTacBoard = new string[9, 11]
+            {
+                {" "," "," ","|"," "," "," ","|"," "," "," "},
+                {" ","1"," ","|"," ","2"," ","|"," ","3"," "},
+                {"_","_","_","|","_","_","_","|","_","_","_"},
+                {" "," "," ","|"," "," "," ","|"," "," "," "},
+                {" ","4"," ","|"," ","5"," ","|"," ","6"," "},
+                {"_","_","_","|","_","_","_","|","_","_","_"},
+                {" "," "," ","|"," "," "," ","|"," "," "," "},
+                {" ","7"," ","|"," ","8"," ","|"," ","9"," "},
+                {" "," "," ","|"," "," "," ","|"," "," "," "}
+            };
 
-            Console.ReadKey();
+            // validation to exit the game while playing
+            bool isGameFinish = false;
 
+            // players
+            string? player1 = string.Empty;
+            string? player2 = string.Empty;
+
+
+
+            // TODO
+            // input board position
+            // check if position has been already selected
+            // apply position
+            // check if winner
+
+            Console.Write("Welcome to Tic Tac Toe\n\nTo start the game press the SPACEBAR, or Q to exit> ");
+            ConsoleKeyInfo initialOption = Console.ReadKey();
+
+
+            // the game starts and prints the board
+            if (initialOption.Key == ConsoleKey.Spacebar)
+            {
+                Console.Clear(); // clear terminal
+                Console.WriteLine("Let's Go!\n");
+
+                // Ask for the players name and save it
+                player1 = AskName(1);
+                player2 = AskName(2);
+
+                Console.Clear();
+
+                while (!isGameFinish)
+                {
+                    // loop for the maximum number of entries which is 9
+                    for (int i = 0; i < 9; i++)
+                    {
+                        // tracks each user position
+                        int position;
+
+                        // shows current board
+                        PrintBoard(TicTacBoard);
+
+                        // to alternate players use even numbers for player 1 and odd for player 2
+                        if (i % 2 == 0)
+                        {
+                            position = PlayerInput(player1);
+
+                            while (ValidateIfUse(TicTacBoard, position))
+                            {
+                                Console.WriteLine("\nThis position was already selected, please choose again");
+                                position = PlayerInput(player1);
+                            }
+
+                            ModifyBoard(TicTacBoard, position, "X");
+                        }
+                        else
+                        {
+                            position = PlayerInput(player2);
+
+                            while (ValidateIfUse(TicTacBoard, position))
+                            {
+                                Console.WriteLine("\nThis position was already selected, please choose again");
+                                position = PlayerInput(player2);
+                            }
+
+                            ModifyBoard(TicTacBoard, position, "O");
+                        }
+                        Console.Clear();
+                    }
+                    isGameFinish = true;
+                }
+            }
+            // do not start the game, then exit the game and show message
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Bye!");
+            }
         }
     }
 }
