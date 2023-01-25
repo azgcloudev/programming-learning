@@ -169,6 +169,54 @@ namespace ChallangeTicTacToe
             }
         }
 
+        /// <summary>
+        /// CheckIfWinner check if there is a match
+        /// </summary>
+        static bool CheckIfWinner(string symbol, string[,] board)
+        {
+            // first row horizontal
+            if (board[1, 1] == symbol && board[1, 5] == symbol && board[1, 9] == symbol)
+            {
+                return true;
+            }
+            //first column vertical
+            else if (board[1, 1] == symbol && board[4, 1] == symbol && board[7, 1] == symbol)
+            {
+                return true;
+            }
+            // second column vertical
+            else if (board[1, 4] == symbol && board[4, 4] == symbol && board[7, 4] == symbol)
+            {
+                return true;
+            }
+            // third column vertical
+            else if (board[1, 9] == symbol && board[4, 9] == symbol && board[7, 9] == symbol)
+            {
+                return true;
+            }
+            // second row horizontal
+            else if (board[4, 1] == symbol && board[4, 5] == symbol && board[4, 9] == symbol)
+            {
+                return true;
+            }
+            // third row horizontal
+            else if (board[7, 1] == symbol && board[7, 5] == symbol && board[7, 9] == symbol)
+            {
+                return true;
+            }
+            // diagonal options
+            else if (board[1, 1] == symbol && board[4, 5] == symbol && board[7, 9] == symbol)
+            {
+                return true;
+            }
+            else if (board[1, 9] == symbol && board[4, 5] == symbol && board[7, 1] == symbol)
+            {
+                return true;
+            }
+
+            // if no winner
+            return false;
+        }
 
         static void Main(string[] args)
         {
@@ -241,6 +289,16 @@ namespace ChallangeTicTacToe
                             }
 
                             ModifyBoard(TicTacBoard, position, "X");
+
+                            // check if the player won and end the game
+                            if (CheckIfWinner("X", TicTacBoard))
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Winner is {0}!!!", player1);
+                                Console.WriteLine("Congratulations!");
+                                break;
+                            }
+
                         }
                         else
                         {
@@ -253,6 +311,15 @@ namespace ChallangeTicTacToe
                             }
 
                             ModifyBoard(TicTacBoard, position, "O");
+
+                            // check if the player won and end the game
+                            if (CheckIfWinner("O", TicTacBoard))
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Winner is {0}!!!", player1);
+                                Console.WriteLine("Congratulations!");
+                                break;
+                            }
                         }
                         Console.Clear();
                     }
