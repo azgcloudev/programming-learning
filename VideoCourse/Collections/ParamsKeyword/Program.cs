@@ -1,4 +1,6 @@
-﻿namespace ParamsKeyword
+﻿using System;
+
+namespace ParamsKeyword
 {
     class Program
     {
@@ -12,6 +14,11 @@
             float pi = 3.1415F;
 
             ParamsMethod2(number, symbol, name, pi);
+
+            // Get int min value from array using params
+            int[] numbers = { 2345, 1234, 23456, 2134, 2345, 712324, 234 };
+
+            Console.WriteLine("The minimum number is {0}", MinV2(numbers));
         }
 
         // params allows to enter multiple values
@@ -32,6 +39,22 @@
                 // objects has a string method
                 Console.WriteLine(str);
             }
+        }
+
+
+        public static int MinV2(params int[] numbers)
+        {
+            // defines the maximum int number avialable as an initial value for the minimum
+            int min = int.MaxValue;
+
+            // loop through all numbers array and assign assign the minimum to 'min'
+            foreach (int number in numbers)
+            {
+                if (number < min)
+                    min = number;
+            }
+
+            return min;
         }
     }
 }
