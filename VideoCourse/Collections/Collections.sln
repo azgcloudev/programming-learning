@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashTables", "HashTables\Ha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionariesCs", "DictionariesCs\DictionariesCs.csproj", "{9D23DB31-F086-4778-ADFF-B9BE29A6C276}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackDemo", "StackDemo\StackDemo.csproj", "{6C762B1A-A0F8-4726-AA39-B6DC43BB719F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackDemo", "StackDemo\StackDemo.csproj", "{6C762B1A-A0F8-4726-AA39-B6DC43BB719F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueDemo", "QueueDemo\QueueDemo.csproj", "{7F830ADD-8A20-433A-9A12-FC9D97A528CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{6C762B1A-A0F8-4726-AA39-B6DC43BB719F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C762B1A-A0F8-4726-AA39-B6DC43BB719F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C762B1A-A0F8-4726-AA39-B6DC43BB719F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F830ADD-8A20-433A-9A12-FC9D97A528CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F830ADD-8A20-433A-9A12-FC9D97A528CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F830ADD-8A20-433A-9A12-FC9D97A528CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F830ADD-8A20-433A-9A12-FC9D97A528CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
