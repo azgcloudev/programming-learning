@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+﻿using System.Numerics; // namespace to use BigIntegers
 
 namespace Program;
 
@@ -29,6 +29,8 @@ class Program
         useDateAndTimes();
 
         UseDatesAndTimes();
+
+        UseBigInteger();
 
         Console.ReadKey();
     }
@@ -219,6 +221,22 @@ class Program
         TimeOnly t = new TimeOnly(13, 30, 0, 0);
         Console.WriteLine(t);
 
+        Console.WriteLine();
+    }
+
+
+    // using BigIntegers
+    static void UseBigInteger()
+    {
+        BigInteger biggy = BigInteger.Parse("9999999999999999999999999999999999999999999999");
+        Console.WriteLine("Value of biggy is {0}", biggy);
+        Console.WriteLine("Is biggy an even value: {0}", biggy.IsEven);
+        Console.WriteLine("Is biggy a power of two: {0}", biggy.IsPowerOfTwo);
+        BigInteger reallyBig = BigInteger.Multiply(biggy, BigInteger.Parse("123456789098765432123456789098765432345678909876"));
+        Console.WriteLine("Value of reallyBig is {0}", reallyBig);
+        //using c# mathematical operators
+        BigInteger reallyBig2 = biggy * reallyBig;
+        Console.WriteLine("Value of reallyBig2 is {0}", reallyBig2);
         Console.WriteLine();
     }
 }
