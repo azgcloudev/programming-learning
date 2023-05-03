@@ -20,6 +20,12 @@ class Program
 
         dataTypeFunctionality();
 
+        charFunctionality();
+
+        parseFromString();
+
+        parseFromStringUsingTryParse();
+
         Console.ReadKey();
     }
 
@@ -106,6 +112,65 @@ class Program
         Console.WriteLine("double.Epsilon: {0}", double.Epsilon);
         Console.WriteLine("double.PositiveInfinity: {0}", double.PositiveInfinity);
         Console.WriteLine("double.NegativeInfinity: {0}", double.NegativeInfinity);
+        Console.WriteLine();
+    }
+
+
+    // Members of System.Char
+    static void charFunctionality()
+    {
+        Console.WriteLine("=> char type functionality:");
+        char myChar = 'a';
+        Console.WriteLine("char.IsDigit('a'): {0}", char.IsDigit(myChar));
+        Console.WriteLine("char.IsLetter('a'): {0}", char.IsLetter(myChar));
+        Console.WriteLine("char.IsWhiteSpace('Hello there', 5): {0}", char.IsWhiteSpace("Hello there", 5));
+        Console.WriteLine("char.IsWhiteSpace('Hello there', 6): {0}", char.IsWhiteSpace("Hello there", 6));
+        Console.WriteLine("char.IsPunctuation('?')", char.IsPunctuation('?'));
+        Console.WriteLine();
+    }
+
+
+    // Parsing values from string data
+    static void parseFromString()
+    {
+        Console.WriteLine("=> Data type parsing:");
+        bool b = bool.Parse("True");
+        Console.WriteLine("Value of b: {0}", b);
+        double d = double.Parse("99.884");
+        Console.WriteLine("Value of d: {0}", d);
+        int i = int.Parse("8");
+        Console.WriteLine("Value of i: {0}", i);
+        char c = Char.Parse("H");
+        Console.WriteLine("Value of c: {0}", c);
+        Console.WriteLine();
+    }
+
+
+    // parsing from string using tryparse
+    static void parseFromStringUsingTryParse()
+    {
+        Console.WriteLine("=> Data type parsing with TryParse:");
+        // tryparse returns a boolean
+        if (bool.TryParse("True", out bool b))
+        {
+            Console.WriteLine("Value of b: {0}", b);
+        }
+        else
+        {
+            Console.WriteLine("Default value of b: {0}", b);
+        }
+
+        string value = "hello";
+        if (double.TryParse(value, out double d))
+        {
+            Console.WriteLine("Value of d: {0}", d);
+        }
+        else
+        {
+            Console.WriteLine("Failed to convert the input ({0}) to a double and the variable was assigned to the default {1}",
+                value, d);
+        }
+
         Console.WriteLine();
     }
 }
