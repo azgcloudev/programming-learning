@@ -26,6 +26,10 @@ class Program
 
         parseFromStringUsingTryParse();
 
+        useDateAndTimes();
+
+        UseDatesAndTimes();
+
         Console.ReadKey();
     }
 
@@ -170,6 +174,50 @@ class Program
             Console.WriteLine("Failed to convert the input ({0}) to a double and the variable was assigned to the default {1}",
                 value, d);
         }
+
+        Console.WriteLine();
+    }
+
+
+
+    // System.DateTime and System.TimeSpan
+    static void useDateAndTimes()
+    {
+        Console.WriteLine("=> Dates and Times:");
+
+        // constructor takes year, month and date
+        DateTime dt = new DateTime(2015, 10, 17);
+
+        // what day of the month is this?
+        Console.WriteLine("The day of {0} is {1}", dt.Date, dt.DayOfWeek);
+
+        // Month is now December
+        dt = dt.AddMonths(2);
+        Console.WriteLine("Daylight savings: {0}", dt.IsDaylightSavingTime());
+
+        // this constructor takes hours, minutes and seconds
+        TimeSpan ts = new TimeSpan(4, 30, 0);
+        Console.WriteLine(ts);
+
+        // Subtract 15 min from currect timespan and
+        // print the results
+        Console.WriteLine(ts.Subtract(new TimeSpan(0, 15, 0)));
+
+        Console.WriteLine();
+    }
+
+
+    // new to .net6 - date only and time only
+    // aligns to the SQL server date and time types
+    static void UseDatesAndTimes()
+    {
+        Console.WriteLine("=> Dates and Times:");
+
+        DateOnly d = new DateOnly(2021, 06, 21);
+        Console.WriteLine(d);
+
+        TimeOnly t = new TimeOnly(13, 30, 0, 0);
+        Console.WriteLine(t);
 
         Console.WriteLine();
     }
