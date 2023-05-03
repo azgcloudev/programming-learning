@@ -18,6 +18,8 @@ class Program
 
         objectFunctionality();
 
+        dataTypeFunctionality();
+
         Console.ReadKey();
     }
 
@@ -90,6 +92,20 @@ class Program
         Console.WriteLine("12.Equals(23) = {0}", 12.Equals(23));
         Console.WriteLine("12.ToString() = {0}", 12.ToString().GetType());
         Console.WriteLine("12.GetType() = {0}", 12.GetType());
+        Console.WriteLine();
+    }
+
+
+    // Members of numerical data types
+    static void dataTypeFunctionality()
+    {
+        Console.WriteLine("Max of int is {0}", int.MaxValue);
+        Console.WriteLine("Min of int is {0}", int.MinValue);
+        Console.WriteLine("Max of double is {0}", double.MaxValue);
+        Console.WriteLine("Min of double is {0}", double.MinValue);
+        Console.WriteLine("double.Epsilon: {0}", double.Epsilon);
+        Console.WriteLine("double.PositiveInfinity: {0}", double.PositiveInfinity);
+        Console.WriteLine("double.NegativeInfinity: {0}", double.NegativeInfinity);
         Console.WriteLine();
     }
 }
