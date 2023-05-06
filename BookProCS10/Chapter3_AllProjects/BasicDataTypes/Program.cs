@@ -32,6 +32,8 @@ class Program
 
         UseBigInteger();
 
+        DigitSeparators();
+
         Console.ReadKey();
     }
 
@@ -239,4 +241,19 @@ class Program
         Console.WriteLine("Value of reallyBig2 is {0}", reallyBig2);
         Console.WriteLine();
     }
+
+
+
+    // digit separators from c# 7.0
+    static void DigitSeparators()
+    {
+        Console.WriteLine("=> Use digit separators");
+        Console.Write("Integer:");
+        Console.WriteLine(123_456);
+        Console.Write("Long:");
+        Console.WriteLine(123_456_789L);
+        Console.Write("Hex:");
+        Console.WriteLine(0x_00_00_FF);
+    }
+
 }
