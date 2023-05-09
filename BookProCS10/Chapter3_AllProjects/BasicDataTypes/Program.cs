@@ -254,6 +254,7 @@ class Program
         Console.WriteLine(123_456_789L);
         Console.Write("Hex:");
         Console.WriteLine(0x_00_00_FF);
+        Console.WriteLine();
     }
 
 }
