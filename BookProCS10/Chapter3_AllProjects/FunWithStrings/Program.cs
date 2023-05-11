@@ -18,6 +18,8 @@ StringEqualitySpecifyingCompareRules();
 
 StringsAreInmutable();
 
+FunWithStringBuilder();
+
 Console.ReadKey();
 
 
@@ -182,6 +184,24 @@ static void StringsAreInmutable()
 
     // s1 still unchanged
     Console.WriteLine("s1 = {0}, upperString = {1}", s1, upperString);
+
+    Console.WriteLine();
+}
+
+static void FunWithStringBuilder()
+{
+    Console.WriteLine("=> Using the StringBuilder:");
+
+    StringBuilder sb = new StringBuilder("***** Fantastic Games *****");
+    sb.Append("\n");
+    sb.AppendLine("Half Life");
+    sb.AppendLine("Morrowind");
+    sb.AppendLine("Deus Ex" + "2");
+    sb.Append("System Shock");
+    Console.WriteLine(sb.ToString());
+    sb.Replace("2", " Invisible War");
+    Console.WriteLine(sb.ToString());
+    Console.WriteLine("sb has {0} characters", sb.Length);
 
     Console.WriteLine();
 }
