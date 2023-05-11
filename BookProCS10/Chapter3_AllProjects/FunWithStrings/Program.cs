@@ -16,6 +16,8 @@ StringEquality();
 
 StringEqualitySpecifyingCompareRules();
 
+StringsAreInmutable();
+
 Console.ReadKey();
 
 
@@ -163,5 +165,23 @@ static void StringEqualitySpecifyingCompareRules()
         s1.IndexOf("E", StringComparison.InvariantCultureIgnoreCase));
 
     Console.WriteLine();
+}
 
+
+// STRING INMMUTABLE
+static void StringsAreInmutable()
+{
+    Console.WriteLine("=> Inmutable Strings:");
+    // set initial value
+    string s1 = "This is my string.";
+    Console.WriteLine("s1 = {0}", s1);
+
+    // Uppercase s1
+    string upperString = s1.ToUpper();
+    Console.WriteLine("upperString  = {0}", upperString);
+
+    // s1 still unchanged
+    Console.WriteLine("s1 = {0}, upperString = {1}", s1, upperString);
+
+    Console.WriteLine();
 }
