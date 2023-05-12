@@ -34,6 +34,8 @@ Console.WriteLine("{0} + {1} = {2}",
     num1, num2, shortCasted);
 NarrowingAttempt();
 
+ProcessByte();
+
 Console.ReadLine();
 
 static int Add(int x, int y)
@@ -48,6 +50,37 @@ static void NarrowingAttempt()
     // explicit cast the int into byte (no loss of data)
     myByte = (byte)myInt;
     Console.WriteLine("Value of byte: {0}", myByte);
+
+    Console.WriteLine();
+}
+
+
+// the checked keyword
+static void ProcessByte()
+{
+    byte b1 = 100;
+    byte b2 = 250;
+
+    // tell the compiler to add CLI code
+    // to throw an exception if overflow/underflow
+    // takes place
+
+    try
+    {
+        //byte sum = checked((byte)Add(b1, b2)); // using checked
+        //Console.WriteLine("sum = {0}", sum);
+
+        // can use also a block scope for checked
+        checked
+        {
+            byte sum = (byte)Add(b1, b2);
+            Console.WriteLine("sum = {0}", sum);
+        }
+    }
+    catch (OverflowException ex)
+    {
+        Console.WriteLine(ex);
+    }
 
     Console.WriteLine();
 }
