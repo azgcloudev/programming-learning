@@ -84,3 +84,10 @@ static void ProcessByte()
 
     Console.WriteLine();
 }
+
+
+
+// USE THE 'UNCHECKED' KEYWORD
+// if project is enabled with checking for underflow/overflow
+// unckecked allow data loss on a single statement (block, scopre)
+
