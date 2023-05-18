@@ -1,4 +1,4 @@
-﻿ForLoopExample();  ForEachLoopExample();  LinqQueryOverInts();  //WhileLoopExample();  //DoWhileLoopExample();  IfElseExample();  IfElsePatternMatching();  IfElsePatternMatchingUpdatedInCSharp9();  Console.ReadKey();    // FOR LOOP static void ForLoopExample() {     // i is only visible within the scope of the for loop     for(int i = 0; i<4;i++)     {         Console.WriteLine("Number is: {0}", i);     }     // 'i' is not visible here     Console.WriteLine(); }   // using FOREACH static void ForEachLoopExample() {     string[] carTypes = { "Ford", "BMW", "Yugo", "Honda" };     foreach (string c in carTypes)     {         Console.WriteLine(c);     }      int[] myInts = { 10, 20, 30, 40 };     foreach (int i in myInts)     {         Console.WriteLine(i);     }     Console.WriteLine(); }  // implicit type using foreach static void LinqQueryOverInts() {     int[] numbers = { 10, 20, 30, 40, 1, 2, 3, 8 };      // LINQ query!     var subset = from i in numbers where i < 10 select i;     Console.WriteLine("Values in subset: ");      foreach (var i in subset)     {         Console.Write("{0} ", i);     }     Console.WriteLine(); }   // USING WHILE LOOP AND DO WHILE static void WhileLoopExample() {     string userIsDone = "";      // Test on a lower-class copy of the string      while(userIsDone.ToLower() != "yes")     {         Console.WriteLine("In the while loop");         Console.Write("Are you done? [yes] [no]: ");         userIsDone = Console.ReadLine();     }     Console.WriteLine(); }  static void DoWhileLoopExample()
+﻿ForLoopExample();  ForEachLoopExample();  LinqQueryOverInts();  //WhileLoopExample();  //DoWhileLoopExample();  IfElseExample();  IfElsePatternMatching();  IfElsePatternMatchingUpdatedInCSharp9();  ExacuteIfElseUsingConditionalOperator();  ConditionalRedExample();  Console.ReadKey();    // FOR LOOP static void ForLoopExample() {     // i is only visible within the scope of the for loop     for(int i = 0; i<4;i++)     {         Console.WriteLine("Number is: {0}", i);     }     // 'i' is not visible here     Console.WriteLine(); }   // using FOREACH static void ForEachLoopExample() {     string[] carTypes = { "Ford", "BMW", "Yugo", "Honda" };     foreach (string c in carTypes)     {         Console.WriteLine(c);     }      int[] myInts = { 10, 20, 30, 40 };     foreach (int i in myInts)     {         Console.WriteLine(i);     }     Console.WriteLine(); }  // implicit type using foreach static void LinqQueryOverInts() {     int[] numbers = { 10, 20, 30, 40, 1, 2, 3, 8 };      // LINQ query!     var subset = from i in numbers where i < 10 select i;     Console.WriteLine("Values in subset: ");      foreach (var i in subset)     {         Console.Write("{0} ", i);     }     Console.WriteLine(); }   // USING WHILE LOOP AND DO WHILE static void WhileLoopExample() {     string userIsDone = "";      // Test on a lower-class copy of the string      while(userIsDone.ToLower() != "yes")     {         Console.WriteLine("In the while loop");         Console.Write("Are you done? [yes] [no]: ");         userIsDone = Console.ReadLine();     }     Console.WriteLine(); }  static void DoWhileLoopExample()
 {
     string userIsDone = "";
 
@@ -115,6 +115,45 @@ static void IfElsePatternMatchingUpdatedInCSharp9()
     {
         Console.WriteLine($"{testItem1} is not null");
     }
+
+    Console.WriteLine();
+}
+
+
+// USING CONDITIONAL OPERATOR
+// ternary conditional operator
+// condition ? first_expression : second_expression;
+
+static void ExacuteIfElseUsingConditionalOperator()
+{
+    Console.WriteLine("=> Conditional Operator:");
+
+    string stringData = "My textual data";
+    Console.WriteLine(stringData.Length > 0 ? "string is greater than 0 characters" : "string is not greater than 0 characters");
+
+    Console.WriteLine();
+}
+
+// conditional reference
+static void ConditionalRedExample()
+{
+    int[] smallArray = new int[] { 1, 2, 3, 4, 5 };
+    int[] largeArray = new int[] { 10, 20, 30, 40, 50 };
+
+    int index = 7;
+
+    ref int refValue = ref ((index < 5)
+        ? ref smallArray[index]
+        : ref largeArray[index - 5]);
+    refValue = 0;
+
+    index = 2;
+    ((index < 5)
+        ? ref smallArray[index]
+        : ref largeArray[index - 5]) = 100;
+
+    Console.WriteLine(string.Join(" ", smallArray));
+    Console.WriteLine(string.Join(" ", largeArray));
 
     Console.WriteLine();
 }
