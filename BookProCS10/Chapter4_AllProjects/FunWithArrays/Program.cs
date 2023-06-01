@@ -12,6 +12,8 @@ ArrayOfObjects();
 
 RectMultidimensionalArray();
 
+JaggedMultidimensionalArray();
+
 static void SimpleArrays()
 {
     Console.WriteLine("=> Simple Array Creation.");
@@ -159,5 +161,32 @@ static void RectMultidimensionalArray()
         Console.WriteLine();
     }
 
+    Console.WriteLine();
+}
+
+/// jagged arrays
+// contains inner arrays but each of them have different limit (not equals like rectangural arrays)
+static void JaggedMultidimensionalArray()
+{
+    Console.WriteLine("=> Jagged multidimensional array:");
+
+    // array of 5 different ways
+    int[][] myJagArray = new int[5][];
+
+    //create the jagged array
+    for (int i = 0; i < myJagArray.Length; i++)
+    {
+        myJagArray[i] = new int[i + 7];
+    }
+
+    // print each row (each element is defaulted to zero)
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < myJagArray[i].Length; j++)
+        {
+            Console.Write(myJagArray[i][j] + " ");
+        }
+        Console.WriteLine();
+    }
     Console.WriteLine();
 }
