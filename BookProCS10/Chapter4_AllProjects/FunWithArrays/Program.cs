@@ -8,6 +8,8 @@ ArrayInitialization();
 
 DeclareImplicirArrays();
 
+ArrayOfObjects();
+
 static void SimpleArrays()
 {
     Console.WriteLine("=> Simple Array Creation.");
@@ -77,5 +79,25 @@ static void DeclareImplicirArrays()
     var c = new[] { "hello", null, "world" };
     Console.WriteLine("c is a: {0}", c.ToString());
 
+    Console.WriteLine();
+}
+
+// defining an array of objects
+static void ArrayOfObjects()
+{
+    Console.WriteLine("=> Array of objects:");
+
+    // an array of objects can be anything at all
+    object[] myObjects = new object[4];
+    myObjects[0] = 10;
+    myObjects[1] = false;
+    myObjects[2] = new DateTime(1969, 3, 24);
+    myObjects[3] = "Form & Void";
+
+    foreach(object obj in myObjects)
+    {
+        // print the type and value for each item
+        Console.WriteLine("Type: {0}, Value: {1}", obj.GetType(), obj);
+    }
     Console.WriteLine();
 }
