@@ -10,6 +10,8 @@ DeclareImplicirArrays();
 
 ArrayOfObjects();
 
+RectMultidimensionalArray();
+
 static void SimpleArrays()
 {
     Console.WriteLine("=> Simple Array Creation.");
@@ -31,7 +33,7 @@ static void SimpleArraysCreation()
     myInts[2] = 300;
 
     // now print each value.
-    foreach(int i in myInts)
+    foreach (int i in myInts)
     {
         Console.WriteLine(i);
     }
@@ -58,7 +60,7 @@ static void ArrayInitialization()
 
     // size and elements quantity mismatch
     // int[] numbers = new int[3] { 1, 2 }; // compile error
-    
+
     Console.WriteLine();
 }
 
@@ -94,10 +96,68 @@ static void ArrayOfObjects()
     myObjects[2] = new DateTime(1969, 3, 24);
     myObjects[3] = "Form & Void";
 
-    foreach(object obj in myObjects)
+    foreach (object obj in myObjects)
     {
         // print the type and value for each item
         Console.WriteLine("Type: {0}, Value: {1}", obj.GetType(), obj);
     }
+    Console.WriteLine();
+}
+
+// multidimensional rectangular arrays
+static void RectMultidimensionalArray()
+{
+    Console.WriteLine("=> Rectangular multidimensional array:");
+
+    // a rectangular MD array
+    int[,] myMatrix;
+
+    myMatrix = new int[3, 4];
+    /*
+     {
+        {1,2,3,4},
+        {1,2,3,4},
+        {1,2,3,4}
+     }
+     */
+
+    int[,] myMatrixManual =
+    {
+        {1,2,3,4},
+        {1,2,3,4},
+        {1,2,3,4}
+    };
+
+    // Populate (3 * 4) araray
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            myMatrix[i, j] = i * j;
+        }
+    }
+
+    // print (3*4) array
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            Console.Write(myMatrix[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+
+
+    // print manual array MD
+    Console.WriteLine();
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            Console.Write(myMatrixManual[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+
     Console.WriteLine();
 }
