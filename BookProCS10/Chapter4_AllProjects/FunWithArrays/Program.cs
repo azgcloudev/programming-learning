@@ -14,6 +14,10 @@ RectMultidimensionalArray();
 
 JaggedMultidimensionalArray();
 
+PassAndReceiveArrays();
+
+SystemArrayFunctionality();
+
 static void SimpleArrays()
 {
     Console.WriteLine("=> Simple Array Creation.");
@@ -187,6 +191,76 @@ static void JaggedMultidimensionalArray()
             Console.Write(myJagArray[i][j] + " ");
         }
         Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+// ARRAYS AS ARGUMENTS OR RETURN VALUES
+static void PrintArray(int[] myInts)
+{
+    for (int i = 0; i < myInts.Length; i++)
+    {
+        Console.WriteLine("Item {0} is {1}", i, myInts[i]);
+    }
+    Console.WriteLine();
+}
+
+static string[] GetStringArray()
+{
+    string[] theStrings = { "Hello", "from", "GetStringArray" };
+    return theStrings;
+}
+
+static void PassAndReceiveArrays()
+{
+    Console.WriteLine("=> Arrays as params and return values.");
+    // pass array as parameter
+    int[] ages = { 20, 22, 23, 0 };
+    PrintArray(ages);
+
+    // get array as return value
+    string[] strs = GetStringArray();
+    foreach (string s in strs)
+    {
+        Console.WriteLine(s);
+    }
+    Console.WriteLine();
+}
+
+// --- USING THE SYSTEMARRAY CLASS ---
+static void SystemArrayFunctionality()
+{
+    Console.WriteLine("=> Working with System.Array:");
+
+    // initialize items at startup
+    string[] gothicBands = { "Tones on Tail", "Bauhaus", "Sisters of Mercy" };
+
+    // print out names in declared order
+    Console.WriteLine("-> Here is the array:");
+    for (int i = 0; i < gothicBands.Length; i++)
+    {
+        // print a name
+        Console.Write(gothicBands[i] + ", ");
+    }
+    Console.WriteLine("\n");
+
+    // reverse them...
+    Array.Reverse(gothicBands);
+    Console.WriteLine("-> The reversed array");
+    for (int i = 0; i < gothicBands.Length; i++)
+    {
+        // print a name
+        Console.Write(gothicBands[i] + ", ");
+    }
+    Console.WriteLine("\n");
+
+    // clear out all but the first member
+    Console.WriteLine("-> Cleared out all but one...");
+    Array.Clear(gothicBands, 1, 2);
+    for (int i = 0; i < gothicBands.Length; i++)
+    {
+        // print a name
+        Console.Write(gothicBands[i] + ", ");
     }
     Console.WriteLine();
 }
