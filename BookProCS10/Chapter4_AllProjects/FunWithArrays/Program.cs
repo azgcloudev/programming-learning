@@ -262,5 +262,73 @@ static void SystemArrayFunctionality()
         // print a name
         Console.Write(gothicBands[i] + ", ");
     }
+    Console.WriteLine("\n");
+
+    // USING INDICES AND RANGES
+    gothicBands[0] = "Tones on Tail";
+    gothicBands[1] = "Bauhaus";
+    gothicBands[2] = "Sisters of Mercy";
+
+    Console.WriteLine("-> Using 'index'");
+    for (int i = 0; i < gothicBands.Length; i++)
+    {
+        Index idx = i;
+        //print a name
+        Console.Write(gothicBands[idx] + ", ");
+    }
+    Console.WriteLine();
+
+    for (int i = 1; i <= gothicBands.Length; i++)
+    {
+        Index idx = ^i;
+        // ^ specify how many positions from the end of the sequence
+        // if length is 10, ^1 is 9
+        Console.Write(gothicBands[idx] + ", ");
+    }
+    Console.WriteLine("\n");
+
+    Console.WriteLine("-> Range operator");
+    // first is inclusive and last number exclusive
+    // prints first two elements of the array
+    foreach (string item in gothicBands[0..2])
+    {
+        //print name
+        Console.Write(item + ", ");
+    }
+    Console.WriteLine("\n");
+
+    Range r = 0..2;
+    foreach (string item in gothicBands[r])
+    {
+        Console.Write(item + ", ");
+    }
+    Console.WriteLine("\n");
+
+    // defining ranges using index variables
+    Index idx1 = 0;
+    Index idx2 = 2;
+    r = idx1..idx2;
+    foreach (string item in gothicBands[r])
+    {
+        Console.Write(item + ", ");
+    }
+    Console.WriteLine("\n");
+
+    Console.WriteLine("gothicBand[..]:");
+    foreach(string item in gothicBands[..])
+    {
+        Console.Write(item + " ");
+    }
+    Console.WriteLine("\ngothicBand[0..^0]:");
+    foreach (string item in gothicBands[0..^0])
+    {
+        Console.Write(item + " ");
+    }
+    Console.WriteLine("\ngothicBand[0..3]:");
+    foreach (string item in gothicBands[0..3])
+    {
+        Console.Write(item + " ");
+    }
+
     Console.WriteLine();
 }
