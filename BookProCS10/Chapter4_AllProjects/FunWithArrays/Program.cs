@@ -18,6 +18,8 @@ PassAndReceiveArrays();
 
 SystemArrayFunctionality();
 
+Console.WriteLine("Add() result is: {0}", Add(6, 3));
+
 static void SimpleArrays()
 {
     Console.WriteLine("=> Simple Array Creation.");
@@ -315,7 +317,7 @@ static void SystemArrayFunctionality()
     Console.WriteLine("\n");
 
     Console.WriteLine("gothicBand[..]:");
-    foreach(string item in gothicBands[..])
+    foreach (string item in gothicBands[..])
     {
         Console.Write(item + " ");
     }
@@ -332,3 +334,7 @@ static void SystemArrayFunctionality()
 
     Console.WriteLine();
 }
+
+
+// SINGLE EXPRESSION BODIE MEMBERS
+static int Add(int n1, int n2) => n1 + n2;
