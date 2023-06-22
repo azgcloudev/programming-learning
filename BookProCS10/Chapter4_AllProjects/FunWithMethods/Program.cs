@@ -47,5 +47,10 @@
         {
             ans = x + y;
         }
+
+        static void AddOutCompilerError(int x, int y, out int res)
+        {
+            result = x + y;
+        }
     }
 }
