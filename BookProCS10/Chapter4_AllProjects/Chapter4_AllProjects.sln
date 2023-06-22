@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunWithArrays", "FunWithArrays\FunWithArrays.csproj", "{02EB589E-E3C7-4AF4-A39A-2F5977B1BD27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithLocalFunctions", "FunWithLocalFunctions\FunWithLocalFunctions.csproj", "{80C181D2-41A7-4043-9FF4-721CA0AE8442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunWithLocalFunctions", "FunWithLocalFunctions\FunWithLocalFunctions.csproj", "{80C181D2-41A7-4043-9FF4-721CA0AE8442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithMethods", "FunWithMethods\FunWithMethods.csproj", "{9C5ABDF0-8BD9-4433-9309-26C04CAD1513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{80C181D2-41A7-4043-9FF4-721CA0AE8442}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80C181D2-41A7-4043-9FF4-721CA0AE8442}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80C181D2-41A7-4043-9FF4-721CA0AE8442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5ABDF0-8BD9-4433-9309-26C04CAD1513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5ABDF0-8BD9-4433-9309-26C04CAD1513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5ABDF0-8BD9-4433-9309-26C04CAD1513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5ABDF0-8BD9-4433-9309-26C04CAD1513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
