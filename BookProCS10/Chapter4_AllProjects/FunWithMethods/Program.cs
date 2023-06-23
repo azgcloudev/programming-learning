@@ -27,6 +27,15 @@
             AddOut(90, 90, out int ans);
             Console.WriteLine("90 + 90 = {0}\n", ans);
 
+
+            // ref modifier
+            Console.WriteLine("\n-> ref modifier:");
+            string str1 = "flip";
+            string str2 = "flop";
+            Console.WriteLine("Before: {0}, {1}", str1, str2);
+            SwapStrings( str1, str2);
+            Console.WriteLine("After: {0}, {1}", str1, str2);
+
         }
 
         // value type arguments are passed by value by default
@@ -53,5 +62,15 @@
         //    result = x + y;
         //    Console.WriteLine("error CS0177: The out parameter 'res' must be assigned to before control leaves the current method");
         //}
+
+
+
+        // ref modifier
+        public static void SwapStrings(string s1, string s2)
+        {
+            string tempStr = s1;
+            s1 = s2;
+            s2 = tempStr;
+        }
     }
 }
