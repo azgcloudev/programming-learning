@@ -48,9 +48,10 @@
             ans = x + y;
         }
 
-        static void AddOutCompilerError(int x, int y, out int res)
-        {
-            result = x + y;
-        }
+        //static void AddOutCompilerError(int x, int y, out int res)
+        //{
+        //    result = x + y;
+        //    Console.WriteLine("error CS0177: The out parameter 'res' must be assigned to before control leaves the current method");
+        //}
     }
 }
