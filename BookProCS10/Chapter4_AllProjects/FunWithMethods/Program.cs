@@ -33,8 +33,13 @@
             string str1 = "flip";
             string str2 = "flop";
             Console.WriteLine("Before: {0}, {1}", str1, str2);
-            SwapStrings( str1, str2);
+            SwapStrings( ref str1, ref str2);
             Console.WriteLine("After: {0}, {1}", str1, str2);
+
+
+            // in modifier
+            Console.WriteLine("\n-> in modifier:");
+            Console.WriteLine(AddReadOnly(10, 40));
 
         }
 
@@ -66,11 +71,23 @@
 
 
         // ref modifier
-        public static void SwapStrings(string s1, string s2)
+        public static void SwapStrings(ref string s1, ref string s2)
         {
             string tempStr = s1;
             s1 = s2;
             s2 = tempStr;
+        }
+
+
+        // --- in modifier ---
+        // The in keyword causes arguments to be passed by reference but ensures the argument is not modified.
+        public static int AddReadOnly(in int x, in int y)
+        {
+            // error CS8331: Cannot assign to variable 'x' or use it as the right hand side of a ref assignment because it is a readonly variable
+            // x = 10000;
+            // y = 88888;
+            int ans = x + y;
+            return ans;
         }
     }
 }
