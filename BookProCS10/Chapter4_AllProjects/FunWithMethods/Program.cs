@@ -41,6 +41,13 @@
             Console.WriteLine("\n-> in modifier:");
             Console.WriteLine(AddReadOnly(10, 40));
 
+
+            // paramm modifier
+            Console.WriteLine("\n-> params modifier:");
+            Console.WriteLine(CalculateAverage(21,54,657,34.2)); // using comma delimited values
+            double[] myNumbers = { 324, 1234, 423, 54322, 124 };
+            Console.WriteLine(CalculateAverage(myNumbers)); // passing array values
+
         }
 
         // value type arguments are passed by value by default
@@ -88,6 +95,26 @@
             // y = 88888;
             int ans = x + y;
             return ans;
+        }
+
+
+
+        // ---- PARAMS MODIFIER ----
+        static double CalculateAverage(params double[] values)
+        {
+            double sum = 0;
+
+            if (values.Length == 0)
+            {
+                return sum;
+            }
+           
+            for (int i = 0; i < values.Length; i++)
+            {
+                sum += values[i];
+            }
+
+            return (sum / values.Length);
         }
     }
 }
