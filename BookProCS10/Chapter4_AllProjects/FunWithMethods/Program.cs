@@ -48,6 +48,12 @@
             double[] myNumbers = { 324, 1234, 423, 54322, 124 };
             Console.WriteLine(CalculateAverage(myNumbers)); // passing array values
 
+
+            // optional parameters
+            Console.WriteLine("-> Optional parameters:");
+            EnterLogData("Oh no! Grid can't find data");
+            EnterLogData("Oh no! I can't find the payroll data", "CFO");
+
         }
 
         // value type arguments are passed by value by default
@@ -115,6 +121,14 @@
             }
 
             return (sum / values.Length);
+        }
+
+
+        // ---- OPTIONAL PARAMETERS ----
+        static void EnterLogData(string message, string owner = "Programmer")
+        {
+            Console.WriteLine("Error: {0}", message);
+            Console.WriteLine("Owner of error: {0}", owner);
         }
     }
 }
