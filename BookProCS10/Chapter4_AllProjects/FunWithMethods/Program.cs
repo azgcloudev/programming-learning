@@ -51,7 +51,7 @@
 
             // optional parameters
             Console.WriteLine("-> Optional parameters:");
-            EnterLogData("Oh no! Grid can't find data");
+            EnterLogData("Oh no! Grid can't find data");    // not using the optional 'owner'
             EnterLogData("Oh no! I can't find the payroll data", "CFO");
 
         }
