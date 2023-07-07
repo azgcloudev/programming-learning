@@ -54,6 +54,10 @@
             EnterLogData("Oh no! Grid can't find data");    // not using the optional 'owner'
             EnterLogData("Oh no! I can't find the payroll data", "CFO");
 
+            // named arguments
+            Console.WriteLine("-> Named arguments:");
+            DisplayFancyMessage(message: "Wow! Very fancy", textColor: ConsoleColor.DarkRed, backgroundColor: ConsoleColor.White);
+
         }
 
         // value type arguments are passed by value by default
@@ -129,6 +133,24 @@
         {
             Console.WriteLine("Error: {0}", message);
             Console.WriteLine("Owner of error: {0}", owner);
-        }
+        } 
+
+
+        // ---- NAMED ARGUMENTS ----
+        static void DisplayFancyMessage(ConsoleColor textColor, ConsoleColor backgroundColor, string message)
+        {
+            // store old colors to restore after message is printed
+            ConsoleColor oldTextColor = Console.ForegroundColor;
+            ConsoleColor oldBackgroundColor = Console.BackgroundColor;
+
+            // set new colors and print message
+            Console.ForegroundColor = textColor;
+            Console.BackgroundColor = backgroundColor;
+            Console.WriteLine(message);
+
+            // restore colors
+            Console.ForegroundColor = oldTextColor;
+            Console.BackgroundColor = oldBackgroundColor;
+         }
     }
 }
