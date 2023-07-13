@@ -9,6 +9,10 @@ AskForBonus(em);
 Console.WriteLine($"EmpTypeEnum uses a \"{Enum.GetUnderlyingType(em.GetType())}\" for storage");
 Console.WriteLine("EmpTypeEnum uses a \"{0}\" for storage", Enum.GetUnderlyingType(typeof(EmpTypeEnum)));
 
+// get enum name in string and get the value
+Console.WriteLine("\nem is {0}", em.ToString());
+Console.WriteLine("{0} value is {1}", em.ToString(), (byte)em);
+
 Console.ReadLine();
 
 // local functions
