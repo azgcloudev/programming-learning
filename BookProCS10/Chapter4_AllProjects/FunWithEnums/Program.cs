@@ -13,6 +13,10 @@ Console.WriteLine("EmpTypeEnum uses a \"{0}\" for storage", Enum.GetUnderlyingTy
 Console.WriteLine("\nem is {0}", em.ToString());
 Console.WriteLine("{0} value is {1}", em.ToString(), (byte)em);
 
+// Enum printing details
+Console.WriteLine();
+EvaluateEnum(em);
+
 Console.ReadLine();
 
 // local functions
@@ -33,6 +37,25 @@ static void AskForBonus(EmpTypeEnum e)
             Console.WriteLine("VERY GOOD, SIR");
             break;
     }
+}
+
+// method will print details out of any enum
+static void EvaluateEnum(System.Enum e)
+{
+    Console.WriteLine("=> Information about {0}", e.GetType().Name);
+
+    Console.WriteLine("Underlyting storage type {0}", Enum.GetUnderlyingType(e.GetType()));
+
+    // get all name value pairs for incoming parameters
+    Array enumData = Enum.GetValues(e.GetType());
+    Console.WriteLine("This enum has {0} members", enumData.Length);
+
+    // Show the string name and associated value, using D format
+    for (int i = 0; i < enumData.Length; i++)
+    {
+        Console.WriteLine("Name: {0}, Value: {0:D}",enumData.GetValue(i));    
+    }
+
 }
 
 // Custom enumeration
