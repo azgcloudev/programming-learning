@@ -13,6 +13,11 @@
             Console.WriteLine("~1:{0} = {1}: b{2}", Convert.ToString(1, 2), ~1, Convert.ToString(~1, 2));
             Console.WriteLine("Int.MaxValue: {0}", Convert.ToString((int.MaxValue), 2));
 
+            // Enums with bitwise
+            ContactPreference emailAndPhone = ContactPreference.Email | ContactPreference.Phone;
+
+            Console.WriteLine("None? {0}", (emailAndPhone | ContactPreference.None) == ContactPreference.Email);
+
             // end
             Console.ReadLine();
         }
