@@ -17,6 +17,14 @@ Console.WriteLine("{0} value is {1}", em.ToString(), (byte)em);
 Console.WriteLine();
 EvaluateEnum(em);
 
+// print days of the week
+Array ArrayDays = Enum.GetValues(DaysOfTheWeek.Monday.GetType());
+foreach (var day in ArrayDays)
+{
+    Console.WriteLine("Day:{0:D} : {0}", day);
+}
+
+
 Console.ReadLine();
 
 // local functions
@@ -53,7 +61,7 @@ static void EvaluateEnum(System.Enum e)
     // Show the string name and associated value, using D format
     for (int i = 0; i < enumData.Length; i++)
     {
-        Console.WriteLine("Name: {0}, Value: {0:D}",enumData.GetValue(i));    
+        Console.WriteLine("Name: {0}, Value: {0:D}", enumData.GetValue(i));
     }
 
 }
@@ -84,4 +92,15 @@ enum EmpTypeNonSequentialEnum : byte
     Grunt = 1,
     Contractor = 100,
     VicePresident = 9
+}
+
+enum DaysOfTheWeek
+{
+    Monday = 1,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
 }
