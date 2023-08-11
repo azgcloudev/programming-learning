@@ -12,6 +12,9 @@ p1.Display();
 p1.Increment();
 p1.Display();
 
+// structure declaration with custom constructor
+Point p2 = new Point(10, 20);
+p2.Display();
 
 
 // end
@@ -22,6 +25,13 @@ struct Point
     // fields
     public int X;
     public int Y;
+
+    // custom constructor
+    public Point(int xPos, int yPos)
+    {
+        X = xPos;
+        Y = yPos;
+    }
 
     // methods
     public void Increment()
