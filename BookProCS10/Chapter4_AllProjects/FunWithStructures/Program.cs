@@ -23,8 +23,12 @@ Console.ReadLine();
 struct Point
 {
     // fields
-    public int X;
-    public int Y;
+    // c#10+ fields can be initialize
+    public int X = 10;
+    public int Y = 542;
+
+    // parameterless constructor
+    public Point() { }
 
     // custom constructor
     public Point(int xPos, int yPos)
