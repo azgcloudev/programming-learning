@@ -57,3 +57,23 @@ struct Point
         Console.WriteLine("X = {0}, Y = {1}", X, Y);
     }
 }
+
+readonly struct ReadOnlyStruct
+{
+    // fields
+    public int X { get; }
+    public int Y { get; }
+
+    // display current position
+    public void Display()
+    {
+        Console.WriteLine($"X = {X}, Y = {Y}");
+    }
+
+    // constructor
+    public ReadOnlyStruct(int xPos, int yPos)
+    {
+        X = xPos;
+        Y = yPos;
+    }
+}
