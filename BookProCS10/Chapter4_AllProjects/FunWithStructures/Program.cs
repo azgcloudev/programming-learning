@@ -6,6 +6,12 @@ myPoint.Display();
 myPoint.Decrement();
 myPoint.Display();
 
+// default values using constructor new
+Point p1 = new Point();
+p1.Display();
+p1.Increment();
+p1.Display();
+
 
 
 // end
