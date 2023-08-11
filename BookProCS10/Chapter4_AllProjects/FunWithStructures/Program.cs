@@ -16,6 +16,10 @@ p1.Display();
 Point p2 = new Point(10, 20);
 p2.Display();
 
+// readonly struct
+PointWithReadOnly pReadOnly = new PointWithReadOnly(50, 60, "Point w/RO");
+pReadOnly.Display();
+
 
 // end
 Console.ReadLine();
@@ -75,5 +79,27 @@ readonly struct ReadOnlyStruct
     {
         X = xPos;
         Y = yPos;
+    }
+}
+
+struct PointWithReadOnly
+{
+    // fields
+    public int X;
+    public readonly int Y;
+    public readonly string Name;
+
+    // methods
+    public readonly void Display()
+    {
+        Console.WriteLine($"X = {X}, Y = {Y}, Name = {Name}");
+    }
+
+    // constructor
+    public PointWithReadOnly(int yPos, int xPos, string name)
+    {
+        X = xPos;
+        Y = yPos;
+        Name = name;
     }
 }
