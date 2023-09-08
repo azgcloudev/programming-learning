@@ -27,6 +27,14 @@
             //all numbers are the same
             Console.WriteLine($"{decimalNotation == binaryNotation}");
             Console.WriteLine($"{decimalNotation == hexadecimalNotation}");
+
+            // size of types
+            Console.WriteLine();
+            Console.WriteLine($"Int has a size of {sizeof(int)} bytes. Its minimum value is {int.MinValue}\tand max value is {int.MaxValue}.");
+            Console.WriteLine();
+            Console.WriteLine($"Double has a size of {sizeof(double)} bytes. Its minimum value is {double.MinValue:N0}\tand max value is {double.MaxValue:N0}.");
+            Console.WriteLine();
+            Console.WriteLine($"Decimal has a size of {sizeof(decimal)} bytes. Its minimum value is {decimal.MinValue:N0}\tand max value is {decimal.MaxValue:N0}.");
         }
     }
 }
