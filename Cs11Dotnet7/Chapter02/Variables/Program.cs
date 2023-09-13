@@ -56,3 +56,6 @@ int number = 13;
 Console.WriteLine("{0} value is {1}.", nameof(number), number);
 number = default;
 Console.WriteLine("{0} value is {1}.", nameof(number), number);
+
+// end
+Console.ReadKey();
