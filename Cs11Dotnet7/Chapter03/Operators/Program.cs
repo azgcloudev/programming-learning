@@ -27,3 +27,14 @@ WriteLine($"e % f = {e % f}");
 double g = 11.0;
 WriteLine($"g is {g:N1}, f is {f}");
 WriteLine($"g / f = {g / f}");
+
+WriteLine();
+
+// assigment operator with arithmetic operator
+WriteLine("--- assigment operator ---");
+int p = 6;
+p += 3; // equivalent to p = p + 3
+p -= 3;
+p *= 3;
+p /= 3;
+WriteLine(p);
