@@ -1,6 +1,5 @@
 ﻿
 // AND, OR , XOR bitwise operators
-using System.Security.Cryptography;
 
 int a = 10;
 int b = 6;
