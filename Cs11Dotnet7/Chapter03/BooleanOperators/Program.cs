@@ -11,3 +11,22 @@ WriteLine();
 WriteLine($"XOR  | a     | b    ");
 WriteLine($"a    | {a ^ a,-5} | {a ^ b,-5}  ");
 WriteLine($"b    | {b ^ a,-5} | {b ^ b,-5}  ");
+
+WriteLine();
+
+// conditional logical operators
+// &&, ||
+WriteLine("--- Coditional logical operator ---");
+WriteLine($"a & DoStuff() = {a & DoStuff()}");
+WriteLine($"b & DoStuff() = {b & DoStuff()}");
+
+WriteLine();
+WriteLine($"a && DoStuff() = {a && DoStuff()}");
+WriteLine($"b && DoStuff() = {b && DoStuff()}");
+
+static bool DoStuff()
+{
+    WriteLine("\tI am doing some stuff");
+
+    return true;
+}
