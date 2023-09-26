@@ -27,8 +27,15 @@ WriteLine($"a & b =   {ToBinaryString(a & b)}");
 WriteLine($"a | b =   {ToBinaryString(a | b)}");
 WriteLine($"a ^ b =   {ToBinaryString(a ^ b)}");
 
-// FUNCTIONS
+WriteLine();
 
+// MISCELLANEOUS OPERATORS
+WriteLine("--- sizeof() and nameof() operators ---");
+int age = 28;
+WriteLine($"The {nameof(age)} variable uses {sizeof(int)} bytes of memory.");
+
+
+// FUNCTIONS
 // convert decimal to binary
 static string ToBinaryString(int value)
 {
