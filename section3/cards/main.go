@@ -3,8 +3,8 @@ package main
 func main() {
 	cards := deck{"Ace of Diamonds", newCard()}
 
-	// add new element
-	cards = append(cards, "Six of Spades")
+	// creates a new card deck
+	cards = newDeck()
 
 	// // loop/iterate over the slice
 	// for i, card := range cards {
