@@ -1,16 +1,14 @@
 package main
 
 func main() {
-	cards := deck{"Ace of Diamonds", newCard()}
+	cards := newDeck()
 
-	// creates a new card deck
-	cards = newDeck()
+	hand, remaininDeck := deal(cards, 5)
 
-	// // loop/iterate over the slice
-	// for i, card := range cards {
-	// 	fmt.Println(i, card)
-	// }
-	cards.print()
+	hand.print()
+	remaininDeck.print()
+
+	cards.saveToFile("my_cards")
 }
 
 func newCard() string {
