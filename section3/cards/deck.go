@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -49,4 +50,33 @@ func (d deck) toString() string {
 func (d deck) saveToFile(filename string) error {
 
 	return os.WriteFile(filename, []byte(d.toString()), 0666)
+}
+
+// Create a new deck, based on a local file
+func newDeckFromFile(filename string) deck {
+	bs, err := os.ReadFile(filename)
+
+	// what to do in case if the read file fails, err != nil
+	if err != nil {
+		// will log the error and close the program
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+
+	//byte slice to string
+	s := strings.Split(string(bs), ",")
+
+	return deck(s)
+
+}
+
+// Shuffle the deck.
+func (d deck) shuffle() {
+
+	for i := range d {
+		newPosition := rand.Intn(len(d) - 1) // generate a random number between 0 and the length of the slice
+
+		// swap elements position in the slice
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
 }
