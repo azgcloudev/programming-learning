@@ -59,9 +59,23 @@ string[][] jagged = new[]
     new[] {"Aardvark","Bear","Cat","Dog" }
 };
 
-WriteLine("Upper bound of array of arrays is: {0}", jagged.GetUpperBound(0));
+Console.WriteLine("Upper bound of array of arrays is: {0}", jagged.GetUpperBound(0));
 
 for (int array = 0; array <= jagged.GetUpperBound(0); array++)
 {
     WriteLine("Upper bound array {0} is: {1}", array, jagged[array].GetUpperBound(0));
 }
+
+
+//===============================
+// Pattern matching in arrays
+//===============================
+int[] sequentialNumbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+int[] oneTwoNumbers = new int[] { 1, 2 };
+int[] oneTwoTenNumbers = new int[] { 1, 2, 10 };
+int[] oneTwoThreeTenNumbers = new int[] { 1, 2, 3, 10 };
+int[] primeNumbers = new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+int[] fibonacciNumbers = new int[] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 };
+int[] emptyNumbers = new int[] { };
+int[] threeNumbers = new int[] { 9, 7, 5 };
+int[] sixNumbers = new int[] { 9, 7, 5, 4, 2, 10 };
