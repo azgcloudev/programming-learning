@@ -24,3 +24,19 @@ WriteLine($"e is {e:N0} and f is {f:N0}");
 double g = 9.8;
 int h = ToInt32(g);
 WriteLine($"g is {g} and h is {h}.");
+
+
+Console.WriteLine();
+//======================
+// Rounding numbers
+//======================
+WriteLine("=== Rounding numbers ===");
+double[] doubles = new[] { 9.49, 9.5, 9.51, 10.49, 10.5, 10.51 };
+foreach (double number in doubles)
+{
+    // System.Convert uses the bankers rounding rule
+    WriteLine($"ToInt32({number}) is {ToInt32(number)}");
+
+    // Using the Math class
+    WriteLine($"\tMath.Round({number}), 0, MidpointRounding.AwayFromZero is {Math.Round(value: number, digits: 0, mode: MidpointRounding.AwayFromZero)}");
+}
