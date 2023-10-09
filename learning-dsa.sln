@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "algorithms", "algorithms", "{78077D3C-7AE8-4693-8206-0720405C2CB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "linear_search", "linear_search", "{7331C34C-1424-45EA-A706-ACD4F5F032B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cs", "cs", "{1F584500-9B9E-4775-B5BE-76AD9501FCD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "linearsearch", "algorithms\linear_search\cs\linearsearch\linearsearch.csproj", "{5AF5F025-EBA2-41C9-B7CF-A8DC85CB0FB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +18,16 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AF5F025-EBA2-41C9-B7CF-A8DC85CB0FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF5F025-EBA2-41C9-B7CF-A8DC85CB0FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF5F025-EBA2-41C9-B7CF-A8DC85CB0FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF5F025-EBA2-41C9-B7CF-A8DC85CB0FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7331C34C-1424-45EA-A706-ACD4F5F032B0} = {78077D3C-7AE8-4693-8206-0720405C2CB3}
+		{1F584500-9B9E-4775-B5BE-76AD9501FCD1} = {7331C34C-1424-45EA-A706-ACD4F5F032B0}
+		{5AF5F025-EBA2-41C9-B7CF-A8DC85CB0FB7} = {1F584500-9B9E-4775-B5BE-76AD9501FCD1}
 	EndGlobalSection
 EndGlobal
