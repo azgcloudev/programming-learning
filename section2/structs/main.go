@@ -15,6 +15,11 @@ type person struct {
 	contact contactInfo
 }
 
+// structs and receivers
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
 func main() {
 	// // declaring
 	// alex := person{"Alex", "Anderson"}
@@ -36,6 +41,15 @@ func main() {
 			zipCode: 94000,
 		},
 	}
+	// // jimPointer := &jim
+	// jimPointer.updateName("Jimmy")
 
-	fmt.Printf("%v\n", jim.contact.email)
+	// if receiver is type pointer, Go can use the value variable and convert it in reference
+	// hence create a variable with the reference value is not needed and can do the following:
+	jim.updateName("Todd")
+	jim.print()
+}
+
+func (p *person) updateName(name string) {
+	(*p).firstName = name
 }
