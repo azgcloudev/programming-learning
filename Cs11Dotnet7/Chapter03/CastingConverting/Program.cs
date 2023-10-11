@@ -40,3 +40,43 @@ foreach (double number in doubles)
     // Using the Math class
     WriteLine($"\tMath.Round({number}), 0, MidpointRounding.AwayFromZero is {Math.Round(value: number, digits: 0, mode: MidpointRounding.AwayFromZero)}");
 }
+
+
+Console.WriteLine();
+
+// ===============================
+// convert any type into string
+// ===============================
+WriteLine("=== Converting types to string ===");
+int n = 12;
+WriteLine(n.ToString());
+bool boolean = true;
+WriteLine(boolean.ToString());
+DateTime now = DateTime.Now;
+WriteLine(now.ToString());
+object me = new();
+WriteLine(me.ToString());
+
+
+Console.WriteLine();
+
+// ===============================
+// convert from binary object to string
+// ===============================
+WriteLine("=== Converting from a binary object to string ===");
+// allocate array of 128 bytes
+byte[] binaryObject = new byte[128];
+
+// populate array with random bytes
+Random.Shared.NextBytes(binaryObject);
+
+WriteLine("Binary Object as bytes:");
+for (int index = 0; index < binaryObject.Length; index++)
+{
+    Write($"{binaryObject[index]:X} ");
+}
+WriteLine();
+
+// convert to Base^4 string and output as text
+string encoded = ToBase64String(binaryObject);
+WriteLine($"Binary Object as Base64: {encoded}");
