@@ -80,3 +80,30 @@ WriteLine();
 // convert to Base^4 string and output as text
 string encoded = ToBase64String(binaryObject);
 WriteLine($"Binary Object as Base64: {encoded}");
+
+
+
+Console.WriteLine();
+
+// ====================================================
+// convert from strings to numbers and date time types
+// ====================================================
+WriteLine("=== Convert strings to numbers and date time ===");
+int age = int.Parse("28");
+DateTime birthday = DateTime.Parse("21 June 1995");
+WriteLine($"I was born {age} years ago.");
+WriteLine($"My birthday is {birthday}.");
+WriteLine("My birthday is {0:D}.", birthday);
+
+// converting using tryparse to check if the value can be converted
+Write("How many eggs are there? ");
+string? countInput = ReadLine();
+
+if (int.TryParse(countInput, out int count))
+{
+    WriteLine("There are {0} eggs.", count);
+}
+else
+{
+    WriteLine("The input could not be parsed");
+}
