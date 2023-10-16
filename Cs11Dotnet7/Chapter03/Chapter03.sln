@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckingForOverflow", "Chec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3_2", "Exercise3_2\Exercise3_2.csproj", "{A64ACD4D-920C-4F88-B8C2-A0F83BE6129E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3_3", "Exercise3_3\Exercise3_3.csproj", "{42EF3C68-17E3-49C5-8920-B1C6641FB5DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{A64ACD4D-920C-4F88-B8C2-A0F83BE6129E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A64ACD4D-920C-4F88-B8C2-A0F83BE6129E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A64ACD4D-920C-4F88-B8C2-A0F83BE6129E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42EF3C68-17E3-49C5-8920-B1C6641FB5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42EF3C68-17E3-49C5-8920-B1C6641FB5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42EF3C68-17E3-49C5-8920-B1C6641FB5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42EF3C68-17E3-49C5-8920-B1C6641FB5DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
