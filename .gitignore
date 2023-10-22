@@ -1,6 +1,10 @@
 **/bin
 **/obj
-**/.vscode
-.vscode/*
-.vs/*
+**/.vscode/
+.vs/
 **/.vs
+.vscode/
+
+# golan main executables
+main
+*.exe
