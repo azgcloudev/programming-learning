@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace FunWithTuples
+﻿namespace FunWithTuples
 {
     class Program
     {
@@ -67,6 +65,14 @@ namespace FunWithTuples
             Point myPoint = new Point(21, 95);
             var customTypeTupleDecons = myPoint.Deconstruct();
             Console.WriteLine(customTypeTupleDecons);
+
+            // deconstruction of tuples using positional pattern matching (C# 8.0)
+            Console.WriteLine("\n\n--- Deconstruction with position pattern matching ---");
+            Point p2 = new Point(8,15);
+            int xp1 = 0;
+            int xp2 = 0;
+            //(xp1, xp2) = p2; // need to use a void Deconstruct with out arguments
+            
         }
 
         // static void FillTheseValues(out int a, out string b, out bool c)
