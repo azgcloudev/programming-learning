@@ -10,8 +10,55 @@ namespace Classes
     {
         // fields to store data (variables)
         private string? _name;
-        private string? _hp;
+        private int _hp;
         private string? _color;
+        private int _milesUsage;
+
+        //==== Properties ======
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        // auto implemented property
+        /*
+         * This are variables that will be created automatically once used
+         * Do not required a field to bi initialized
+         */
+        public int MaxSpeed { get; set; }
+
+        // read and write only properties
+        // READONLY
+        public string Year { get; } = "2020";
+
+        // WRITEONLY       
+        public int MilesUsage
+        {
+            set
+            {
+                _milesUsage = value; // this requires to create a private field
+            }
+        }
+
+        // ======= end of properties =-========
+
+        // getters and setters
+        public void SetName(string name)
+        {
+            // set
+            _name = name;
+        }
+
+        public string GetName()
+        {
+            return _name;
+        }
+
+        public int GetHp()
+        {
+            return _hp;
+        }
 
         // default constructor
         public Car() { }
@@ -25,7 +72,7 @@ namespace Classes
         public Car(string name, string hp = "0", string color = "white") // name = value, defines the default value if not provided
         {
             _name = name;
-            _hp = hp;
+            _hp = int.Parse(hp);
             _color = color;
         }
 
