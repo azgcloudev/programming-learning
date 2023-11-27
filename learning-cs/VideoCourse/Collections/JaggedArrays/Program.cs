@@ -24,7 +24,7 @@ int[][] jaggedArray2 = new int[][]
 Console.WriteLine("Middle element of the first array is {0}", jaggedArray2[0][4]);
 
 // print all elements in the jagged array
-for (int i =0; i < jaggedArray.Length; i++)
+for (int i = 0; i < jaggedArray.Length; i++)
 {
     for (int j = 0; j < jaggedArray[i].Length; j++)
     {
@@ -32,3 +32,17 @@ for (int i =0; i < jaggedArray.Length; i++)
     }
 }
 Console.Write("\n");
+
+
+string[][] friendsFamilies = new string[][]
+{
+    new string[] {"Juan","Carlos"},
+    new string[] {"Ana","Maria"},
+    new string[] {"Rita", "Josh" }
+};
+
+// print exercise1
+Console.WriteLine("\n\n");
+Console.WriteLine("Hello {0} meet {1}", friendsFamilies[0][0], friendsFamilies[2][1]);
+Console.WriteLine("Hello {0} meet {1}", friendsFamilies[1][0], friendsFamilies[1][1]);
+Console.WriteLine("Hello {0} meet {1}", friendsFamilies[2][0], friendsFamilies[0][1]);
