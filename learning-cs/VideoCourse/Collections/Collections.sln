@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise-Tictactoe", "Exerc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArrays", "JaggedArrays\JaggedArrays.csproj", "{88F2BB68-77F6-476A-97D2-92CB2D05877F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParamsExample", "ParamsExample\ParamsExample.csproj", "{69806946-7EEA-4366-9BC3-17B1F756A081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{88F2BB68-77F6-476A-97D2-92CB2D05877F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F2BB68-77F6-476A-97D2-92CB2D05877F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F2BB68-77F6-476A-97D2-92CB2D05877F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69806946-7EEA-4366-9BC3-17B1F756A081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69806946-7EEA-4366-9BC3-17B1F756A081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69806946-7EEA-4366-9BC3-17B1F756A081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69806946-7EEA-4366-9BC3-17B1F756A081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
