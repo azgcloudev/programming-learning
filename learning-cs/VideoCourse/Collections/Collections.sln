@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayListC", "ArrayListC\Ar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListsC", "ListsC\ListsC.csproj", "{EDEE3937-54C1-47D2-B779-8DF4BB40FA20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTablesC", "HashTablesC\HashTablesC.csproj", "{41667947-8021-4680-B520-F406B539F1AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{EDEE3937-54C1-47D2-B779-8DF4BB40FA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDEE3937-54C1-47D2-B779-8DF4BB40FA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDEE3937-54C1-47D2-B779-8DF4BB40FA20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41667947-8021-4680-B520-F406B539F1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41667947-8021-4680-B520-F406B539F1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41667947-8021-4680-B520-F406B539F1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41667947-8021-4680-B520-F406B539F1AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
