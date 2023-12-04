@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArrays", "JaggedArray
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParamsExample", "ParamsExample\ParamsExample.csproj", "{69806946-7EEA-4366-9BC3-17B1F756A081}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayListC", "ArrayListC\ArrayListC.csproj", "{AA1A43BC-8902-4BE4-84F5-5B01FE80978F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{69806946-7EEA-4366-9BC3-17B1F756A081}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69806946-7EEA-4366-9BC3-17B1F756A081}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69806946-7EEA-4366-9BC3-17B1F756A081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1A43BC-8902-4BE4-84F5-5B01FE80978F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1A43BC-8902-4BE4-84F5-5B01FE80978F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1A43BC-8902-4BE4-84F5-5B01FE80978F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1A43BC-8902-4BE4-84F5-5B01FE80978F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
