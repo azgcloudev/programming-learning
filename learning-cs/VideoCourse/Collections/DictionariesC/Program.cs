@@ -22,3 +22,20 @@ foreach (KeyValuePair<int, string> item in myDict)
 {
     Console.WriteLine($"Key: {item.Key} Value: {item.Value}");
 }
+
+// UPDATE A DICTIONARY
+Console.WriteLine("\n\n--- Update dict ---");
+string one = "uno";
+if (myDict.ContainsKey(1))
+{
+    myDict[1] = one;
+}
+foreach (KeyValuePair<int, string> item in myDict)
+{
+    Console.WriteLine($"Key: {item.Key} Value: {item.Value}");
+}
+
+// remove element from dictionary
+Console.WriteLine("\n\n--- Remove dict element ---");
+myDict.Remove(1);
+Console.WriteLine(myDict.ContainsKey(1));
