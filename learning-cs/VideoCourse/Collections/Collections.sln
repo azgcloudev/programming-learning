@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListsC", "ListsC\ListsC.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashTablesC", "HashTablesC\HashTablesC.csproj", "{41667947-8021-4680-B520-F406B539F1AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionariesC", "DictionariesC\DictionariesC.csproj", "{A95C9A37-53EB-44F4-BBE2-B227366F5FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionariesC", "DictionariesC\DictionariesC.csproj", "{A95C9A37-53EB-44F4-BBE2-B227366F5FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksAndQueuesC", "StacksAndQueuesC\StacksAndQueuesC.csproj", "{CF074E86-220A-48CA-85E8-43EB427ABE60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{A95C9A37-53EB-44F4-BBE2-B227366F5FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A95C9A37-53EB-44F4-BBE2-B227366F5FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A95C9A37-53EB-44F4-BBE2-B227366F5FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF074E86-220A-48CA-85E8-43EB427ABE60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF074E86-220A-48CA-85E8-43EB427ABE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF074E86-220A-48CA-85E8-43EB427ABE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF074E86-220A-48CA-85E8-43EB427ABE60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
