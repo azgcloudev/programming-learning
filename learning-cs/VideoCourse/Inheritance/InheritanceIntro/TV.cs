@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InheritanceIntro
+﻿namespace InheritanceIntro
 {
     internal class TV : ElectricalDevice
     {
@@ -14,7 +8,7 @@ namespace InheritanceIntro
         {
             if (IsOn == true)
             {
-                Console.WriteLine("Watching TV");
+                Console.WriteLine("Watching TV"); 
             }
         }
     }
