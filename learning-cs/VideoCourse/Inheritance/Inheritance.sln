@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceIntro", "InheritanceIntro\InheritanceIntro.csproj", "{3DDE2BBD-EAEA-4C21-B2FF-5A4D8CED592C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualOverrideDemo", "VirtualOverrideDemo\VirtualOverrideDemo.csproj", "{589D0783-9F31-4DCC-AF70-8D52667D4A61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3DDE2BBD-EAEA-4C21-B2FF-5A4D8CED592C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DDE2BBD-EAEA-4C21-B2FF-5A4D8CED592C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DDE2BBD-EAEA-4C21-B2FF-5A4D8CED592C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{589D0783-9F31-4DCC-AF70-8D52667D4A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{589D0783-9F31-4DCC-AF70-8D52667D4A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{589D0783-9F31-4DCC-AF70-8D52667D4A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{589D0783-9F31-4DCC-AF70-8D52667D4A61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
