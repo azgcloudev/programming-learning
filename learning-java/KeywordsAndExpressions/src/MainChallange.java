@@ -23,7 +23,10 @@ public class MainChallange {
         bonus = 200;
 
         // use the same if statement before
-        calculateScore(gameOver, levelCompleted, bonus, finalScore);
+        calculateScore(true, 8, bonus, finalScore);
+
+        int highScore = calculateIntScore(gameOver, finalScore, levelCompleted, bonus);
+        System.out.println("The highscore is: " + highScore);
     }
 
     // method
@@ -33,5 +36,19 @@ public class MainChallange {
             finalScore += (level * bonus);
             System.out.println("Your final score was " + finalScore);
         }
+    }
+
+    // method with return type
+    public static int calculateIntScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+
+        int finalScore = score;
+
+        if (gameOver) {
+            finalScore += (levelCompleted * bonus);
+
+            return finalScore;
+        }
+
+        return finalScore;
     }
 }
