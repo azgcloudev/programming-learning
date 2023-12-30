@@ -9,10 +9,7 @@ public class MainChallange {
 
         int finalScore = score;
 
-        if (gameOver) {
-            finalScore += (levelCompleted * bonus);
-            System.out.println("Your final score was " + finalScore);
-        }
+        calculateScore(gameOver, levelCompleted, bonus, finalScore);
 
 
         /* --- CHALLANGE --- */
@@ -26,8 +23,14 @@ public class MainChallange {
         bonus = 200;
 
         // use the same if statement before
+        calculateScore(gameOver, levelCompleted, bonus, finalScore);
+    }
+
+    // method
+    public static void calculateScore(boolean gameOver, int level, int bonus, int finalScore) {
+        // void returns none date types
         if (gameOver) {
-            finalScore += (levelCompleted * bonus);
+            finalScore += (level * bonus);
             System.out.println("Your final score was " + finalScore);
         }
     }
