@@ -5,12 +5,12 @@ namespace InheritanceDemo
         public string? ImageUrl { get; set; }
         public ImagePost() { }
 
-        public ImagePost(string title, string sendByUserne, bool isPublic, string imageURL)
+        public ImagePost(string title, string sendByUsername, bool isPublic, string imageURL)
         {
             // properties from Post class
             ID = GetNextID();
             Title = title;
-            SendByUsername = sendByUserne;
+            SendByUsername = sendByUsername;
             IsPublic = isPublic;
 
             // ImagePost class properties
