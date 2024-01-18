@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InheritanceDemo
+﻿namespace InheritanceDemo
 {
     /*
      create a VideoPost with properties VideoURL, Length
@@ -27,6 +21,11 @@ namespace InheritanceDemo
         public string? VideoURL { get; set; }
         public int Length { get; set; }
 
+        // timer related
+        protected int currentLength;
+        Timer timer;
+        protected bool isPlaying = false;
+
         // constructor
         public VideoPost() { }
         public VideoPost(string title, string sendByUsername, bool isPublic, string videoURL, int length)
@@ -44,6 +43,43 @@ namespace InheritanceDemo
         public override string ToString()
         {
             return String.Format("{0} - {1} - {2} - by {3}", ID, Title, VideoURL, SendByUsername);
+        }
+
+
+        public void Play()
+        {
+            if(!isPlaying)
+            {
+                isPlaying = true;
+                timer = new Timer(TimerCallBack, null, 0, 1000);
+                Console.WriteLine($"Press any key to stop the timer.");
+            }
+        }
+
+        public void Stop()
+        {
+            if(isPlaying)
+            {
+                isPlaying = false;
+                Console.WriteLine($"\nStopped at {currentLength}s");
+                currentLength = 0;
+                timer.Dispose();
+            }
+        }
+
+        // callback method
+        private void TimerCallBack(Object o)
+        {
+            if (currentLength < Length)
+            {
+                currentLength++;
+                Console.WriteLine($"Video at {currentLength}s");
+                GC.Collect();
+            }
+            else
+            {
+                Stop();
+            }
         }
     }
 }

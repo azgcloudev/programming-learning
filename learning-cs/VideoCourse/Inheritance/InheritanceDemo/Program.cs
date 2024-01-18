@@ -9,4 +9,9 @@ Console.WriteLine(imagePost1.ToString());
 VideoPost videoPost1 = new VideoPost("Paris trip", "Aldair", true, "https://myvideo.com", 20);
 Console.WriteLine(videoPost1.ToString());
 
+videoPost1.Play();
+Console.ReadKey();
+videoPost1.Stop();
+
+
 Console.ReadLine(); 
