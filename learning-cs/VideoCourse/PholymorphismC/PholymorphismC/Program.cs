@@ -24,6 +24,11 @@ namespace PholymorphismC
                 // virtual and override keyword
                 car.ShowDetails();
             }
+
+            M3 m3 = new M3("Grey", 512);
+            m3.Repair();
+
+            Console.ReadKey();
         }
     }
 }

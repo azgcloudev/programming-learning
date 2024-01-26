@@ -24,9 +24,11 @@ namespace PholymorphismC
             Console.WriteLine($"The {Brand} {Model} has {HP}hp and is color {Color}");
         }
 
-        public override void Repair()
+        // sealed prevents the method to be overriten by an sub-class
+        // sealed needs to be typed before 'override'
+        public sealed override void Repair()
         {
-            Console.WriteLine($"{Brand} has been repaired");
+            Console.WriteLine($"{Brand} {Model} has been repaired");
         }
     }
 }
