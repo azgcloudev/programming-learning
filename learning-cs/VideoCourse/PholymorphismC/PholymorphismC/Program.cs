@@ -28,6 +28,9 @@ namespace PholymorphismC
             M3 m3 = new M3("Grey", 512);
             m3.Repair();
 
+            cars[0].SetCardIDNumber(1234, "Aldair");
+            cars[0].GetCardIDNumber();
+
             Console.ReadKey();
         }
     }

@@ -18,6 +18,20 @@ namespace PholymorphismC
             HP = hp;
         }
 
+        // Has as property
+        protected CardIDInfo cardIDInfo = new CardIDInfo();
+        public void SetCardIDNumber(int cardID, string owner)
+        {
+            cardIDInfo.CardIDNumber = cardID;
+            cardIDInfo.Owner = owner;
+        }
+
+        public void GetCardIDNumber()
+        {
+            Console.WriteLine("The car has the ID {0} and is owned by {1}", cardIDInfo.CardIDNumber, cardIDInfo.Owner);
+        }
+        // end of has as
+
         public void ShowDetails()
         {
             Console.WriteLine($"Car color is '{Color}', HP is {HP}");
@@ -25,7 +39,7 @@ namespace PholymorphismC
 
         public virtual void Repair()
         {
-            Console.WriteLine("Car was repaired!");
+            Console.WriteLine("Car mode was repaired!");
         }
     }
 }
