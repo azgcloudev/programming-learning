@@ -23,6 +23,7 @@ namespace AbstractClassesC
 
         public override void GetInfo()
         {
+            base.GetInfo();
             Console.WriteLine($"{Name} volume is {Volume()}");
         }
     }
