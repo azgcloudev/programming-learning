@@ -19,6 +19,13 @@
                 shape.GetInfo();
                 Console.WriteLine($"{shape.Name} has a volume of {shape.Volume()}");
                 Console.WriteLine();
+
+                // as keyword
+                Cube iceCube = shape as Cube;
+                if( iceCube == null )
+                {
+                    Console.WriteLine("This shape is no cube");
+                }
             }
 
             Console.ReadKey();
