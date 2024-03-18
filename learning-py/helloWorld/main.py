@@ -1,3 +1,5 @@
+import math
+
 # printing in the console
 # string
 print("I love pizza")
@@ -22,7 +24,6 @@ first_name, my_age, attractive = "Aldair", 28, True
 
 a = b = c = d = 30
 
-
 ### STRING METHODS
 len(first_name)
 first_name.find("A")
@@ -34,5 +35,21 @@ first_name.isalpha()
 first_name.count("a")
 print(first_name.replace("a", "e"))
 
-#print the string three times
-print(first_name*3)
+# print the string three times
+print(first_name * 3)
+
+# MATH class (import math)
+print("\nMath:")
+pi = 3.14
+x = 1
+y = 2
+z = 3
+n = -4.76
+
+print(round(pi))
+print(math.ceil(pi))
+print(math.floor(pi))
+print(abs(n))
+print(pow(pi, 2))
+print(math.sqrt(420))
+print(max(x, y, y))
