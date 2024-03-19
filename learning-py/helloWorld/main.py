@@ -73,3 +73,15 @@ print(name_reversed)
 website = "http://google.com"
 my_slice = slice(7, -4)
 print(website[my_slice])
+
+### IF STATEMENTS
+print("\nIF STATEMENTS:")
+
+age = int(input("How old are you?: "))
+
+if age >= 18:
+    print("You are an adult!")
+elif age < 0:
+    print("You haven't been born yet.")
+else:
+    print("You are a child!")
