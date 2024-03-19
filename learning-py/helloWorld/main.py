@@ -53,3 +53,23 @@ print(abs(n))
 print(pow(pi, 2))
 print(math.sqrt(420))
 print(max(x, y, y))
+
+## STRING SLICING
+print("\nString Slicing:")
+name = "Aldair Zamora"
+first_name = name[:6]  # since index 0 to the 6
+print(first_name)
+last_name = name[7::]  # since index 7 to the last one
+print(last_name)
+# funky_name = name[0:13:2] # from first to last with step 2
+funky_name = name[::2]  # alternative to previous
+print(funky_name)
+
+# reversing string
+name_reversed = name[::-1]
+print(name_reversed)
+
+# slice
+website = "http://google.com"
+my_slice = slice(7, -4)
+print(website[my_slice])
