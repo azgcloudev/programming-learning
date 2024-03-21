@@ -124,3 +124,21 @@ for i in range(0, rows):
     for j in range(0, columns):
         print(symbol, end="")  # prevents next line
     print()
+
+# LOOP CONTROL STATEMENT
+# break - exit the loop completely
+# continue - skips to the next iteration
+# pass - does nothing, acts as a placeholder
+
+while True:
+    my_name = input("Enter you name: ")
+
+    if (my_name != ""):
+        break
+
+phone_number = "6223-1337"
+for n in range(0, len(phone_number)):
+    if phone_number[n] == "-":
+        continue
+    else:
+        print(phone_number[n], end=" ")
