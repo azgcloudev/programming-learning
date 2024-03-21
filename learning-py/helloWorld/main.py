@@ -95,3 +95,11 @@ if not (temp >= 0 and temp <= 30):
     print("The temperature is bad today, stay inside.")
 elif not (temp < 0 or temp > 30):
     print("Temperature is good today")
+
+### WHILE LOOPS
+name_input = None
+
+while not name_input:
+    name_input = input("Enter your name: ")
+
+print("Hello " + name_input + ", welcome!")
