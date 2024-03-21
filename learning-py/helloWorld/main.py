@@ -85,3 +85,13 @@ elif age < 0:
     print("You haven't been born yet.")
 else:
     print("You are a child!")
+
+### LOGICAL OPERATORS
+## and | or | not
+temp = 23
+
+# not - negates the sentences, true = false; and false = true
+if not (temp >= 0 and temp <= 30):
+    print("The temperature is bad today, stay inside.")
+elif not (temp < 0 or temp > 30):
+    print("Temperature is good today")
