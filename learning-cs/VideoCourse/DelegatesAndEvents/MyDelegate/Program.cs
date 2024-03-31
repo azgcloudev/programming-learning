@@ -6,7 +6,7 @@
         // and returns a bool
         public delegate bool FilterDelegate(Person p);
 
-        static void Main(string[] args)
+        static void Main(string[] args, string v)
         {
             // create 4 person objects
             Person p1 = new Person() { Name = "Aiden", Age = 41 };
