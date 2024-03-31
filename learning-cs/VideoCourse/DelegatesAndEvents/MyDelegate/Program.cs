@@ -29,6 +29,23 @@
             DisplayPeople("Kids", people, filter);
 
             DisplayPeople("All", people, delegate (Person p) { return true; }); // anonymous method passed as argument
+
+            // LAMDA STATEMENT
+            // syntax: (parameters) => { expression }
+            string searchKeyword = "a";
+            DisplayPeople("age > 20 with seach keyword " + searchKeyword, people, p =>
+            {
+                if (p.Name.Contains(searchKeyword) && p.Age > 20)
+                {
+                    return true;
+                }
+
+                return false;
+            });
+
+            // lamda expression
+            // SYNTAX: (parameters) => expression // expression is in a single line
+            DisplayPeople("Exactly 25", people, p => p.Age == 25);
         }
 
         public static void DisplayPeople(string title, List<Person> list, FilterDelegate filter)
