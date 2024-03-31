@@ -20,6 +20,15 @@
             DisplayPeople("Kids", people, IsMinor);
             DisplayPeople("Adults", people, IsAdult);
             DisplayPeople("Seniors", people, IsSenior);
+
+            // ANONYMOUS METHOD
+            FilterDelegate filter = delegate (Person p)
+            {
+                return p.Age >= 20 && p.Age <= 30;
+            };
+            DisplayPeople("Kids", people, filter);
+
+            DisplayPeople("All", people, delegate (Person p) { return true; }); // anonymous method passed as argument
         }
 
         public static void DisplayPeople(string title, List<Person> list, FilterDelegate filter)
