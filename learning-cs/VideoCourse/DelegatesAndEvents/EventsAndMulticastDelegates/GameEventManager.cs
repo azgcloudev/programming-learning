@@ -24,6 +24,11 @@ namespace EventsAndMulticastDelegates
         }
 
         // static method to trigger OnGameOver
+
+        /// <summary>
+        /// TriggerGameOver runs all the events related to GameOver, when the method is associated to
+        /// the GameEvent delegate.
+        /// </summary>
         public static void TriggerGameOver()
         {
             if (OnGameOver != null)
