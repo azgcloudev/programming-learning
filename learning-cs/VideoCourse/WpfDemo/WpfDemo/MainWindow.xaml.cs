@@ -30,5 +30,12 @@ namespace WpfDemo
             Grid myGrid = (Grid)FindName("myGrid");
             myGrid.Children.Add(myButton);
         }
+
+        // This function will be trigger once the button with a Click event with the name 
+        // Button_Click is pressed
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello World");
+        }
     }
 }
