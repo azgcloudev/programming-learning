@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemo", "WpfDemo\WpfDemo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridChallange", "GridChallange\GridChallange.csproj", "{2B254C93-08E2-4617-AA0E-9B81AA0B9D15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp", "TodoApp\TodoApp.csproj", "{7245444B-AFDA-488F-83AC-B6AD4A35332F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2B254C93-08E2-4617-AA0E-9B81AA0B9D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B254C93-08E2-4617-AA0E-9B81AA0B9D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B254C93-08E2-4617-AA0E-9B81AA0B9D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7245444B-AFDA-488F-83AC-B6AD4A35332F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7245444B-AFDA-488F-83AC-B6AD4A35332F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7245444B-AFDA-488F-83AC-B6AD4A35332F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7245444B-AFDA-488F-83AC-B6AD4A35332F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
