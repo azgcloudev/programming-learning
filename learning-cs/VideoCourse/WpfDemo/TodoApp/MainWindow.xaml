@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:TodoApp"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Todo App" Height="450" Width="800">
+        Title="Todo App" Height="450" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
 
@@ -25,10 +25,16 @@
         </Grid.RowDefinitions>
 
         <!-- Button to create a todo  -->
-        <Button Grid.Row="5" Grid.Column="1" Content="Create Todo" FontWeight="Bold" FontFamily="Arial" FontSize="14"/>
-        
+        <Button Grid.Row="5" Grid.Column="1" Content="Create Todo" FontWeight="Bold" FontFamily="Arial" FontSize="14" Background="#FF003EFF" Foreground="White"/>
+
         <!-- Text box for the user to write the text-->
         <TextBox Grid.Row="3" Grid.Column="1" Background="#FF6D6D6D" Foreground="White" 
                  FontFamily="Arial" FontSize="13"/>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Background="#FF313131">
+                
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
