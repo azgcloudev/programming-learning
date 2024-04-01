@@ -120,12 +120,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-<<<<<<< HEAD
 
 # mac
 .DS_Store
 */.DS_Store
-=======
+.mono/
 /learning-java/VideoCourse/MethodOverloading/target/
 /learning-java/VideoCourse/OverloadedMethodChallange/target/
->>>>>>> 5594fc8f4184b97d69269fa2c47ebff32f0b3c71
