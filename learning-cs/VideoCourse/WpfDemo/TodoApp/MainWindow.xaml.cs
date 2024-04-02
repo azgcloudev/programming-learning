@@ -24,7 +24,24 @@ namespace TodoApp
         // function the react to the add todo button
         private void AddTodoButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            string todoText = InputBox.Text;
+
+            // check if the input is empty
+            if (!string.IsNullOrEmpty(todoText))
+            {
+                TextBlock todoItem = new TextBlock
+                {
+                    Text = todoText,
+                    Margin = new Thickness(10),
+                    Foreground = new SolidColorBrush(Colors.White)
+                };
+
+                // Adds the todo item to the StackPanel
+                TodoTextStack.Children.Add(todoItem);
+
+                // clear the text in the input box
+                InputBox.Clear();
+            }
         }
     }
 }
