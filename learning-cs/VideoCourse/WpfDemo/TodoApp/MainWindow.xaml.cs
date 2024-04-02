@@ -20,5 +20,11 @@ namespace TodoApp
         {
             InitializeComponent();
         }
+
+        // function the react to the add todo button
+        private void AddTodoButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
