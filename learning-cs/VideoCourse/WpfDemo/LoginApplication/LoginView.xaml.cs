@@ -50,5 +50,11 @@ namespace LoginApplication
                 MessageBox.Show("Environment variable not found.");
             }
         }
+
+        // disable | enable the login button
+        private void OnPasswordBoxChange(object sender, RoutedEventArgs e)
+        {
+            BtnLogin.IsEnabled = !string.IsNullOrEmpty(InputLoginPassword.Password) && InputLoginPassword.Password.Length > 5;
+        }
     }
 }
