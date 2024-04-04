@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp", "TodoApp\TodoApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentAndUserControl", "ContentAndUserControl\ContentAndUserControl.csproj", "{E7609A9E-FD13-4ABB-AE84-C064AF56F14F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBinding", "DataBinding\DataBinding.csproj", "{DBF561F3-58E0-455A-B245-83F48CC84518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBinding", "DataBinding\DataBinding.csproj", "{DBF561F3-58E0-455A-B245-83F48CC84518}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxDemo", "ListBoxDemo\ListBoxDemo.csproj", "{6F7FBC02-589F-4AE6-9FAA-FC626F5DF4A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListBoxDemo", "ListBoxDemo\ListBoxDemo.csproj", "{6F7FBC02-589F-4AE6-9FAA-FC626F5DF4A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginApplication", "LoginApplication\LoginApplication.csproj", "{98D1BF5E-046A-4157-9052-010907E8D8C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{6F7FBC02-589F-4AE6-9FAA-FC626F5DF4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F7FBC02-589F-4AE6-9FAA-FC626F5DF4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F7FBC02-589F-4AE6-9FAA-FC626F5DF4A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D1BF5E-046A-4157-9052-010907E8D8C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D1BF5E-046A-4157-9052-010907E8D8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D1BF5E-046A-4157-9052-010907E8D8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D1BF5E-046A-4157-9052-010907E8D8C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
