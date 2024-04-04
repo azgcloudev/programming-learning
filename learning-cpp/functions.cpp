@@ -6,6 +6,7 @@ using std::cout;
 // function declaration
 double myPower(double, int);
 
+// void functions
 void print_pow(double base, int exponent)
 {
     double power = myPower(base, exponent);
@@ -45,5 +46,3 @@ double myPower(double base, int exponent)
 
     return result;
 }
-
-// void functions
