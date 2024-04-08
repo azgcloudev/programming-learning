@@ -6,6 +6,13 @@ using std::cout;
 // function declaration
 double myPower(double, int);
 
+// void functions
+void print_pow(double base, int exponent)
+{
+    double power = myPower(base, exponent);
+    cout << base << " raised to the " << exponent << " power is " << power << ".\n";
+}
+
 int main()
 {
     int base, exponent;
@@ -17,6 +24,9 @@ int main()
     // power function
     double result = pow(base, exponent);
     double myResult = myPower(base, exponent);
+
+    // vvoid function calling
+    print_pow(base, exponent);
 
     cout << result << std::endl;
     cout << "My power: " << myResult << std::endl;
@@ -36,5 +46,3 @@ double myPower(double base, int exponent)
 
     return result;
 }
-
-// void functions
