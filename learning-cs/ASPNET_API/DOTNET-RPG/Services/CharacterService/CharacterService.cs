@@ -1,4 +1,5 @@
-﻿using DOTNET_RPG.Models;
+﻿using AutoMapper;
+using DOTNET_RPG.Models;
 
 namespace DOTNET_RPG.Services.CharacterService
 {
@@ -9,6 +10,13 @@ namespace DOTNET_RPG.Services.CharacterService
             new Character(),
             new Character {Name = "Sam", Id = 1}
         };
+
+        private readonly IMapper _mapper;
+
+        public CharacterService(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
 
         public async Task<ServiceResponse<List<Character>>> AddCharacter(Character newCharacter)
         {
@@ -38,7 +46,7 @@ namespace DOTNET_RPG.Services.CharacterService
                 serviceResponse.Message = "Character not found";
             }
 
-            serviceResponse.Data = character;
+            serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
             return serviceResponse;
         }
     }
