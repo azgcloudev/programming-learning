@@ -18,7 +18,8 @@ namespace DOTNET_RPG.Controllers
 
         private readonly ICharacterService _characterService;
 
-        public CharacterController(ICharacterService characterService) {
+        public CharacterController(ICharacterService characterService)
+        {
             _characterService = characterService;
         }
 
@@ -41,6 +42,19 @@ namespace DOTNET_RPG.Controllers
         public async Task<ActionResult<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter)
         {
             return Ok(await _characterService.AddCharacter(newCharacter));
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<GetCharacterDto>> UpdatedCharacter(UpdateCharacterDto updatedCharacter)
+        {
+            var response = await _characterService.UpdateCharacter(updatedCharacter);
+
+            if (response is null)
+            {
+                return NotFound(response);
+            }
+
+            return Ok(response);
         }
     }
 }
