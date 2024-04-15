@@ -1,6 +1,7 @@
 ﻿using DOTNET_RPG.Models;
 using DOTNET_RPG.Services.CharacterService;
 using Microsoft.AspNetCore.Mvc;
+using DOTNET_RPG.Dtos.Character;
 
 namespace DOTNET_RPG.Controllers
 {
@@ -14,6 +15,7 @@ namespace DOTNET_RPG.Controllers
             new Character(),
             new Character {Name = "Sam", Id = 1}
         };
+
         private readonly ICharacterService _characterService;
 
         public CharacterController(ICharacterService characterService) {
@@ -21,14 +23,14 @@ namespace DOTNET_RPG.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<List<Character>>> GetAll()
+        public async Task<ActionResult<List<GetCharacterDto>>> GetAll()
         {
             return Ok(await _characterService.GetAllCharacters());
         }
 
         // function that gets the first item
         [HttpGet("{id}")]
-        public async Task<ActionResult<Character>> GetSingle(int id)
+        public async Task<ActionResult<GetCharacterDto>> GetSingle(int id)
         {
             return Ok(await _characterService.GetCharacterById(id));
         }
@@ -36,7 +38,7 @@ namespace DOTNET_RPG.Controllers
 
         // create a new character
         [HttpPost]
-        public async Task<ActionResult<List<Character>>> AddCharacter(Character newCharacter)
+        public async Task<ActionResult<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter)
         {
             return Ok(await _characterService.AddCharacter(newCharacter));
         }

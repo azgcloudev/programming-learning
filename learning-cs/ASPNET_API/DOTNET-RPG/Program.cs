@@ -8,7 +8,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Automapper
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 // register the Interface characterservice in the application so the controllers can use it
 builder.Services.AddScoped<ICharacterService, CharacterService>();
 
