@@ -76,11 +76,15 @@ namespace DOTNET_RPG.Services.CharacterService
             try
             {
                 var character = characters.FirstOrDefault(c => c.Id == updatedCharacter.Id);
+
                 if (character is null)
                 {
                     //_logger.LogDebug($"Character with id {updatedCharacter.Id} not found. Not able to update it.");
                     throw new Exception($"The character with id {updatedCharacter.Id} was not found");
                 }
+
+                // update character with AutoMapper
+                _mapper.Map<Character>(updatedCharacter);
 
                 character.Name = updatedCharacter.Name;
                 character.HitPoints = updatedCharacter.HitPoints;
