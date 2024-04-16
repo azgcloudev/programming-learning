@@ -54,11 +54,10 @@ namespace WPFZooManager
                     ListZoos.DisplayMemberPath = "Location";
 
                     // Which Value should be delievered, when an Item from the ListBox is Selected
-                    ListZoos.SelectedValuePath = "Id";
+                    ListZoos.SelectedValuePath = "id";
 
                     // The reference to the Data the ListBox should populate
                     ListZoos.ItemsSource = zooTable.DefaultView;
-
                 }
             }
             // Catch any exception and display it in a Message Box
@@ -67,6 +66,50 @@ namespace WPFZooManager
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void ShowAssociatedAnimals()
+        {
+
+            try
+            {
+                string query = "SELECT * FROM Animal a inner join ZooAnimal za on a.Id = za.AnimalId where za.ZooId = @ZooId";
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlAdapter)
+                {
+                    // adds a value to the parameter given in the SQL query
+                    sqlCommand.Parameters.AddWithValue("@ZooId", ListZoos.SelectedValue);
+
+                    DataTable animalTable = new DataTable();
+                    sqlAdapter.Fill(animalTable);
+
+                    // Which information of the Table in DataTable should be shwn in the ListBox
+                    AnimalsInZooList.DisplayMemberPath = "Name";
+
+                    // Which Value should be delievered, when an Item from the ListBox is Selected
+                    AnimalsInZooList.SelectedValuePath = "Id";
+
+                    // The reference to the Data the ListBox should populate
+                    AnimalsInZooList.ItemsSource = animalTable.DefaultView;
+
+                }
+            }
+            // Catch any exception and display it in a Message Box
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                //MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowAssociatedAnimals();
         }
     }
 }

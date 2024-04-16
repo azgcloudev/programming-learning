@@ -10,6 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
@@ -21,7 +23,13 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Zoo List" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="center" VerticalContentAlignment="center" FontWeight="Bold" FontSize="16"/>
-        <ListBox Grid.Row="2" Grid.Column="1" x:Name="ListZoos"/>
+          <!-- Zoo lis section -->
+        <Label Content="Zoo List" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="center" VerticalContentAlignment="center" FontWeight="Bold" FontSize="14"/>
+        <ListBox Grid.Row="2" Grid.Column="1" Name="ListZoos" SelectionChanged="ListZoos_SelectionChanged"/>
+        
+        <!-- Associated animals to a Zoo -->
+        <Label Content="Associated Animals list" Grid.Row="1" Grid.Column="3" HorizontalContentAlignment="center" VerticalContentAlignment="center" FontWeight="Bold" FontSize="14"/>
+        <ListBox Grid.Row="2" Grid.Column="3" x:Name="AnimalsInZooList" />
+
     </Grid>
 </Window>
