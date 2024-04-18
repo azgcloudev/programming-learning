@@ -1,0 +1,1 @@
+ALTER TABLE sales_item ADD day_of_week VARCHAR(8);
