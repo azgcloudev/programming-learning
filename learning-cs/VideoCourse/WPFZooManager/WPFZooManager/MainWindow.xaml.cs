@@ -140,5 +140,43 @@ namespace WPFZooManager
                 MessageBox.Show($"Error: {ex.Message}.\nException: {ex.InnerException.ToString()}");
             }
         }
+
+        // Action buttons below
+        /// <summary>
+        /// DeleteZoo_Click will delete the Zoo item that is selected in the List Box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "DELETE FROM ZOO WHERE id = @ZooId";
+
+            SqlCommand sqlCmd = new SqlCommand(query, sqlConnection);
+
+            try
+            {
+                //open a connection
+                sqlConnection.Open();
+
+                // add parameters to the command
+                sqlCmd.Parameters.AddWithValue("@ZooId", ListZoos.SelectedValue);
+
+                // execute the query
+                sqlCmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: {0}", ex.Message);
+            }
+            finally
+            {
+                // close sql connection
+                sqlConnection.Close();
+                ShowZoos(); // run again the query to get the new list of zoos
+            }
+
+
+
+        }
     }
 }
