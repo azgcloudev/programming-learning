@@ -35,6 +35,7 @@ namespace WPFZooManager
             sqlConnection = new SqlConnection(connectionString);
 
             ShowZoos();
+            ShowAnimals();
         }
 
         private void ShowZoos()
@@ -50,7 +51,7 @@ namespace WPFZooManager
                     DataTable zooTable = new DataTable();
                     sqlAdapter.Fill(zooTable);
 
-                    // Which information of the Table in DataTable should be shwn in the ListBox
+                    // Which information of the Table in DataTable should be shown in the ListBox
                     ListZoos.DisplayMemberPath = "Location";
 
                     // Which Value should be delievered, when an Item from the ListBox is Selected
@@ -110,6 +111,34 @@ namespace WPFZooManager
         private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowAssociatedAnimals();
+        }
+
+        // Displays the list of the animals
+        private void ShowAnimals()
+        {
+            string query = "SELECT * FROM Animal";
+
+            try
+            {
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlAdapter)
+                {
+
+                    DataTable animalsTable = new DataTable();
+                    sqlAdapter.Fill(animalsTable);
+
+                    AnimalsListBox.DisplayMemberPath = "Name";
+
+                    AnimalsListBox.SelectedValuePath = "Id";
+
+                    AnimalsListBox.ItemsSource = animalsTable.DefaultView;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}.\nException: {ex.InnerException.ToString()}");
+            }
         }
     }
 }

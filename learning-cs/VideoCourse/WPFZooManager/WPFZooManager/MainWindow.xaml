@@ -10,26 +10,39 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="15"/>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="10"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-          <!-- Zoo lis section -->
-        <Label Content="Zoo List" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="center" VerticalContentAlignment="center" FontWeight="Bold" FontSize="14"/>
-        <ListBox Grid.Row="2" Grid.Column="1" Name="ListZoos" SelectionChanged="ListZoos_SelectionChanged"/>
-        
+        <!-- Zoo lis section -->
+        <Label Content="Zoo List" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="center" VerticalContentAlignment="center" FontSize="13"/>
+        <ListBox Grid.Row="3" Grid.Column="1" Name="ListZoos" SelectionChanged="ListZoos_SelectionChanged"/>
+
         <!-- Associated animals to a Zoo -->
-        <Label Content="Associated Animals list" Grid.Row="1" Grid.Column="3" HorizontalContentAlignment="center" VerticalContentAlignment="center" FontWeight="Bold" FontSize="14"/>
-        <ListBox Grid.Row="2" Grid.Column="3" x:Name="AnimalsInZooList" />
+        <Label Content="Associated Animals list" Grid.Row="1" Grid.Column="3" HorizontalContentAlignment="center" VerticalContentAlignment="center" FontSize="13"/>
+        <ListBox Grid.Row="3" Grid.Column="3" x:Name="AnimalsInZooList" />
+
+        <!-- Animals column -->
+        <Button Content="Add Animal to Zoo" Grid.Column="5" Grid.Row="1" />
+        <ListBox x:Name="AnimalsListBox" Grid.Column="5" Grid.Row="3" Grid.RowSpan="7"/>
 
     </Grid>
 </Window>
