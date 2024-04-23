@@ -114,6 +114,13 @@ namespace WPFZooManager
         private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowAssociatedAnimals();
+            ShowSelectedZooInTextBox();
+        }
+
+        // perform when there is an animal selected
+        private void AnimalList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowSelectedAnimalInTextBox();
         }
 
         // Displays the list of the animals
@@ -311,6 +318,59 @@ namespace WPFZooManager
                 sqlConnection.Close();
                 ShowAssociatedAnimals();
             }
+        }
+
+        private void ShowSelectedZooInTextBox()
+        {
+            string query = "SELECT Location FROM Zoo WHERE Id = @ZooId";
+
+            try
+            {
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlAdapter)
+                {
+                    // adds a value to the parameter given in the SQL query
+                    sqlCommand.Parameters.AddWithValue("@ZooId", ListZoos.SelectedValue);
+
+                    DataTable zooTable = new DataTable();
+
+                    sqlAdapter.Fill(zooTable);
+                    // update input text box
+                    inputTextBox.Text = zooTable.Rows[0]["Location"].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ShowSelectedAnimalInTextBox()
+        {
+            string query = "SELECT Name FROM Animal WHERE Id = @AnimalId";
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlAdapter)
+                {
+                    sqlCommand.Parameters.AddWithValue("@AnimalId", AnimalsListBox.SelectedValue);
+                    DataTable animalTable = new DataTable();
+                    sqlAdapter.Fill(animalTable);
+                    inputTextBox.Text = animalTable.Rows[0]["Name"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

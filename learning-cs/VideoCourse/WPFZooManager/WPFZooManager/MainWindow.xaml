@@ -42,7 +42,7 @@
 
         <!-- Animals column -->
         <Button Content="Add Animal to Zoo" Grid.Column="5" Grid.Row="1" Click="AddAnimalToZoo_Click"/>
-        <ListBox x:Name="AnimalsListBox" Grid.Column="5" Grid.Row="3" Grid.RowSpan="7"/>
+        <ListBox x:Name="AnimalsListBox" Grid.Column="5" Grid.Row="3" Grid.RowSpan="7" SelectionChanged="AnimalList_SelectionChanged"/>
 
         <!-- Delete Zoo button-->
         <Button Content="Delete Zoo" Grid.Column="1" Grid.Row="5" Click="DeleteZoo_Click"/>
