@@ -41,32 +41,32 @@
         <ListBox Grid.Row="3" Grid.Column="3" x:Name="AnimalsInZooList" />
 
         <!-- Animals column -->
-        <Button Content="Add Animal to Zoo" Grid.Column="5" Grid.Row="1" />
-        <ListBox x:Name="AnimalsListBox" Grid.Column="5" Grid.Row="3" Grid.RowSpan="7"/>
+        <Button Content="Add Animal to Zoo" Grid.Column="5" Grid.Row="1" Click="AddAnimalToZoo_Click"/>
+        <ListBox x:Name="AnimalsListBox" Grid.Column="5" Grid.Row="3" Grid.RowSpan="7" SelectionChanged="AnimalList_SelectionChanged"/>
 
         <!-- Delete Zoo button-->
         <Button Content="Delete Zoo" Grid.Column="1" Grid.Row="5" Click="DeleteZoo_Click"/>
         
         <!-- Remove animal from Zoo button -->
-        <Button Content="Remove animal" Grid.Column="3" Grid.Row="5"/>
+        <Button Content="Remove animal" Grid.Column="3" Grid.Row="5" Click="RemoveAnimalFromZoo_Click"/>
         
         <!-- Add Zoo Button -->
-        <Button Content="Add zoo" Grid.Column="1" Grid.Row="9"/>
+        <Button Content="Add zoo" Grid.Column="1" Grid.Row="9" Click="AddZoo_Click"/>
         
         <!-- Update zoo button -->
         <Button Content="Update zoo" Grid.Column="1" Grid.Row="11"/>
         
         <!-- Add animal zoo button -->
-        <Button Content="Add animal zoo" Grid.Column="3" Grid.Row="9"/>
+        <Button Content="Add animal" Grid.Column="3" Grid.Row="9" Click="AddAnimal_Click"/>
         
         <!-- Update animal button -->
         <Button Content="Update animal" Grid.Column="3" Grid.Row="11"/>
         
         <!-- Delete animal -->
-        <Button Content="Delete animal" Grid.Column="5" Grid.Row="11"/>
+        <Button Content="Delete animal" Grid.Column="5" Grid.Row="11" Click="DeleteAnimal_Click"/>
         
         <!-- Text input box -->
-        <TextBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" />
+        <TextBox x:Name="inputTextBox" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" />
 
     </Grid>
 </Window>

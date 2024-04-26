@@ -55,7 +55,7 @@ namespace WPFZooManager
                     ListZoos.DisplayMemberPath = "Location";
 
                     // Which Value should be delievered, when an Item from the ListBox is Selected
-                    ListZoos.SelectedValuePath = "id";
+                    ListZoos.SelectedValuePath = "Id";
 
                     // The reference to the Data the ListBox should populate
                     ListZoos.ItemsSource = zooTable.DefaultView;
@@ -69,6 +69,9 @@ namespace WPFZooManager
 
         }
 
+        /// <summary>
+        /// Shows the animals associated to a Zoo.
+        /// </summary>
         private void ShowAssociatedAnimals()
         {
 
@@ -111,6 +114,13 @@ namespace WPFZooManager
         private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowAssociatedAnimals();
+            ShowSelectedZooInTextBox();
+        }
+
+        // perform when there is an animal selected
+        private void AnimalList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowSelectedAnimalInTextBox();
         }
 
         // Displays the list of the animals
@@ -174,8 +184,192 @@ namespace WPFZooManager
                 sqlConnection.Close();
                 ShowZoos(); // run again the query to get the new list of zoos
             }
+        }
 
+        // add a new Zoo
+        private void AddZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "INSERT INTO Zoo VALUES (@Location)";
 
+            SqlCommand sqlCmd = new SqlCommand(query, sqlConnection);
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCmd.Parameters.AddWithValue("@Location", inputTextBox.Text);
+                // execute query
+                sqlCmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+                sqlConnection.Close();
+                ShowZoos();
+            }
+        }
+
+        // add a new animal to a Zoo
+        private void AddAnimalToZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "INSERT INTO ZooAnimal VALUES (@ZooId, @AnimalId)";
+
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+            try
+            {
+
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("ZooId", int.Parse(ListZoos.SelectedValue.ToString()));
+                sqlCommand.Parameters.AddWithValue("AnimalId", int.Parse(AnimalsListBox.SelectedValue.ToString()));
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAssociatedAnimals();
+            }
+
+        }
+
+        private void AddAnimal_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "INSERT INTO Animal VALUES (@Name)";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Name", inputTextBox.Text);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                inputTextBox.Clear(); // cleans the input field
+                sqlConnection.Close();
+                ShowAnimals();
+            }
+        }
+
+        /// <summary>
+        /// Removes an animal from the animal list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "DELETE FROM Animal WHERE Id = @AnimalId";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@AnimalId", AnimalsListBox.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAnimals();
+            }
+        }
+
+        /// <summary>
+        /// Removes an animal from a selected Zoo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoveAnimalFromZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "DELETE FROM ZooAnimal WHERE Id = @Id";
+
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+            DataRowView item = (DataRowView)AnimalsInZooList.SelectedItem;
+            int itemId = int.Parse(item.Row.ItemArray[2].ToString());
+
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Id", itemId);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAssociatedAnimals();
+            }
+        }
+
+        private void ShowSelectedZooInTextBox()
+        {
+            string query = "SELECT Location FROM Zoo WHERE Id = @ZooId";
+
+            try
+            {
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlAdapter)
+                {
+                    // adds a value to the parameter given in the SQL query
+                    sqlCommand.Parameters.AddWithValue("@ZooId", ListZoos.SelectedValue);
+
+                    DataTable zooTable = new DataTable();
+
+                    sqlAdapter.Fill(zooTable);
+                    // update input text box
+                    inputTextBox.Text = zooTable.Rows[0]["Location"].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ShowSelectedAnimalInTextBox()
+        {
+            string query = "SELECT Name FROM Animal WHERE Id = @AnimalId";
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlAdapter)
+                {
+                    sqlCommand.Parameters.AddWithValue("@AnimalId", AnimalsListBox.SelectedValue);
+                    DataTable animalTable = new DataTable();
+                    sqlAdapter.Fill(animalTable);
+                    inputTextBox.Text = animalTable.Rows[0]["Name"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }
