@@ -1,5 +1,8 @@
 // static list of games
 using GameStore.Api.Entities;
+using Microsoft.JSInterop.Infrastructure;
+
+const string GetGameEndpointName = "GetAllGames";
 
 List<Game> games = new() {
     new Game()
@@ -50,6 +53,40 @@ app.MapGet("/games/{id}", (int id) =>
 
     // returnd HTTP 202 when the game is found
     return Results.Ok(game);
+}).WithName(GetGameEndpointName);
+
+// POST
+// creates a new game
+app.MapPost("/games", (Game game) =>
+{
+    // get the max ID of the current items and add 1
+    game.Id = games.Max(game => game.Id) + 1;
+    // add the new game
+    games.Add(game);
+
+    // return with a header of the object created
+    return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
+});
+
+// update a game
+app.MapPut("/games/{id}", (int id, Game updatedGame) =>
+{
+    Game? existingGame = games.Find(game => game.Id == id);
+
+    // check if id is not found
+    // return HTTP 404
+    if (existingGame is null)
+    {
+        return Results.NotFound();
+    }
+
+    existingGame.Name = updatedGame.Name;
+    existingGame.Genre = updatedGame.Genre;
+    existingGame.Price = updatedGame.Price;
+    existingGame.ReleaseDate = updatedGame.ReleaseDate;
+    existingGame.ImageUrl = updatedGame.ImageUrl;
+
+    return Results.NoContent();
 });
 
 app.Run();
