@@ -67,5 +67,21 @@ namespace LINQToObjectsAndQueryOperators
                 student.Print();
             }
         }
+
+        // using a foreing key to match a value from a different source
+        public void AllStudentsFromBeijinTech()
+        {
+            IEnumerable<Student> studentFromBeijinTech = from student in students
+                                                         join university in universities
+                                                         on student.UniversityId equals university.Id
+                                                         where university.Name == "Beijin Tech"
+                                                         select student;
+
+            Console.WriteLine("Students from Beijin Tech");
+            foreach (Student student in studentFromBeijinTech)
+            {
+                student.Print();
+            }
+        }
     }
 }

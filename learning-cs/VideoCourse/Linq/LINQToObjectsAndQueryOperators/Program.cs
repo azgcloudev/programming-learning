@@ -7,4 +7,7 @@ um.FemaleStudents();
 Console.WriteLine();
 um.StudentsSortByAge();
 
+Console.WriteLine();
+um.AllStudentsFromBeijinTech();
+
 Console.ReadKey();
