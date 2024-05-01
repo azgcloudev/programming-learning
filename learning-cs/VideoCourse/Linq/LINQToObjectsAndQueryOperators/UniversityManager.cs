@@ -53,5 +53,19 @@ namespace LINQToObjectsAndQueryOperators
                 student.Print();
             }
         }
+
+        // sort using linq
+        public void StudentsSortByAge()
+        {
+            var sortedStudents = from student in students
+                                 orderby student.Age
+                                 select student;
+
+            Console.WriteLine("Students sorted by age:");
+            foreach (Student student in sortedStudents)
+            {
+                student.Print();
+            }
+        }
     }
 }
