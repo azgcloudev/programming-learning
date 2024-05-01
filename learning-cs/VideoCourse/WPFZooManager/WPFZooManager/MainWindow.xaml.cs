@@ -64,7 +64,7 @@ namespace WPFZooManager
             // Catch any exception and display it in a Message Box
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show($"Error at ShowZoos message: \n{ex.Message}");
             }
 
         }
@@ -159,7 +159,7 @@ namespace WPFZooManager
         /// <param name="e"></param>
         private void DeleteZoo_Click(object sender, RoutedEventArgs e)
         {
-            string query = "DELETE FROM ZOO WHERE id = @ZooId";
+            string query = "DELETE FROM ZOO WHERE id = (@ZooId)";
 
             SqlCommand sqlCmd = new SqlCommand(query, sqlConnection);
 
@@ -169,14 +169,14 @@ namespace WPFZooManager
                 sqlConnection.Open();
 
                 // add parameters to the command
-                sqlCmd.Parameters.AddWithValue("@ZooId", ListZoos.SelectedValue);
+                sqlCmd.Parameters.AddWithValue("@ZooId", int.Parse(ListZoos.SelectedValue.ToString()));
 
                 // execute the query
                 sqlCmd.ExecuteScalar();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: {0}", ex.Message);
+                MessageBox.Show($"DeleteZoo_Click Error: {ex.Message}");
             }
             finally
             {
@@ -229,7 +229,7 @@ namespace WPFZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"AddAnimalToZoo_Click error: {ex.Message}");
             }
             finally
             {
@@ -252,7 +252,7 @@ namespace WPFZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"AddAnimal_Click error: {ex.Message}");
             }
             finally
             {
@@ -269,13 +269,13 @@ namespace WPFZooManager
         /// <param name="e"></param>
         private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
         {
-            string query = "DELETE FROM Animal WHERE Id = @AnimalId";
+            string query = "DELETE FROM Animal WHERE Id = (@AnimalId)";
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
             try
             {
                 sqlConnection.Open();
-                sqlCommand.Parameters.AddWithValue("@AnimalId", AnimalsListBox.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@AnimalId", int.Parse(AnimalsListBox.SelectedValue.ToString()));
                 sqlCommand.ExecuteScalar();
             }
             catch (Exception ex)
@@ -296,7 +296,7 @@ namespace WPFZooManager
         /// <param name="e"></param>
         private void RemoveAnimalFromZoo_Click(object sender, RoutedEventArgs e)
         {
-            string query = "DELETE FROM ZooAnimal WHERE Id = @Id";
+            string query = "DELETE FROM ZooAnimal WHERE Id = (@Id)";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
@@ -311,7 +311,7 @@ namespace WPFZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"RemoveAnimalFromZoo_Click error: {ex.Message}");
             }
             finally
             {
@@ -322,7 +322,7 @@ namespace WPFZooManager
 
         private void ShowSelectedZooInTextBox()
         {
-            string query = "SELECT Location FROM Zoo WHERE Id = @ZooId";
+            string query = "SELECT Location FROM Zoo WHERE Id = (@ZooId)";
 
             try
             {
@@ -333,7 +333,7 @@ namespace WPFZooManager
                 using (sqlAdapter)
                 {
                     // adds a value to the parameter given in the SQL query
-                    sqlCommand.Parameters.AddWithValue("@ZooId", ListZoos.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@ZooId", int.Parse(ListZoos.SelectedValue.ToString()));
 
                     DataTable zooTable = new DataTable();
 
@@ -345,13 +345,13 @@ namespace WPFZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"ShowSelectedZooInTextBox error: {ex.Message}");
             }
         }
 
         private void ShowSelectedAnimalInTextBox()
         {
-            string query = "SELECT Name FROM Animal WHERE Id = @AnimalId";
+            string query = "SELECT Name FROM Animal WHERE Id = (@AnimalId)";
 
             try
             {
@@ -360,7 +360,7 @@ namespace WPFZooManager
 
                 using (sqlAdapter)
                 {
-                    sqlCommand.Parameters.AddWithValue("@AnimalId", AnimalsListBox.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@AnimalId", int.Parse(AnimalsListBox.SelectedValue.ToString()));
                     DataTable animalTable = new DataTable();
                     sqlAdapter.Fill(animalTable);
                     inputTextBox.Text = animalTable.Rows[0]["Name"].ToString();
@@ -368,9 +368,69 @@ namespace WPFZooManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"ShowSelectedAnimalInTextBox error: {ex.Message}");
             }
 
+        }
+
+        /// <summary>
+        /// Updates the Zoo name.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateZoo_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "UPDATE Zoo SET Location = (@LocationName) WHERE Id = (@ZooId)";
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@LocationName", inputTextBox.Text);
+                sqlCommand.Parameters.AddWithValue("@ZooId", int.Parse(ListZoos.SelectedValue.ToString()));
+
+                sqlConnection.Open();
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"UpdateZoo_Click error: {ex.Message}");
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowZoos();
+            }
+
+        }
+
+        /// <summary>
+        /// Updates the animal in the animal list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateAnimal_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "UPDATE Animal SET Name = (@AnimalName) WHERE Id = (@AnimalId)";
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@AnimalName", inputTextBox.Text);
+                sqlCommand.Parameters.AddWithValue("@AnimalId", int.Parse(AnimalsListBox.SelectedValue.ToString()));
+
+                sqlConnection.Open();
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"UpdateAnimal_Click error: {ex.Message}");
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAnimals();
+                ShowAssociatedAnimals();
+            }
         }
     }
 }

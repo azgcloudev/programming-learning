@@ -54,13 +54,13 @@
         <Button Content="Add zoo" Grid.Column="1" Grid.Row="9" Click="AddZoo_Click"/>
         
         <!-- Update zoo button -->
-        <Button Content="Update zoo" Grid.Column="1" Grid.Row="11"/>
+        <Button Content="Update zoo" Grid.Column="1" Grid.Row="11" Click="UpdateZoo_Click"/>
         
         <!-- Add animal zoo button -->
         <Button Content="Add animal" Grid.Column="3" Grid.Row="9" Click="AddAnimal_Click"/>
         
         <!-- Update animal button -->
-        <Button Content="Update animal" Grid.Column="3" Grid.Row="11"/>
+        <Button Content="Update animal" Grid.Column="3" Grid.Row="11" Click="UpdateAnimal_Click"/>
         
         <!-- Delete animal -->
         <Button Content="Delete animal" Grid.Column="5" Grid.Row="11" Click="DeleteAnimal_Click"/>
