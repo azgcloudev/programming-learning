@@ -83,5 +83,20 @@ namespace LINQToObjectsAndQueryOperators
                 student.Print();
             }
         }
+
+        // method that takes the an int parameter, and returns all the student that have that ID as university
+        public void StudentsFromId(int id)
+        {
+            IEnumerable<Student> studenstsFromUniversity = from student in students
+                                                           join university in universities on student.UniversityId equals university.Id
+                                                           where university.Id == id
+                                                           select student;
+
+            Console.WriteLine("Students from university ID: {0}", id);
+            foreach (Student st in studenstsFromUniversity)
+            {
+                st.Print();
+            }
+        }
     }
 }
