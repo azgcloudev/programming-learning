@@ -1,4 +1,6 @@
-﻿using LINQToObjectsAndQueryOperators;
+﻿using System;
+
+using LINQToObjectsAndQueryOperators;
 
 UniversityManager um = new UniversityManager();
 
