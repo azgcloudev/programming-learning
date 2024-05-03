@@ -94,6 +94,9 @@ namespace LINQToObjectsAndQueryOperators
             foreach (Student st in studenstsFromUniversity)
             {
                 st.Print();
+            }
+        }
+
         // create a new collection
         public void StudentAndUniversityNameCollection()
         {
