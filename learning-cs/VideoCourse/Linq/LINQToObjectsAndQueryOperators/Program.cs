@@ -10,4 +10,7 @@ um.StudentsSortByAge();
 Console.WriteLine();
 um.AllStudentsFromBeijinTech();
 
+Console.WriteLine();
+um.StudentAndUniversityNameCollection();
+
 Console.ReadKey();
