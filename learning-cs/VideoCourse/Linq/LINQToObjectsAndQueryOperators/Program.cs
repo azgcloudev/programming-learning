@@ -1,4 +1,6 @@
-﻿using LINQToObjectsAndQueryOperators;
+﻿using System;
+
+using LINQToObjectsAndQueryOperators;
 
 UniversityManager um = new UniversityManager();
 
@@ -37,6 +39,7 @@ foreach (int i in sortedReverseLinq)
 {
     Console.WriteLine(i);
 }
+um.StudentAndUniversityNameCollection();
 
 Console.ReadKey();
 // end of main class
