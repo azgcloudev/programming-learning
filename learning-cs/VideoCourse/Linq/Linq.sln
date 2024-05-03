@@ -5,9 +5,11 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linq1", "Linq1\Linq1.csproj", "{3515231D-8C07-4786-AFE6-D933E3C3EC4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQToObjectsAndQueryOperators", "LINQToObjectsAndQueryOperators\LINQToObjectsAndQueryOperators.csproj", "{2063A813-F5CD-461C-9327-7CBDA2F58CF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQToObjectsAndQueryOperators", "LINQToObjectsAndQueryOperators\LINQToObjectsAndQueryOperators.csproj", "{2063A813-F5CD-461C-9327-7CBDA2F58CF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqWithXML", "LinqWithXML\LinqWithXML.csproj", "{B6335858-E109-4F30-A89C-F40DD105C0B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqWithXML", "LinqWithXML\LinqWithXML.csproj", "{B6335858-E109-4F30-A89C-F40DD105C0B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToSQL", "LinqToSQL\LinqToSQL.csproj", "{3F6CECCE-0B2E-4AA2-8F91-F3ECE4140940}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B6335858-E109-4F30-A89C-F40DD105C0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6335858-E109-4F30-A89C-F40DD105C0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6335858-E109-4F30-A89C-F40DD105C0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F6CECCE-0B2E-4AA2-8F91-F3ECE4140940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F6CECCE-0B2E-4AA2-8F91-F3ECE4140940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F6CECCE-0B2E-4AA2-8F91-F3ECE4140940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F6CECCE-0B2E-4AA2-8F91-F3ECE4140940}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
