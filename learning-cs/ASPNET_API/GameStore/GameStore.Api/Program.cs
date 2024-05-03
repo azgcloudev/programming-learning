@@ -1,5 +1,6 @@
 // static list of games
 using GameStore.Api.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.JSInterop.Infrastructure;
 
 const string GetGameEndpointName = "GetAllGames";
@@ -87,6 +88,23 @@ app.MapPut("/games/{id}", (int id, Game updatedGame) =>
     existingGame.ImageUrl = updatedGame.ImageUrl;
 
     return Results.NoContent();
+});
+
+// delete a game
+app.MapDelete("/games/{id}", (int id) =>
+{
+    Game? game = games.Find(game => game.Id == id);
+
+    if (game is not null)
+    {
+        // will be use to return the game deleted in the response
+        Game gameDeleted = game;
+        
+        games.Remove(game);
+        return Results.Ok(gameDeleted);
+    }
+
+    return Results.NotFound();
 });
 
 app.Run();
