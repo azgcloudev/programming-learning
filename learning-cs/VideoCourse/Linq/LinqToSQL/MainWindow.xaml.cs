@@ -31,7 +31,9 @@ namespace LinqToSQL
             dataContext = new LinqToSQLDataClassesDataContext(connectionString);
 
             // InsertUniversity();
-            InsertStudent();
+            //InsertStudent();
+            //InsertLecture();
+            InsertStudentLectureAssociation();
         }
 
         // insert a university into a table
@@ -72,6 +74,43 @@ namespace LinqToSQL
             dataContext.SubmitChanges();
 
             MainDataGrid.ItemsSource = dataContext.Students;
+        }
+
+        public void InsertLecture()
+        {
+            dataContext.Lectures.InsertOnSubmit(new Lecture { Name = "Math" });
+            dataContext.Lectures.InsertOnSubmit(new Lecture { Name = "History" });
+
+            dataContext.SubmitChanges();
+
+            MainDataGrid.ItemsSource = dataContext.Lectures;
+        }
+
+        public void InsertStudentLectureAssociation()
+        {
+
+            dataContext.ExecuteCommand("DELETE FROM StudentLecture");
+
+            University yale = dataContext.Universities.First(um => um.Name.Equals("Yale"));
+            University beijinTech = dataContext.Universities.First(um => um.Name.Equals("Beijin Tech"));
+
+            Lecture math = dataContext.Lectures.First(l => l.Name.Equals("Math"));
+            Lecture history = dataContext.Lectures.First(l => l.Name.Equals("History"));
+
+            List<Student> students = new List<Student>
+            {
+                new Student { Name = "Carla", Gender = "female", UniversityId = yale.Id },
+                new Student { Name = "Toni", Gender = "male", University = yale },
+                new Student { Name = "Leyle", Gender = "female", University = beijinTech },
+                new Student { Name = "James", Gender = "male", University = beijinTech }
+            };
+
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = students.ElementAt(0), Lecture = history });
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = students.ElementAt(0), Lecture = math });
+
+            dataContext.SubmitChanges();
+
+            MainDataGrid.ItemsSource = dataContext.StudentLectures;
         }
     }
 }
