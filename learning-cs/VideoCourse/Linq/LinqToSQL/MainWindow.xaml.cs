@@ -33,7 +33,11 @@ namespace LinqToSQL
             // InsertUniversity();
             //InsertStudent();
             //InsertLecture();
-            InsertStudentLectureAssociation();
+            //InsertStudentLectureAssociation();
+            //GetTonisLectures();
+            //GetAllStudentsFromYale();
+            //GetAllUniversitiesWithTransgenders();
+            GetAllLecturesAtBeijin();
         }
 
         // insert a university into a table
@@ -58,6 +62,8 @@ namespace LinqToSQL
 
         public void InsertStudent()
         {
+            dataContext.ExecuteCommand("delete from Student");
+
             University yale = dataContext.Universities.First(um => um.Name.Equals("Yale"));
             University beijinTech = dataContext.Universities.First(um => um.Name.Equals("Beijin Tech"));
 
@@ -73,7 +79,7 @@ namespace LinqToSQL
             // submit the changes
             dataContext.SubmitChanges();
 
-            MainDataGrid.ItemsSource = dataContext.Students;
+            //MainDataGrid.ItemsSource = dataContext.Students;
         }
 
         public void InsertLecture()
@@ -88,29 +94,76 @@ namespace LinqToSQL
 
         public void InsertStudentLectureAssociation()
         {
-
+            // this deletes the current entries to avoid duplicate data
             dataContext.ExecuteCommand("DELETE FROM StudentLecture");
 
-            University yale = dataContext.Universities.First(um => um.Name.Equals("Yale"));
-            University beijinTech = dataContext.Universities.First(um => um.Name.Equals("Beijin Tech"));
+            Student carla = dataContext.Students.First(st => st.Name.Equals("Carla"));
+            Student toni = dataContext.Students.First(st => st.Name.Equals("Toni"));
+            Student leyle = dataContext.Students.First(st => st.Name.Equals("Leyle"));
+            Student james = dataContext.Students.First(st => st.Name.Equals("James"));
 
             Lecture math = dataContext.Lectures.First(l => l.Name.Equals("Math"));
             Lecture history = dataContext.Lectures.First(l => l.Name.Equals("History"));
 
-            List<Student> students = new List<Student>
-            {
-                new Student { Name = "Carla", Gender = "female", UniversityId = yale.Id },
-                new Student { Name = "Toni", Gender = "male", University = yale },
-                new Student { Name = "Leyle", Gender = "female", University = beijinTech },
-                new Student { Name = "James", Gender = "male", University = beijinTech }
-            };
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { StudentId = carla.Id, Lecture = history });
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { StudentId = carla.Id, Lecture = math });
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { StudentId = leyle.Id, LectureId = history.Id });
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { StudentId = toni.Id, LectureId = history.Id });
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { StudentId = toni.Id, LectureId = math.Id });
 
-            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = students.ElementAt(0), Lecture = history });
-            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = students.ElementAt(0), Lecture = math });
+            StudentLecture jamesHistory = new StudentLecture();
+            jamesHistory.Student = james;
+            jamesHistory.Lecture = history;
 
             dataContext.SubmitChanges();
 
-            MainDataGrid.ItemsSource = dataContext.StudentLectures;
+            //MainDataGrid.ItemsSource = dataContext.StudentLectures;
+        }
+
+        public void GetTonisLectures()
+        {
+            Student Toni = dataContext.Students.First(st => st.Name.Equals("Toni"));
+
+            if (Toni.StudentLectures.Count <= 0)
+            {
+                MessageBox.Show("User has no lectures");
+            }
+            else
+            {
+                var tonisLectures = from sl in Toni.StudentLectures select sl.Lecture;
+
+                MainDataGrid.ItemsSource = tonisLectures;
+            }
+        }
+
+        public void GetAllStudentsFromYale()
+        {
+            var studentsFromyale = from st in dataContext.Students where st.University.Name == "Yale" select st;
+
+            MainDataGrid.ItemsSource = studentsFromyale;
+        }
+
+        public void GetAllUniversitiesWithTransgenders()
+        {
+            var transgenderUniversities = from student in dataContext.Students
+                                          join university in dataContext.Universities
+                                          on student.University equals university
+                                          where student.Gender == "trans-gender"
+                                          select university;
+
+            MainDataGrid.ItemsSource = transgenderUniversities;
+        }
+
+        public void GetAllLecturesAtBeijin()
+        {
+            var lectures = from stL in dataContext.StudentLectures
+                           join student in dataContext.Students
+                           on stL.StudentId equals student.Id
+                           where student.University.Name == "Beijin tech"
+                           select stL.Lecture;
+
+            MainDataGrid.ItemsSource = lectures;
+
         }
     }
 }
