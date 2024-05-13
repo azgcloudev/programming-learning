@@ -37,7 +37,9 @@ namespace LinqToSQL
             //GetTonisLectures();
             //GetAllStudentsFromYale();
             //GetAllUniversitiesWithTransgenders();
-            GetAllLecturesAtBeijin();
+            //GetAllLecturesAtBeijin();
+            GetAllStudents();
+            UpdateToni();
         }
 
         // insert a university into a table
@@ -164,6 +166,30 @@ namespace LinqToSQL
 
             MainDataGrid.ItemsSource = lectures;
 
+        }
+
+        // update the name of toni
+        public void UpdateToni()
+        {
+            Student toni = dataContext.Students.FirstOrDefault(st => st.Name.Equals("Toni"));
+
+            if (toni != null)
+            {
+                toni.Name = "Antonio";
+
+                dataContext.SubmitChanges();
+
+                return;
+            }
+
+            MessageBox.Show("Student not fount.");
+        }
+
+        public void GetAllStudents()
+        {
+            var students = dataContext.Students;
+
+            MainDataGrid.ItemsSource = students;
         }
     }
 }
