@@ -38,8 +38,9 @@ namespace LinqToSQL
             //GetAllStudentsFromYale();
             //GetAllUniversitiesWithTransgenders();
             //GetAllLecturesAtBeijin();
-            GetAllStudents();
-            UpdateToni();
+            //GetAllStudents();
+            //UpdateToni();
+            DeleteStudent("James");
         }
 
         // insert a university into a table
@@ -190,6 +191,26 @@ namespace LinqToSQL
             var students = dataContext.Students;
 
             MainDataGrid.ItemsSource = students;
+        }
+
+        //delete a student
+        public void DeleteStudent(string name)
+        {
+            Student st = dataContext.Students.FirstOrDefault(stu => stu.Name.Equals(name));
+
+            if (st != null)
+            {
+                dataContext.Students.DeleteOnSubmit(st);
+                dataContext.SubmitChanges();
+
+                MainDataGrid.ItemsSource = dataContext.Students;
+
+                return;
+            }
+
+            MainDataGrid.ItemsSource = dataContext.Students;
+
+            MessageBox.Show($"Student {name} not found.");
         }
     }
 }
