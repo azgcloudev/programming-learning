@@ -10,28 +10,26 @@ namespace NamingConventions
     /// </summary>
     internal class CustomerService // class name in Pascal Case
     {
+        /*
+         * For code formatting follow the next conventions for order:
+         * 1- Properties
+         * 2- Fields
+         * 3- Constructors
+         * 4- Methods
+         */
+
         // properties
         public int CustomerCount { get; set; } // Pascal Case
-
-        // private field
-        private string lastCustomerName = "Doe"; // camel case
-
-        // private field 2
-        private string _customerName;
-
         // constant variable
         public const int MAX_CUSTOMERS = 100; // all caps with underscore
 
-        //method
-        public string GetCustomerName(int id) // Name is in Pascal Case and parameters are camel case
-        {
-            string customerName = "John Doe"; // local variable in camel case
-            return customerName;
-        }
+        // private field
+        private string lastCustomerName = "Doe"; // camel case
+        // private field 2
+        private string _customerName;
 
         // Constructor because allows to create an empty object
-        public CustomerService() {}
-
+        public CustomerService() { }
         /// <summary>
         /// Creates a CustomerService class object with customerName
         /// </summary>
@@ -41,6 +39,12 @@ namespace NamingConventions
             _customerName = customerName;
         }
 
+        //method
+        public string GetCustomerName(int id) // Name is in Pascal Case and parameters are camel case
+        {
+            string customerName = "John Doe"; // local variable in camel case
+            return customerName;
+        }
         /// <summary>
         /// Gets a customer by Id
         /// </summary>
