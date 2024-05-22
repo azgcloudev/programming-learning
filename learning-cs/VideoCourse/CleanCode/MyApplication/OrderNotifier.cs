@@ -1,4 +1,6 @@
-﻿namespace MyApplication;
+﻿using System;
+
+namespace MyApplication;
 
 public class OrderNotifier
 {
