@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O_SOLID", "O_SOLID\O_SOLID.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L_SOLID", "L_SOLID\L_SOLID.csproj", "{76452C50-23D3-4DE8-BD94-E033B10672EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I_SOLID", "I_SOLID\I_SOLID.csproj", "{51D07355-3BAA-476E-BBA6-6DDF35826FA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{76452C50-23D3-4DE8-BD94-E033B10672EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76452C50-23D3-4DE8-BD94-E033B10672EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76452C50-23D3-4DE8-BD94-E033B10672EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51D07355-3BAA-476E-BBA6-6DDF35826FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51D07355-3BAA-476E-BBA6-6DDF35826FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51D07355-3BAA-476E-BBA6-6DDF35826FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51D07355-3BAA-476E-BBA6-6DDF35826FA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
