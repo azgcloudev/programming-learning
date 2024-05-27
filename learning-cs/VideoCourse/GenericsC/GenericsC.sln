@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroToGenerics", "IntroToGenerics\IntroToGenerics.csproj", "{BB048E87-0A72-4473-AC01-F3AB957F0F6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsMultipleTypes", "GenericsMultipleTypes\GenericsMultipleTypes.csproj", "{7C57B766-0A82-461D-9409-2A27CD3AB0E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMethod", "GenericMethod\GenericMethod.csproj", "{0DA78BB6-7867-4E3A-8F3B-3062C1469922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsConstraints", "GenericsConstraints\GenericsConstraints.csproj", "{9CC5AAA5-9F4A-45ED-9CDA-75547520EB19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{BB048E87-0A72-4473-AC01-F3AB957F0F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB048E87-0A72-4473-AC01-F3AB957F0F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB048E87-0A72-4473-AC01-F3AB957F0F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C57B766-0A82-461D-9409-2A27CD3AB0E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C57B766-0A82-461D-9409-2A27CD3AB0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C57B766-0A82-461D-9409-2A27CD3AB0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C57B766-0A82-461D-9409-2A27CD3AB0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA78BB6-7867-4E3A-8F3B-3062C1469922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA78BB6-7867-4E3A-8F3B-3062C1469922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA78BB6-7867-4E3A-8F3B-3062C1469922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA78BB6-7867-4E3A-8F3B-3062C1469922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC5AAA5-9F4A-45ED-9CDA-75547520EB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC5AAA5-9F4A-45ED-9CDA-75547520EB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC5AAA5-9F4A-45ED-9CDA-75547520EB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC5AAA5-9F4A-45ED-9CDA-75547520EB19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
