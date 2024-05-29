@@ -1,10 +1,11 @@
-﻿namespace GenericMethod;
-
-class Program
+﻿namespace GenericMethod
 {
-    static void Main(string[] args)
+    class Program
+    {
+        static void Main(string[] args)
     {
         Logger logger = new Logger();
         logger.Log("Unable to find source");
+    }
     }
 }

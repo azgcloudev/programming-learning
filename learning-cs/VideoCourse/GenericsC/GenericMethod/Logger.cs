@@ -1,11 +1,12 @@
-namespace GenericMethod;
-
-public class Logger
+namespace GenericMethod
 {
-    // method with a geeneric type
-    public void Log<T>(T message)
+    public class Logger
+    {
+        // method with a geeneric type
+        public void Log<T>(T message)
     {
         DateTime dateTime = new DateTime();
         Console.WriteLine($"[LOG] {dateTime} error: {message}");
+    }
     }
 }

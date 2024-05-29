@@ -1,8 +1,8 @@
-﻿namespace IntroToGenerics;
-
-class Program
+﻿namespace IntroToGenerics
 {
-    static void Main(string[] args)
+    class Program
+    {
+        static void Main(string[] args)
     {
         List<string> books = new List<string>();
         
@@ -18,5 +18,6 @@ class Program
         Bag<string> bag = new Bag<string>("Pali");
         bag.UpdateContent("Walmart");
         Console.WriteLine(bag.GetContent());
+    }
     }
 }
