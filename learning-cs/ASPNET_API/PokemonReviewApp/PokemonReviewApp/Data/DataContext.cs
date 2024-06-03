@@ -27,5 +27,20 @@ public class DataContext : DbContext
             .HasOne(p => p.Pokemon)
             .WithMany(pc => pc.PokemonCategories)
             .HasForeignKey(p => p.PokemonId);
+        modelBuilder.Entity<PokemonCategory>()
+            .HasOne(p => p.Category)
+            .WithMany(pc => pc.PokemonCategories)
+            .HasForeignKey(p => p.CategoryId);
+
+        modelBuilder.Entity<PokemonOwner>()
+            .HasKey(po => new { po.PokemonId, po.OwnerId });
+        modelBuilder.Entity<PokemonOwner>()
+            .HasOne(p => p.Pokemon)
+            .WithMany(pc => pc.PokemonOwners)
+            .HasForeignKey(p => p.PokemonId);
+        modelBuilder.Entity<PokemonOwner>()
+            .HasOne(p => p.Owner)
+            .WithMany(pc => pc.PokemonOwners)
+            .HasForeignKey(c => c.OwnerId);
     }
 }
