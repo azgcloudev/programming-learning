@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GenericInterfaces
 {
-    internal class Product
+    internal class Product : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
