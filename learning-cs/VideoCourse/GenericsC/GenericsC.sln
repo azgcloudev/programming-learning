@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodConstraints", "Method
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericInterfaces", "GenericInterfaces\GenericInterfaces.csproj", "{70FAE0A1-E1FC-478D-88A5-20D2E416DCAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericClassesAndInterfaces", "GenericClassesAndInterfaces\GenericClassesAndInterfaces.csproj", "{44A6AD1E-E56B-4F0F-A9CA-B3FB9A3580DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{70FAE0A1-E1FC-478D-88A5-20D2E416DCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70FAE0A1-E1FC-478D-88A5-20D2E416DCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70FAE0A1-E1FC-478D-88A5-20D2E416DCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A6AD1E-E56B-4F0F-A9CA-B3FB9A3580DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A6AD1E-E56B-4F0F-A9CA-B3FB9A3580DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A6AD1E-E56B-4F0F-A9CA-B3FB9A3580DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A6AD1E-E56B-4F0F-A9CA-B3FB9A3580DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
