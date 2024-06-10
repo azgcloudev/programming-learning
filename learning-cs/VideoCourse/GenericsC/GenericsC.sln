@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericClassesAndInterfaces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericAction", "GenericAction\GenericAction.csproj", "{C0EDC0F1-C8ED-4BB8-A4CA-5167AE20DED3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericFunctionDelegate", "GenericFunctionDelegate\GenericFunctionDelegate.csproj", "{2D1C531A-70B6-4572-91FB-FF6D1772245C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericPredicateDelegate", "GenericPredicateDelegate\GenericPredicateDelegate.csproj", "{8E953861-AF33-4F59-8597-CA594B180843}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,8 +67,19 @@ Global
 		{C0EDC0F1-C8ED-4BB8-A4CA-5167AE20DED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0EDC0F1-C8ED-4BB8-A4CA-5167AE20DED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0EDC0F1-C8ED-4BB8-A4CA-5167AE20DED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D1C531A-70B6-4572-91FB-FF6D1772245C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D1C531A-70B6-4572-91FB-FF6D1772245C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D1C531A-70B6-4572-91FB-FF6D1772245C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D1C531A-70B6-4572-91FB-FF6D1772245C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E953861-AF33-4F59-8597-CA594B180843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E953861-AF33-4F59-8597-CA594B180843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E953861-AF33-4F59-8597-CA594B180843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E953861-AF33-4F59-8597-CA594B180843}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35BF9BEA-107F-4C02-9736-FE18B80F75C0}
 	EndGlobalSection
 EndGlobal
