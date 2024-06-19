@@ -1,8 +1,10 @@
+using System;
 using System.Globalization;
 
 namespace WorkingWithEFCore;
 
-partial class Program_Helper
+// partial class Program_Helper
+partial class Program
 {
     private static void ConfigureConsole(string culture = "en-US", bool useComputerCulture = false)
     {
@@ -16,7 +18,26 @@ partial class Program_Helper
         WriteLine($"CurrentCulture: {CultureInfo.CurrentCulture.DisplayName}");
     }
 
-    private static void WriteLineInColor()
+    private static void WriteLineInColor(string text, ConsoleColor color)
     {
+        ConsoleColor previousColor = ForegroundColor;
+        ForegroundColor = color;
+        WriteLine(text);
+        ForegroundColor = previousColor;
+    }
+
+    private static void SectionTitle(string title)
+    {
+        WriteLineInColor($"*** {title} ***", ConsoleColor.DarkYellow);
+    }
+
+    private static void Fail(string message)
+    {
+        WriteLineInColor("Fail > {message}", ConsoleColor.Red);
+    }
+
+    private static void Info(string message)
+    {
+        WriteLineInColor($"Info > {message}", ConsoleColor.Cyan);
     }
 }
