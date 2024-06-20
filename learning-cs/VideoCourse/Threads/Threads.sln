@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadsDemo", "ThreadsDemo\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartEndAndCompletetion", "StartEndAndCompletetion\StartEndAndCompletetion.csproj", "{79FFB344-D24B-4473-A239-3151FC78FB26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoiningAndIsAlive", "JoiningAndIsAlive\JoiningAndIsAlive.csproj", "{5BAF2176-98D4-4DC8-B924-3C5FF6CFAB50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoiningAndIsAlive", "JoiningAndIsAlive\JoiningAndIsAlive.csproj", "{5BAF2176-98D4-4DC8-B924-3C5FF6CFAB50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTask", "WPFTask\WPFTask.csproj", "{18EA2BCA-39A9-4B04-94EB-44E6DEB802DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +29,15 @@ Global
 		{5BAF2176-98D4-4DC8-B924-3C5FF6CFAB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BAF2176-98D4-4DC8-B924-3C5FF6CFAB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BAF2176-98D4-4DC8-B924-3C5FF6CFAB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18EA2BCA-39A9-4B04-94EB-44E6DEB802DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18EA2BCA-39A9-4B04-94EB-44E6DEB802DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18EA2BCA-39A9-4B04-94EB-44E6DEB802DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18EA2BCA-39A9-4B04-94EB-44E6DEB802DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A4686AF-436E-48B3-BC97-C9ED80A98922}
 	EndGlobalSection
 EndGlobal
