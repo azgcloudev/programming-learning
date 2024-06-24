@@ -56,3 +56,17 @@ print(implicitLastName!)
 if let bindingLastName = lastName {
     print("The last name is \(bindingLastName)")
 }
+
+
+var title: String? = "Title"
+
+var result = title ?? "The title"
+print("result: \(result)")
+title = nil
+result = title ?? "The title"
+print("result: \(result)")
+
+// ranges
+for i in 0..<10 {
+    print(i)
+}
