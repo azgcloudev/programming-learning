@@ -13,6 +13,11 @@ namespace CalculatorTest
             {
                 throw new SystemException();
             }
+
+            if (calculator.Sum(100, 100) != 200)
+            {
+                throw new SystemException();
+            }
         }
     }
 }

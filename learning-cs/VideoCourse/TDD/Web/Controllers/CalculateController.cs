@@ -7,7 +7,7 @@ namespace Web.Controllers
     [Route("[controller]")]
     public class CalculateController : ControllerBase
     {
-        [HttpGet("Add/({left}/{right})")]
+        [HttpGet("Add/{left}/{right}")]
         public int Get(int left, int right)
         {
             Calculator calculator = new();
