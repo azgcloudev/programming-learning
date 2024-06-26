@@ -70,3 +70,45 @@ print("result: \(result)")
 for i in 0..<10 {
     print(i)
 }
+
+
+
+/* ARRAYS */
+var ages = [21,55,34,67,80,15]
+var agesEmpty: [Int]
+
+ages.count
+ages.last
+ages.append(99)
+ages.insert(44, at: 0)
+
+ages.sort()
+ages.reverse()
+ages.shuffle()
+
+
+/* SET */
+// unordered
+// no duplicate values
+var myAges = [21,52,63,62,22,56,32,21,52,22] // array
+// empty set
+var agesSet: Set<Int>
+var agesSetFromArray = Set(myAges)
+print(agesSetFromArray)
+ages.contains(21)
+agesSetFromArray.insert(200)
+print(agesSetFromArray)
+
+
+
+/* DICTIONARY */
+// Key value pairs
+let devices: [String : String] = [
+    "phone": "iPhone X",
+    "laptop": "2016 MacBook Pro",
+    "table": "2018 iPad Pro",
+    "desktop": "2017 iMac Pro"
+]
+
+devices["laptop"]
+devices["phone"]
