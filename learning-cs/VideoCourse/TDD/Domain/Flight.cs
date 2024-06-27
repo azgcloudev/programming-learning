@@ -2,8 +2,10 @@
 {
     public class Flight
     {
+        private List<Booking> bookingList = new();
+        public IEnumerable<Booking> BookingList => bookingList;
+        
         public int RemainingNumberOfSeats { get; set; }
-        public List<Booking> BookingList { get; set; } = new List<Booking>();
 
         public Flight(int seatCapacity)
         {
@@ -20,7 +22,7 @@
 
             var booking = new Booking(passengerEmail, numberOfSeats);
 
-            BookingList.Add(booking);
+            bookingList.Add(booking);
             
             RemainingNumberOfSeats -= numberOfSeats;
         }
