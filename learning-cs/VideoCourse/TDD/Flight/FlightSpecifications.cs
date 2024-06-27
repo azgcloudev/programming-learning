@@ -22,10 +22,10 @@ namespace FlightTest
             Flight flight = new Flight(3);
 
             // WHEN
-            var error = flight.Book("aldair@azgcloudev.xyz", 4);
+            Action act = () => flight.Book("aldair@azgcloudev.xyz", 4);
 
             // THEN
-            error.Should().BeOfType<OverBookingError>();
+            act.Should().Throw<OverBookingException>();
         }
     }
 }
