@@ -11,8 +11,8 @@
 
         public void Book(string passengerEmail, int numberOfSeats)
         {
-
-            if (numberOfSeats > this.RemainingNumberOfSeats)
+            // Check first for overbooking
+            if (numberOfSeats > RemainingNumberOfSeats)
             {
                 throw new OverBookingException();
             }

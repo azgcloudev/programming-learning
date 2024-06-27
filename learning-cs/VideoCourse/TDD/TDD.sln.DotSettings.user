@@ -1,8 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2c0049e7_002D516c_002D40a4_002Daa8e_002Dc5925cd8a172/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Sum_of_2_and_2_should_be_4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::98B5DBB8-8589-4806-989E-82B18D6F7CB4::net8.0::CalculatorTest.CalculatorTest.Sum_of_2_and_2_should_be_4&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::9EE810D3-17BC-4B3E-8166-865259A70C46::net8.0::FlightTest.FlightSpecifications.Booking_reduces_the_number_of_seats&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::9EE810D3-17BC-4B3E-8166-865259A70C46::net8.0::FlightTest.FlightSpecifications.Avoids_overbooking&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=64f27cb5_002D39a4_002D48d8_002D8854_002D43c6c2b00238/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;FlightTest&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="D:\Programming\Learning\programming-learning\learning-cs\VideoCourse\TDD\Flight" Presentation="&amp;lt;FlightTest&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
