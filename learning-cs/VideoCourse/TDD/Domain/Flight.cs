@@ -1,4 +1,6 @@
-﻿namespace Domain
+﻿using Domain.BookingErrors;
+
+namespace Domain
 {
     public class Flight
     {
@@ -25,6 +27,18 @@
             bookingList.Add(booking);
             
             RemainingNumberOfSeats -= numberOfSeats;
+        }
+
+        public object? CancelBooking(string passengerEmail, int cancelledSeats)
+        {
+            if (bookingList.All(booking => booking.Email != passengerEmail))
+            {
+                return new BookingNotFoundError();
+            }
+            
+            RemainingNumberOfSeats += cancelledSeats;
+
+            return null;
         }
     }
 }

@@ -1,5 +1,6 @@
 using Domain;
 using FluentAssertions;
+using Domain.BookingErrors;
 
 namespace FlightTest
 {
@@ -73,6 +74,43 @@ namespace FlightTest
             // correct way to check
             flight.BookingList.Should().ContainEquivalentOf(new Booking("a@me.com", 4));
 
+        }
+
+        [Theory]
+        [InlineData(3,1,1,3)]
+        [InlineData(100,3,3,100)]
+        public void Cancelling_bookings_frees_up_the_seats(int seatCapacity, int numberOfSeats,int seatsToCancel, int remainingSeats)
+        {
+            // given
+            var flight = new Flight(seatCapacity);
+            flight.Book("a@b.com",numberOfSeats);
+
+            // when
+            flight.CancelBooking("a@b.com", seatsToCancel);
+            
+            // then
+            flight.RemainingNumberOfSeats.Should().Be(remainingSeats);
+
+        }
+
+        [Fact]
+        public void Doesnt_cancel_booking_for_passenger_who_have_not_book()
+        {
+            var flight = new Flight(20);
+            
+            var error = flight.CancelBooking("a@b.com", 3);
+
+            error.Should().BeOfType<BookingNotFoundError>();
+        }
+
+        [Fact]
+        public void Returns_null_when_booking_cancelled()
+        {
+            var flight = new Flight(30);
+            flight.Book("a@b.com", 4);
+            var error = flight.CancelBooking("a@b.com", 4);
+
+            error.Should().BeNull();
         }
     }
 }
