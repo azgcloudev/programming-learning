@@ -4,10 +4,17 @@ namespace Domain
 {
     public class Flight
     {
+        public Guid Id { get; }
+
         private List<Booking> bookingList = new();
         public IEnumerable<Booking> BookingList => bookingList;
         
         public int RemainingNumberOfSeats { get; set; }
+
+        [Obsolete("Needed by EF")]
+        Flight()
+        {
+        }
 
         public Flight(int seatCapacity)
         {
