@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using System.IO;
+using Spectre.Console;
 
 namespace WorkingWithFileSystems;
 
@@ -35,5 +36,38 @@ partial class Program
         // render table in the console
         AnsiConsole.Write(table);
         #endregion
+        
+        WriteLine();
+        SectionTitle("Managing drives");
+
+        Table drives = new();
+
+        drives.AddColumn("[blue]NAME[/]");
+        drives.AddColumn("[blue]TYPE[/]");
+        drives.AddColumn("[blue]FORMAT[/]");
+        drives.AddColumn(new TableColumn(
+            "[blue]SIZE (BYTES)[/]").RightAligned());
+        drives.AddColumn(new TableColumn(
+            "[blue]FREE SPACE([/]").RightAligned());
+        
+        
+        
+
+        foreach (DriveInfo drive in DriveInfo.GetDrives())
+        {
+            if (drive.IsReady)
+            {
+                drives.AddRow(drive.Name, drive.DriveType.ToString(),
+                    drive.DriveFormat, drive.TotalSize.ToString("N0"),
+                        drive.AvailableFreeSpace.ToString("N0"));
+            }
+            else
+            {
+                drives.AddRow(drive.Name, drive.DriveType.ToString(),
+                    string.Empty, string.Empty, string.Empty);
+            }
+        }
+        // display table
+        AnsiConsole.Write(drives);
     }
 }
