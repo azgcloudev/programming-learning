@@ -69,5 +69,26 @@ partial class Program
         }
         // display table
         AnsiConsole.Write(drives);
+        
+        
+        //  ------- managing directories ----------------
+        SectionTitle("Managing directories");
+        string newFolder = Combine(GetFolderPath(SpecialFolder.Personal), "NewFolder");
+        WriteLine($"Working with: {newFolder}");
+        
+        // must explicitly say which Exists method to use
+        // because we statically imported both Path and Directory
+        WriteLine($"Does it exist? {Path.Exists(newFolder)}");
+        WriteLine("Creating it...");
+
+        CreateDirectory(newFolder);
+        
+        // Let's use the Directory.Exists method now
+        WriteLine($"Does it exist? {Directory.Exists(newFolder)}");
+        Write("Confirm the directory exists, and then press any key");
+        ReadKey(intercept: true);
+        WriteLine("Deleting it...");
+        Delete(newFolder, recursive: true);
+        WriteLine($"Does it exist? {Path.Exists(newFolder)}");
     }
 }
