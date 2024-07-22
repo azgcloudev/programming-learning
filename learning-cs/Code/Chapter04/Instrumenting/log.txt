@@ -1,5 +1,0 @@
-Trace says, I am watching!
-Trace error: True
-Trace warning: True
-Trace info: False
-Trace verbose: False

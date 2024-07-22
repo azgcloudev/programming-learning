@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEFCore", "WorkingWithEFCore\WorkingWithEFCore.csproj", "{AC46F09D-87B6-4D83-B861-BC831DABA73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.EntityModels", "Northwind.EntityModels\Northwind.EntityModels.csproj", "{CFA9D50A-762E-46E7-B8A9-136DE9FC9052}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC46F09D-87B6-4D83-B861-BC831DABA73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC46F09D-87B6-4D83-B861-BC831DABA73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC46F09D-87B6-4D83-B861-BC831DABA73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC46F09D-87B6-4D83-B861-BC831DABA73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA9D50A-762E-46E7-B8A9-136DE9FC9052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA9D50A-762E-46E7-B8A9-136DE9FC9052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA9D50A-762E-46E7-B8A9-136DE9FC9052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA9D50A-762E-46E7-B8A9-136DE9FC9052}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

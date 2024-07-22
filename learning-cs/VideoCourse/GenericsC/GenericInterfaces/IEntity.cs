@@ -1,0 +1,6 @@
+namespace GenericInterfaces;
+
+public interface IEntity
+{
+    public int Id { get; }
+}

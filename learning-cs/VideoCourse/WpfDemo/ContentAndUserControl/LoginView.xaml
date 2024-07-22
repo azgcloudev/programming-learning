@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ContentAndUserControl.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ContentAndUserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/> 
+        </Grid.RowDefinitions>
+        
+        <!-- label - login -->
+        <Label Content="Please login" Grid.Column="1" Grid.Row="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        
+        <!-- button - login -->
+        <Button Content="Login" Grid.Column="1" Grid.Row="3" Click="ButtonLogin_Clicked"/>
+    </Grid>
+</UserControl>
