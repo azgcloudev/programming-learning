@@ -1,0 +1,1 @@
+/Users/aldair/Programming/Learning/programming-learning/learning-rust/hello_cargo/target/debug/hello_cargo: /Users/aldair/Programming/Learning/programming-learning/learning-rust/hello_cargo/src/main.rs
