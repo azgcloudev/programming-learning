@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Net.Security;
 using Spectre.Console;
 
 namespace WorkingWithFileSystems;
@@ -90,5 +91,31 @@ partial class Program
         WriteLine("Deleting it...");
         Delete(newFolder, recursive: true);
         WriteLine($"Does it exist? {Path.Exists(newFolder)}");
+        
+        
+        
+        // =========== MANAGING FILES =================
+        SectionTitle("Managing files");
+        
+        // define a directory path to outoput files
+        // in the user's folder
+        string dir = Combine(GetFolderPath(SpecialFolder.Personal), "OutputFiles");
+
+        CreateDirectory(dir);
+        
+        // define file paths
+        string textFile = Combine(dir, "Dummy.txt");
+        string backupFile = Combine(dir, "Dummy.bak");
+        WriteLine($"Working with: {textFile}");
+        WriteLine($"Does it exists? {File.Exists(textFile)}");
+        
+        // create a new text file and write a line to it
+        StreamWriter textWriter = File.CreateText(textFile);
+        textWriter.WriteLine("Hello, C#!");
+        textWriter.Close(); // close the file to release resources
+        WriteLine($"Does it exist? {File.Exists(textFile)}");
+        
+        // copy the file and override if it already exists.
+        File.Copy(textFile,backupFile,true);
     }
 }
