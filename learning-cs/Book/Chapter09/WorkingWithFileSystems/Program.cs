@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Net.Security;
 using Spectre.Console;
 
 namespace WorkingWithFileSystems;
@@ -117,5 +116,34 @@ partial class Program
         
         // copy the file and override if it already exists.
         File.Copy(textFile,backupFile,true);
+        
+        WriteLine($"Does {backupFile} exist? {File.Exists(backupFile)}");
+        
+        Write("Confirm the files exist, and the press any key.");
+        ReadKey(intercept: true);
+        
+        // delete the file
+        File.Delete(textFile);
+        WriteLine($"Does it exist? {File.Exists(textFile)}");
+        
+        // read from the text file backup
+        WriteLine($"Reading contents of {backupFile}:");
+        StreamReader textReader = File.OpenText(backupFile);
+        WriteLine(textReader.ReadToEnd());
+        textReader.Close();
+        
+        
+        
+        
+        
+        // Managing paths
+        SectionTitle("Managing paths");
+        
+        WriteLine($"Folder Name: {GetDirectoryName(textFile)}");
+        WriteLine($"File Name: {GetFileName(textFile)}");
+        WriteLine("File Name without Extension: {0}", GetFileNameWithoutExtension(textFile));
+        WriteLine($"File Extension: {GetExtension(textFile)}");
+        WriteLine($"Random File Name: {GetRandomFileName()}");
+        WriteLine($"Temporary File Name: {GetTempFileName()}");
     }
 }
