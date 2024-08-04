@@ -12,7 +12,7 @@ c1.AboutToBlow += delegate
 
 c1.AboutToBlow += delegate(object sender, CarEventsArgs e)
 {
-    Console.WriteLine("Meesage from Car: {0}", e.msg);
+    Console.WriteLine("Message from Car: {0}", e.msg);
 };
 
 c1.Exploded += delegate(object sender, CarEventsArgs e)
@@ -23,6 +23,6 @@ c1.Exploded += delegate(object sender, CarEventsArgs e)
 // this will eventually trigger the events
 for (int i = 0; i < 6; i++)
 {
-    c1.Accelerate(10);
+    c1.Accelerate(20);
 }
 Console.ReadLine();
