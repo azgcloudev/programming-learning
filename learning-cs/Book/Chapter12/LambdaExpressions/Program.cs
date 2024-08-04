@@ -52,7 +52,12 @@ static void LambdaExpressionSyntax()
     list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });
     
     // use c# lambda expression
-    List<int> evenNumbers = list.FindAll(i => i % 2 == 0);
+    List<int> evenNumbers = list.FindAll((i) =>
+    {
+        Console.WriteLine("value of i is currently: {0}", i);
+        bool isEven = (i % 2) == 0;
+        return isEven;
+    });
     
     Console.WriteLine("Here are your even numbers:");
     foreach (int evenNumber in evenNumbers)
