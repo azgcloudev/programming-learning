@@ -15,6 +15,16 @@ m.SetMathHandler((msg, result) =>
 
 m.Add(10,10);
 
+// discards
+var outerVariable = 0;
+Func<int, int, bool> DoWork = (x, y) =>
+{
+    outerVariable++;
+    return true;
+};
+DoWork(_, _); // discards can be minimum 2, can not be just 1 discard in the parameters
+Console.WriteLine("Outer variable now is {0}", outerVariable);
+
 Console.ReadLine();
 
 static void TraditionalDelegateSyntax()
