@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicDelegateProblem", "Pu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEvents", "CarEvents\CarEvents.csproj", "{9451803B-A07E-4772-A3C4-074CF74DB6E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomEventArguments", "CustomEventArguments\CustomEventArguments.csproj", "{BD722E96-229E-431F-BC13-5983A58AC531}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9451803B-A07E-4772-A3C4-074CF74DB6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9451803B-A07E-4772-A3C4-074CF74DB6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9451803B-A07E-4772-A3C4-074CF74DB6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD722E96-229E-431F-BC13-5983A58AC531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD722E96-229E-431F-BC13-5983A58AC531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD722E96-229E-431F-BC13-5983A58AC531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD722E96-229E-431F-BC13-5983A58AC531}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
