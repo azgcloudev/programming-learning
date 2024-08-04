@@ -7,7 +7,7 @@ var c1 = new Car("SlugBug", 100, 10);
 c1.Exploded += CarAboutToBlow;
 c1.AboutToBlow += CarIsAlmostDoomed;
 
-Car.CarEngineHandler d = CarExploded;
+EventHandler<CarEventsArgs> d = CarExploded;
 c1.Exploded += d;
 
 Console.WriteLine("***** Speeding up *****");

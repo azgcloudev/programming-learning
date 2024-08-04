@@ -12,8 +12,8 @@ public class Car
     public string Name { get; set; }
     
     // this car can send the events:
-    public event CarEngineHandler Exploded;
-    public event CarEngineHandler AboutToBlow;
+    public event EventHandler<CarEventsArgs> Exploded;
+    public event EventHandler<CarEventsArgs> AboutToBlow; 
 
     public Car()
     {
