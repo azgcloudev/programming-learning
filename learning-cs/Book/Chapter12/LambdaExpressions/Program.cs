@@ -1,9 +1,19 @@
-﻿Console.WriteLine("***** Fun with Lambdas *****");
+﻿using LambdaExpressions;
+
+Console.WriteLine("***** Fun with Lambdas *****");
 
 TraditionalDelegateSyntax();
 AnonymousMethodSyntax();
 LambdaExpressionSyntax();
 
+// multiple parameter lambda expression
+SimpleMath m = new SimpleMath();
+m.SetMathHandler((msg, result) =>
+{
+    Console.WriteLine("Message: {0}, Result: {1}", msg, result);
+});
+
+m.Add(10,10);
 
 Console.ReadLine();
 
