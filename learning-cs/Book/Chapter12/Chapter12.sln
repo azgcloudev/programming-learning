@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionAndFuncDelegates", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicDelegateProblem", "PublicDelegateProblem\PublicDelegateProblem.csproj", "{0A989842-8E7D-42AD-BF38-19599757A4DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEvents", "CarEvents\CarEvents.csproj", "{9451803B-A07E-4772-A3C4-074CF74DB6E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0A989842-8E7D-42AD-BF38-19599757A4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A989842-8E7D-42AD-BF38-19599757A4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A989842-8E7D-42AD-BF38-19599757A4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9451803B-A07E-4772-A3C4-074CF74DB6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9451803B-A07E-4772-A3C4-074CF74DB6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9451803B-A07E-4772-A3C4-074CF74DB6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9451803B-A07E-4772-A3C4-074CF74DB6E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
