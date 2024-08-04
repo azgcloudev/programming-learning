@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEvents", "CarEvents\CarE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomEventArguments", "CustomEventArguments\CustomEventArguments.csproj", "{BD722E96-229E-431F-BC13-5983A58AC531}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymousMethods", "AnonymousMethods\AnonymousMethods.csproj", "{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BD722E96-229E-431F-BC13-5983A58AC531}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD722E96-229E-431F-BC13-5983A58AC531}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD722E96-229E-431F-BC13-5983A58AC531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
