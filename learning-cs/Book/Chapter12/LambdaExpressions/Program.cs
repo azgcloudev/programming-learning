@@ -22,8 +22,16 @@ Func<int, int, bool> DoWork = (x, y) =>
     outerVariable++;
     return true;
 };
-DoWork(_, _); // discards can be minimum 2, can not be just 1 discard in the parameters
-Console.WriteLine("Outer variable now is {0}", outerVariable);
+//DoWork(_, _); // discards can be minimum 2, can not be just 1 discard in the parameters
+//Console.WriteLine("Outer variable now is {0}", outerVariable);
+
+
+// expresion bodie members
+Console.WriteLine("***** Expression bodie members *****");
+var sm = new SimpleMath();
+Console.WriteLine(sm.AddTwoNumbers(3,3));
+sm.PrintSum(10,20);
+
 
 Console.ReadLine();
 

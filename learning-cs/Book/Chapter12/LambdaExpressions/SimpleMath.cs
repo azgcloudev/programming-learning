@@ -15,4 +15,9 @@ public class SimpleMath
     {
         _mmDelegate?.Invoke("Adding has completed!", x + y);
     }
+
+    // lambda and expression bodie members
+    public int AddTwoNumbers(int x, int y) => x + y;
+    public void PrintSum(int x, int y) => Console.WriteLine(x + y);
+
 }
