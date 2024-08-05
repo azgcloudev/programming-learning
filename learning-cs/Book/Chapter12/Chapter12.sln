@@ -9,15 +9,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarDelegate", "CarDelegate\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericDelegate", "GenericDelegate\GenericDelegate.csproj", "{0A116EB5-975E-4FB4-96F2-479DC0DC7D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionAndFuncDelegates", "ActionAndFuncDelegates\ActionAndFuncDelegates.csproj", "{01356588-5771-41C1-983C-3A6908D37684}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActionAndFuncDelegates", "ActionAndFuncDelegates\ActionAndFuncDelegates.csproj", "{01356588-5771-41C1-983C-3A6908D37684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicDelegateProblem", "PublicDelegateProblem\PublicDelegateProblem.csproj", "{0A989842-8E7D-42AD-BF38-19599757A4DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicDelegateProblem", "PublicDelegateProblem\PublicDelegateProblem.csproj", "{0A989842-8E7D-42AD-BF38-19599757A4DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEvents", "CarEvents\CarEvents.csproj", "{9451803B-A07E-4772-A3C4-074CF74DB6E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarEvents", "CarEvents\CarEvents.csproj", "{9451803B-A07E-4772-A3C4-074CF74DB6E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomEventArguments", "CustomEventArguments\CustomEventArguments.csproj", "{BD722E96-229E-431F-BC13-5983A58AC531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomEventArguments", "CustomEventArguments\CustomEventArguments.csproj", "{BD722E96-229E-431F-BC13-5983A58AC531}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymousMethods", "AnonymousMethods\AnonymousMethods.csproj", "{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnonymousMethods", "AnonymousMethods\AnonymousMethods.csproj", "{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaExpressions", "LambdaExpressions\LambdaExpressions.csproj", "{EB843B6A-F9B0-4BFE-A505-4047D3C20E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWithLambda", "CarWithLambda\CarWithLambda.csproj", "{6985E6C5-5238-45D0-92FE-7952FD9C2404}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{474FB4C6-744A-4EC4-974B-85E9A48EE3F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB843B6A-F9B0-4BFE-A505-4047D3C20E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB843B6A-F9B0-4BFE-A505-4047D3C20E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB843B6A-F9B0-4BFE-A505-4047D3C20E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB843B6A-F9B0-4BFE-A505-4047D3C20E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6985E6C5-5238-45D0-92FE-7952FD9C2404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6985E6C5-5238-45D0-92FE-7952FD9C2404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6985E6C5-5238-45D0-92FE-7952FD9C2404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6985E6C5-5238-45D0-92FE-7952FD9C2404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
