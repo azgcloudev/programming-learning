@@ -99,6 +99,15 @@ static void QueryOverInts()
     {
         Console.WriteLine("Item: {0}", i);
     }
+
+    Console.WriteLine();
+    
+    // deferred execution
+    numbers[0] = 4;
+    foreach (var i in subset)
+    {
+        Console.WriteLine("{0} < 10", i);
+    }
     ReflecOverQueryResults(subset);
 }
 
