@@ -8,6 +8,7 @@ QueryOverStrings();
 QueryOverStringsWithExtensionMethods();
 QueryOverStringsLongHand();
 QueryOverInts();
+DefaultWhenEmpty();
 
 // Console.ReadLine();
 
@@ -109,6 +110,28 @@ static void QueryOverInts()
         Console.WriteLine("{0} < 10", i);
     }
     ReflecOverQueryResults(subset);
+}
+
+static void DefaultWhenEmpty()
+{
+    Console.WriteLine("\n***** Default when empty *****");
+    List<int> numbers = new List<int>() { 10, 20, 30, 40, 1, 2, 3, 8 };
+    
+    // returns all the numbers
+    foreach (var i in numbers.DefaultIfEmpty(-1))
+    {
+        Console.WriteLine("{0}", i);
+    }
+
+    Console.WriteLine();
+    
+    // return -1 since the sequence is empty
+    foreach (var i in (from i in numbers where i > 99 select i).DefaultIfEmpty(-1))
+    {
+        Console.WriteLine($"{i}");
+    }
+
+    Console.WriteLine();
 }
 
 static void ReflecOverQueryResults(object resultSet, string queryType = "Query Expressions")
