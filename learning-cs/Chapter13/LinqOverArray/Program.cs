@@ -130,8 +130,17 @@ static void DefaultWhenEmpty()
     {
         Console.WriteLine($"{i}");
     }
-
     Console.WriteLine();
+}
+
+static void InmediateExecution()
+{
+    Console.WriteLine();
+    Console.WriteLine("\n***** Inmediate Execution *****");
+    int[] numbers = new int[] { 10, 20, 30, 40, 1, 2, 3, 8 };
+    
+    // get the first element in sequence number
+    
 }
 
 static void ReflecOverQueryResults(object resultSet, string queryType = "Query Expressions")

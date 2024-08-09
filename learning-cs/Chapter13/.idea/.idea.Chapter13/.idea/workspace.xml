@@ -47,9 +47,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "/Users/aldair/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
-      "/Users/aldair/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
-      "/Users/aldair/Library/Application Support/Symbols/src"
+      "C:\\Users\\aldai\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\aldai\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\aldai\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -83,6 +83,7 @@
       <updated>1722834560257</updated>
       <workItem from="1722834562223" duration="3131000" />
       <workItem from="1723093389857" duration="2469000" />
+      <workItem from="1723174996401" duration="2719000" />
     </task>
     <servers />
   </component>
@@ -92,25 +93,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LinqOverArray/Program.cs</url>
-          <line>94</line>
-          <properties documentPath="$PROJECT_DIR$/LinqOverArray/Program.cs" containingFunctionPresentation="Local function 'QueryOverInts'">
-            <startOffsets>
-              <option value="2341" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2394" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
