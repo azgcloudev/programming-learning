@@ -9,6 +9,7 @@ QueryOverStringsWithExtensionMethods();
 QueryOverStringsLongHand();
 QueryOverInts();
 DefaultWhenEmpty();
+ImmediateExecution();
 
 // Console.ReadLine();
 
@@ -133,14 +134,64 @@ static void DefaultWhenEmpty()
     Console.WriteLine();
 }
 
-static void InmediateExecution()
+static void ImmediateExecution()
 {
     Console.WriteLine();
     Console.WriteLine("\n***** Inmediate Execution *****");
     int[] numbers = new int[] { 10, 20, 30, 40, 1, 2, 3, 8 };
     
     // get the first element in sequence number
-    
+    int number = (from i in numbers select i).First();
+    Console.WriteLine("First is {0}", number);
+
+    // get the first in query order
+    number = (from i in numbers orderby i select i).First();
+    Console.WriteLine("First is {0}", number);
+
+    // get the one element that matches the query
+    number = (from i in numbers where i > 30 select i).Single();
+    Console.WriteLine("Single is {0}", number);
+
+    // return null if nothing is returned
+    number = (from i in numbers where i > 99 select i).FirstOrDefault();
+    number = (from i in numbers where i > 99 select i).SingleOrDefault();
+    try
+    {
+        // throw an exception if no records found
+        number = (from i in numbers where i > 99 select i).First();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("An exception occurred: {0}", ex.Message);
+    }
+
+    try
+    {
+        // throw an exception if no record found
+        number = (from i in numbers where i > 99 select i).Single();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("An exception occurred: {0}", ex.Message);
+    }
+
+    try
+    {
+        //Throw an exception if more than one element passes the query
+        number = (from i in numbers where i > 10 select 1).Single();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("An exception occurred: {0}", ex.Message);
+    }
+
+    // get data right now as int[]
+    int[] subsetAsIntArray = (from i in numbers where i > 10 select i).ToArray<int>();
+    Console.WriteLine(subsetAsIntArray.GetType().Name);
+
+    // get data right now as List<int>
+    List<int> subsetAsListOfInts = (from i in numbers where i > 10 select i).ToList<int>();
+    Console.WriteLine(subsetAsListOfInts.GetType().Name);
 }
 
 static void ReflecOverQueryResults(object resultSet, string queryType = "Query Expressions")
