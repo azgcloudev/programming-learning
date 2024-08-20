@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqOverArray", "LinqOverArray\LinqOverArray.csproj", "{72A79044-8370-4F29-8380-4383CF1A7AC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqRetValues", "LinqRetValues\LinqRetValues.csproj", "{ADC10A45-BC1E-4A60-867E-9F4942C04944}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{72A79044-8370-4F29-8380-4383CF1A7AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72A79044-8370-4F29-8380-4383CF1A7AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72A79044-8370-4F29-8380-4383CF1A7AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADC10A45-BC1E-4A60-867E-9F4942C04944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADC10A45-BC1E-4A60-867E-9F4942C04944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC10A45-BC1E-4A60-867E-9F4942C04944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADC10A45-BC1E-4A60-867E-9F4942C04944}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
