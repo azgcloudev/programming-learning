@@ -10,6 +10,7 @@ QueryOverStringsLongHand();
 QueryOverInts();
 DefaultWhenEmpty();
 ImmediateExecution();
+SettingDefaults();
 
 // Console.ReadLine();
 
@@ -199,4 +200,17 @@ static void ReflecOverQueryResults(object resultSet, string queryType = "Query E
     Console.WriteLine($"***** Info about your query using {queryType} *****");
     Console.WriteLine("resultSet is of type {0}", resultSet.GetType().Name);
     Console.WriteLine("resultSet location: {0}", resultSet.GetType().Assembly.GetName().Name);
+}
+
+static void SettingDefaults()
+{
+    Console.WriteLine("\n***** Defaults *****");
+    int[] numbers = Array.Empty<int>();
+    var query = from i in numbers where i > 100 select i;
+    var number = query.FirstOrDefault(-1);
+    Console.WriteLine(number);
+    number = query.SingleOrDefault(-2);
+    Console.WriteLine(number);
+    number = query.LastOrDefault(-3);
+    Console.WriteLine(number);
 }

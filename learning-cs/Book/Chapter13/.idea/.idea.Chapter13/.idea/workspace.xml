@@ -34,15 +34,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.LinqOverArray.executor": "Debug",
+    ".NET Project.LinqOverArray.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -84,6 +85,7 @@
       <workItem from="1722834562223" duration="3131000" />
       <workItem from="1723093389857" duration="2469000" />
       <workItem from="1723174996401" duration="2719000" />
+      <workItem from="1724127121070" duration="831000" />
     </task>
     <servers />
   </component>
