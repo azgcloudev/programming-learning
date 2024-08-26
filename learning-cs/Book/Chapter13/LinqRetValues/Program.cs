@@ -13,6 +13,8 @@ foreach (var item in GetStringSubsetAsArray())
 {
     Console.WriteLine(item);
 }
+
+
 // =====================================
 
 static IEnumerable<string> GetStringSubset()
