@@ -42,6 +42,15 @@ class Program
         
         SelectEverything(itemsInStock);
 
+        Console.WriteLine();
+        ListProductNames(itemsInStock);
+
+        Console.WriteLine();
+        GetOverstock(itemsInStock);
+
+        Console.WriteLine();
+        PagingWithLINQ(itemsInStock);
+
         Console.ReadLine();
     }
 
@@ -60,4 +69,51 @@ class Program
             Console.WriteLine(p.ToString());
         }
     }
+
+    static void ListProductNames(ProductInfo[] products)
+    {
+        // Get only name of products
+        Console.WriteLine("***** Get only product names *****");
+
+        var names = from p in products select p.Name;
+
+        foreach (var name in names)
+        {
+            Console.WriteLine("Name: {0}", name);
+        }
+    }
+
+    /// <summary>
+    /// Get a subset of items based on a condition.
+    /// </summary>
+    /// <param name="products">IEnumerable object.</param>
+    static void GetOverstock(ProductInfo[] products)
+    {
+        Console.WriteLine("***** Get overstock products *****");
+        var overstock = from p in products where p.NumberInStock > 25 
+                        select p;
+
+        foreach(var p in overstock)
+        {
+            Console.WriteLine(p.ToString());
+        }
+    }
+    static void PagingWithLINQ(ProductInfo[] products)
+    {
+        Console.WriteLine("***** Paging Operation *****");
+
+        // only take the first 3 results
+        IEnumerable<ProductInfo> list = (from p in products select p).Take(3);
+        OutputResults("The first 3", list);
+
+        static void OutputResults(string message, IEnumerable<ProductInfo> products)
+        {
+            Console.WriteLine(message);
+            foreach (ProductInfo p in products)
+            {
+                Console.WriteLine("\t{0}", p.ToString());
+            }
+        }
+    }
+
 }
