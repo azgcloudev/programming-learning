@@ -39,7 +39,7 @@ class Program
                 NumberInStock = 73
             }
         };
-        
+
         SelectEverything(itemsInStock);
 
         Console.WriteLine();
@@ -53,6 +53,12 @@ class Program
 
         Console.WriteLine();
         PagingWithRanges(itemsInStock);
+        
+        Console.WriteLine();
+        PagingWithChunks(itemsInStock);
+
+        Console.WriteLine();
+        GetNamesAndDescriptions(itemsInStock);
 
         Console.ReadLine();
     }
@@ -64,7 +70,7 @@ class Program
     static void SelectEverything(ProductInfo[] products)
     {
         Console.WriteLine("***** Select all products *****");
-        
+
         var allProducts = from p in products select p;
 
         foreach (var p in allProducts)
@@ -93,14 +99,16 @@ class Program
     static void GetOverstock(ProductInfo[] products)
     {
         Console.WriteLine("***** Get overstock products *****");
-        var overstock = from p in products where p.NumberInStock > 25 
-                        select p;
+        var overstock = from p in products
+            where p.NumberInStock > 25
+            select p;
 
-        foreach(var p in overstock)
+        foreach (var p in overstock)
         {
             Console.WriteLine(p.ToString());
         }
     }
+
     static void PagingWithLINQ(ProductInfo[] products)
     {
         Console.WriteLine("***** Paging Operation *****");
@@ -167,12 +175,46 @@ class Program
         {
             Console.WriteLine(message);
 
-            foreach(ProductInfo p in products)
+            foreach (ProductInfo p in products)
             {
                 Console.WriteLine(p.ToString());
             }
         }
     }
 
-   
+    static void PagingWithChunks(ProductInfo[] products)
+    {
+        Console.WriteLine("***** Paging with chunks *****");
+
+        IEnumerable<ProductInfo[]> chunks = products.Chunk(size: 2);
+
+        var counter = 0;
+
+        foreach (var chunk in chunks)
+        {
+            OutputResults($"Chunk #{++counter}", chunk);
+        }
+
+        static void OutputResults(string message, IEnumerable<ProductInfo> products)
+        {
+            Console.WriteLine(message);
+            foreach (var product in products)
+            {
+                Console.WriteLine(product.ToString());
+            }
+        }
+    }
+
+    static void GetNamesAndDescriptions(ProductInfo[] products)
+    {
+        Console.WriteLine("***** Names and descriptions *****");
+
+        var nameDesc = from p in products
+            select new { p.Name, p.Description };
+
+        foreach (var item in nameDesc)
+        {
+            Console.WriteLine(item.ToString());
+        }
+    }
 }
