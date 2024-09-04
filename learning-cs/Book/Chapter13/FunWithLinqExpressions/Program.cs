@@ -53,12 +53,15 @@ class Program
 
         Console.WriteLine();
         PagingWithRanges(itemsInStock);
-        
+
         Console.WriteLine();
         PagingWithChunks(itemsInStock);
 
         Console.WriteLine();
         GetNamesAndDescriptions(itemsInStock);
+
+        Console.WriteLine();
+        GetCountFromQuery();
 
         Console.ReadLine();
     }
@@ -216,5 +219,20 @@ class Program
         {
             Console.WriteLine(item.ToString());
         }
+    }
+
+    // count Enumerables
+    static void GetCountFromQuery()
+    {
+        string[] currentVideogames = { "Morrowind", "Uncharted 2", "Fallout 3", "Daxter", "System Shock 2" };
+
+        // get count from query
+        int numb = (from vg in currentVideogames
+            where vg.Length > 6
+            select
+                vg).Count();
+        
+        // print the number of items
+        Console.WriteLine("{0} items honor the LINQ query.", numb);
     }
 }

@@ -10,10 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15b00b54-dedf-44ad-9456-61923825bee7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Chapter13/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Chapter13/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FunWithLinqExpressions/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FunWithLinqExpressions/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="15b00b54-dedf-44ad-9456-61923825bee7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +26,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3f1f4402a25a494bb02dd8beeca5cb8fd82000/19/bda83066/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8d632098f1cb4a61b0ed7e2b63cd2b5590c00/6a/c9a3d171/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -157,6 +158,7 @@
       <workItem from="1725235113170" duration="1027000" />
       <workItem from="1725237008564" duration="716000" />
       <workItem from="1725340561746" duration="2429000" />
+      <workItem from="1725345014366" duration="516000" />
     </task>
     <servers />
   </component>
