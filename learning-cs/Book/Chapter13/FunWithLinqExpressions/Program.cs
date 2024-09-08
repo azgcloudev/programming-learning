@@ -63,6 +63,15 @@ class Program
         Console.WriteLine();
         GetCountFromQuery();
 
+        Console.WriteLine();
+        GetUnenumeratedCount(itemsInStock);
+
+        Console.WriteLine();
+        GetEnumeratedCountFailed(itemsInStock);
+
+        Console.WriteLine();
+        ReverseEverything(itemsInStock);
+
         Console.ReadLine();
     }
 
@@ -234,5 +243,58 @@ class Program
         
         // print the number of items
         Console.WriteLine("{0} items honor the LINQ query.", numb);
+    }
+
+    static void GetUnenumeratedCount(ProductInfo[] products)
+    {
+        Console.WriteLine("***** Get Unenumerated count *****");
+
+        IEnumerable<ProductInfo> query = from p in products select p;
+        var result = query.TryGetNonEnumeratedCount(out int count);
+
+        if (result)
+        {
+            Console.WriteLine($"Total count: {count}");
+        }
+        else
+        {
+            Console.WriteLine("Try get count failed");
+        }
+    }
+
+    static void GetEnumeratedCountFailed(ProductInfo[] products)
+    {
+        Console.WriteLine("***** Get Unenumerated count failed *****");
+
+        var newResult = GetProduct(products).TryGetNonEnumeratedCount(out int count);
+
+        if (newResult)
+        {
+            Console.WriteLine($"Total count: {count}");
+        }
+        else
+        {
+            Console.WriteLine("Try get count failed");
+        }
+
+        static IEnumerable<ProductInfo> GetProduct(ProductInfo[] products)
+        {
+            for (int i = 0; i < products.Count(); i++)
+            {
+                yield return products[i];
+            }
+        }
+    }
+
+    // reverse function
+    static void ReverseEverything(ProductInfo[] products)
+    {
+        Console.WriteLine("Products in reverse:");
+        var allProducts = from p in products select p;
+
+        foreach (var p in allProducts.Reverse())
+        {
+            Console.WriteLine(p.ToString());
+        }
     }
 }
