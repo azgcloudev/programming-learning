@@ -72,6 +72,15 @@ class Program
         Console.WriteLine();
         ReverseEverything(itemsInStock);
 
+        Console.WriteLine();
+        AlphabetizeProductNames(itemsInStock);
+
+        Console.WriteLine();
+        DisplayDiff();
+
+        Console.WriteLine();
+        DisplayIntersection();
+
         Console.ReadLine();
     }
 
@@ -296,5 +305,76 @@ class Program
         {
             Console.WriteLine(p.ToString());
         }
+    }
+    
+    // sorting using ascending and descending
+    static void AlphabetizeProductNames(ProductInfo[] products)
+    {
+        // ascending is the default for 'orderby'
+        Console.WriteLine("***** Order by ascending name: *****");
+
+        var subset = from p in products
+            orderby p.Name
+            select p;
+        foreach (var p in subset)
+        {
+            Console.WriteLine(p.ToString());
+        }
+
+        Console.WriteLine("\n***** Order by descending name: *****");
+
+        subset = from p in products orderby p.Name
+            descending select p;
+        foreach (var p in subset)
+        {
+            Console.WriteLine(p.ToString());
+        }
+    }
+    
+    // Except() in Enumerable class
+    static void DisplayDiff()
+    {
+        List<string> myCars = new List<string>()
+        {
+            "Yugo", "Aztec", "BMW"
+        };
+        List<string> yourCars = new List<string>()
+        {
+            "BMW", "Saab", "Aztec"
+        };
+
+        var carDiff = (from c in myCars select c)
+            .Except(from c in yourCars select c);
+
+        Console.WriteLine(">>>>> Here is what you don't have but I do: <<<<<");
+        foreach (var c in carDiff)
+        {
+            Console.WriteLine(c); // should print Yugo
+        }
+    }
+    
+    // Intersect() Enumerable class method
+    // return something that is in both sides
+    static void DisplayIntersection()
+    {
+        List<string> myCars = new List<string>()
+        {
+            "Yugo", "Aztec", "BMW"
+        };
+        List<string> yourCars = new List<string>()
+        {
+            "BMW", "Saab", "Aztec"
+        };
+
+        Console.WriteLine(">>>>> Cars we have in common: <<<<<");
+
+        var carIntersection = (from c in myCars select c)
+            .Intersect(from c in yourCars select c);
+
+        foreach (var c in carIntersection)
+        {
+            Console.WriteLine(c);
+        }
+
     }
 }
