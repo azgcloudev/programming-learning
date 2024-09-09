@@ -1,4 +1,8 @@
-﻿namespace FunWithLinqExpressions;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace FunWithLinqExpressions;
 
 class Program
 {
@@ -80,6 +84,15 @@ class Program
 
         Console.WriteLine();
         DisplayIntersection();
+
+        Console.WriteLine();
+        DisplayUnion();
+
+        Console.WriteLine();
+        DisplayConcat();
+
+        Console.WriteLine();
+        DisplayDiffBySelector();
 
         Console.ReadLine();
     }
@@ -249,7 +262,7 @@ class Program
             where vg.Length > 6
             select
                 vg).Count();
-        
+
         // print the number of items
         Console.WriteLine("{0} items honor the LINQ query.", numb);
     }
@@ -306,7 +319,7 @@ class Program
             Console.WriteLine(p.ToString());
         }
     }
-    
+
     // sorting using ascending and descending
     static void AlphabetizeProductNames(ProductInfo[] products)
     {
@@ -323,14 +336,16 @@ class Program
 
         Console.WriteLine("\n***** Order by descending name: *****");
 
-        subset = from p in products orderby p.Name
-            descending select p;
+        subset = from p in products
+            orderby p.Name
+                descending
+            select p;
         foreach (var p in subset)
         {
             Console.WriteLine(p.ToString());
         }
     }
-    
+
     // Except() in Enumerable class
     static void DisplayDiff()
     {
@@ -352,7 +367,7 @@ class Program
             Console.WriteLine(c); // should print Yugo
         }
     }
-    
+
     // Intersect() Enumerable class method
     // return something that is in both sides
     static void DisplayIntersection()
@@ -375,6 +390,63 @@ class Program
         {
             Console.WriteLine(c);
         }
+    }
 
+    // Union() from linq Enumerable
+    // combine same objects from two sets
+    static void DisplayUnion()
+    {
+        List<string> myCars = new List<string>() { "Yugo", "Aztec", "BMW" };
+        List<string> yourCars = new List<string>() { "BMW", "Saab", "Aztec" };
+
+        // get the union of this containers
+        var carUnion = (from c in myCars select c)
+            .Union(from c in yourCars select c);
+
+        Console.WriteLine("***** Here is everything using Union(): *****");
+        foreach (var c in carUnion)
+        {
+            Console.WriteLine(c);
+        }
+    }
+    
+    // Concat() from linq Enumerable
+    // combine all elements from containers
+    static void DisplayConcat()
+    {
+        List<string> myCars = new List<string>() { "Yugo", "Aztec", "BMW" };
+        List<string> yourCars = new List<string>() { "BMW", "Saab", "Aztec" };
+
+        var carsConcat = (from c in myCars select c)
+            .Concat(from c in yourCars select c);
+
+        Console.WriteLine(">>>>> Concat all cars <<<<<");
+        foreach (var c in carsConcat)
+        {
+            Console.WriteLine(c);
+        }
+    }
+
+    static void DisplayDiffBySelector()
+    {
+        var first = new (string Name, int Age)[]
+        {
+            ("Francis", 20), ("Lindsey", 30), ("Ashley", 40)
+        };
+        var second = new (string Name, int Age)[] 
+        {
+            ("Claire", 30), ("Pat", 30), ("Drew", 30)
+        };
+
+        List<int> firstNumbers = new List<int>() { 1, 2, 3, 4, 5 };
+        List<int> secondNumbers = new List<int>() { 3, 4, 5 };
+
+        var result = first.ExceptBy(second.Select(x => x.Age), product => product.Age);
+        var numbersResult = firstNumbers.ExceptBy(secondNumbers);
+        Console.WriteLine(">>>>> Except for by selector: <<<<<");
+        foreach (var item in result)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
