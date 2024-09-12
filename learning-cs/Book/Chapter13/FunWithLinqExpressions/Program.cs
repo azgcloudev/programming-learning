@@ -106,6 +106,12 @@ class Program
         Console.WriteLine();
         DisplayConcatNoDupsBySelector();
 
+        Console.WriteLine();
+        AggregateOps();
+
+        Console.WriteLine();
+        AggregateOpsBySelector(itemsInStock);
+
         Console.ReadLine();
     }
 
@@ -535,11 +541,43 @@ class Program
         };
 
         var result = first.Concat(second).DistinctBy(x => x.Age);
-        
+
         Console.WriteLine(">>>>> Dictinct by selector <<<<<");
         foreach (var item in result)
         {
             Console.WriteLine(item);
         }
+    }
+
+
+    // LINQ AGGREGATION OPERATIONS
+    static void AggregateOps()
+    {
+        double[] winterTemps = { 2.0, -21.3, 8, -4, 0, 8.2 };
+
+        // Max
+        var maxResult = (from t in winterTemps select t).Max();
+        // Min
+        var minResult = (from t in winterTemps select t).Min();
+        // Average
+        var averageResult = (from t in winterTemps select t).Average();
+        // Sum
+        var sumResult = (from t in winterTemps select t).Sum();
+
+        Console.WriteLine(">>>>> Aggregation operations <<<<<");
+        Console.WriteLine($"""
+                           Max temp is {maxResult}
+                           Min temp is {minResult}
+                           Average temp is {averageResult:N2}
+                           Sum of temps is {sumResult:N2}
+                           """);
+    }
+
+    static void AggregateOpsBySelector(ProductInfo[] products)
+    {
+        Console.WriteLine(">>>>> Aggregation by selector MaxBy() & MinBy() <<<<<");
+
+        Console.WriteLine("Max by In Stock: {0}", products.MaxBy(x => x.NumberInStock));
+        Console.WriteLine("Min by In Stock: {0}", products.MinBy(x => x.NumberInStock));
     }
 }
