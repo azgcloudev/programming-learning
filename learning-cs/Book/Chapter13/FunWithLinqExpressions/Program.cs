@@ -94,6 +94,18 @@ class Program
         Console.WriteLine();
         DisplayDiffBySelector();
 
+        Console.WriteLine();
+        DisplayIntersectionBySelector();
+
+        Console.WriteLine();
+        DisplayUnionBySelector();
+
+        Console.WriteLine();
+        DisplayConcatNoDups();
+
+        Console.WriteLine();
+        DisplayConcatNoDupsBySelector();
+
         Console.ReadLine();
     }
 
@@ -409,7 +421,7 @@ class Program
             Console.WriteLine(c);
         }
     }
-    
+
     // Concat() from linq Enumerable
     // combine all elements from containers
     static void DisplayConcat()
@@ -433,17 +445,98 @@ class Program
         {
             ("Francis", 20), ("Lindsey", 30), ("Ashley", 40)
         };
-        var second = new (string Name, int Age)[] 
+        var second = new (string Name, int Age)[]
         {
             ("Claire", 30), ("Pat", 30), ("Drew", 30)
         };
 
-        List<int> firstNumbers = new List<int>() { 1, 2, 3, 4, 5 };
-        List<int> secondNumbers = new List<int>() { 3, 4, 5 };
-
         var result = first.ExceptBy(second.Select(x => x.Age), product => product.Age);
-        var numbersResult = firstNumbers.ExceptBy(secondNumbers);
+
         Console.WriteLine(">>>>> Except for by selector: <<<<<");
+        foreach (var item in result)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    // IntersectBy() returns only one result that matches the 
+    // selector value
+    static void DisplayIntersectionBySelector()
+    {
+        var first = new (string Name, int Age)[]
+        {
+            ("Francis", 20), ("Lindsey", 30), ("Ashley", 40)
+        };
+        var second = new (string Name, int Age)[]
+        {
+            ("Claire", 30), ("Pat", 30), ("Drew", 30)
+        };
+
+        var result = first.IntersectBy(second.Select(x => x.Age), person => person.Age);
+
+        Console.WriteLine(">>>>> Intersection by selector <<<<<");
+        foreach (var item in result)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    /// <summary>
+    /// The UnionBy() return all the values from the selector. It returns the first one and do not
+    /// returns duplicate values for the same value of the selector
+    /// </summary>
+    static void DisplayUnionBySelector()
+    {
+        var first = new (string Name, int Age)[]
+        {
+            ("Francis", 20), ("Lindsey", 30), ("Ashley", 40)
+        };
+        var second = new (string Name, int Age)[]
+        {
+            ("Claire", 30), ("Pat", 30), ("Drew", 33)
+        };
+
+        var result = first.UnionBy(second, person => person.Age);
+
+        Console.WriteLine(">>>>> Union by selector: <<<<<");
+        foreach (var item in result)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    static void DisplayConcatNoDups()
+    {
+        List<string> myCars = new List<string>() { "Yugo", "Aztec", "BMW" };
+        List<string> yourCars = new List<string>() { "BMW", "Saab", "Aztec" };
+
+        var carConcat = (from c in myCars select c).Concat(from c in yourCars select c);
+
+        Console.WriteLine(">>>> DIsplay concatenation with no duplicates using Distinct() <<<<<");
+        foreach (var car in carConcat.Distinct())
+        {
+            Console.WriteLine(car);
+        }
+    }
+
+    /// <summary>
+    /// For the distinct only returns the first match of the selector matched value.
+    /// </summary>
+    static void DisplayConcatNoDupsBySelector()
+    {
+        var first = new (string Name, int Age)[]
+        {
+            ("Francis", 20), ("Lindsey", 30),
+            ("Ashley", 40)
+        };
+        var second = new (string Name, int Age)[]
+        {
+            ("Claire", 30), ("Pat", 30), ("Drew", 33)
+        };
+
+        var result = first.Concat(second).DistinctBy(x => x.Age);
+        
+        Console.WriteLine(">>>>> Dictinct by selector <<<<<");
         foreach (var item in result)
         {
             Console.WriteLine(item);
