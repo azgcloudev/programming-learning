@@ -10,6 +10,10 @@ string pID = Console.ReadLine();
 int pIdInt = int.Parse(pID);
 EnumThreadsForPid(pIdInt);
 
+// Modules of a process
+Console.WriteLine();
+EnumModsForPid(GetFirstProcessInList());
+
 Console.ReadLine();
 
 static void ListAllRunningProcesses()
@@ -72,4 +76,37 @@ static void EnumThreadsForPid(int pid)
     }
 
     Console.WriteLine("*********************************************\n");
+}
+
+static int GetFirstProcessInList()
+{
+    var allProcesses = from p in Process.GetProcesses() select p.Id;
+    var proc = allProcesses.ElementAt(4);
+
+    return 11764;
+}
+
+static void EnumModsForPid(int pid)
+{
+    Process theProc = null;
+
+    try
+    {
+        theProc = Process.GetProcessById(pid);
+    }
+    catch (ArgumentException e)
+    {
+        Console.WriteLine(e.Message);
+    }
+
+    Console.WriteLine("Here are the loaded modules for: {0}", theProc.ProcessName);
+    ProcessModuleCollection theMods = theProc.Modules;
+    ;
+    foreach (ProcessModule mod in theMods)
+    {
+        string info = $"-> Mod Name: {mod.ModuleName}";
+        Console.WriteLine(info);
+    }
+
+    Console.WriteLine("*****************************************\n");
 }
