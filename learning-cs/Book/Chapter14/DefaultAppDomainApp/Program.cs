@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.Loader;
 
@@ -12,6 +15,9 @@ namespace DefaultAppDomainApp
             DisplayDADStats();
 
             ListAllAssembliesInAppDomain();
+            ListAllAssembliesInAppDomain2();
+
+            LoadAdditionalAssembliesDifferentContexts();
 
             Console.ReadLine();
         }
@@ -44,6 +50,39 @@ namespace DefaultAppDomainApp
             {
                 Console.WriteLine($"-> Name, Version: {a.GetName().Name}:{a.GetName().Version}");
             }
+        }
+
+        private static void ListAllAssembliesInAppDomain2()
+        {
+            // get current AppDomain
+            var defaultAD = AppDomain.CurrentDomain;
+
+            // get loaded assemblies in the curren domain
+            var loadedAssemblies = defaultAD.GetAssemblies()
+                .OrderBy(x => x.GetName().Name);
+
+            Console.WriteLine("***** Here are the assemblies loaded in {0} *****\n", defaultAD.FriendlyName);
+            foreach(var a in loadedAssemblies)
+            {
+                Console.WriteLine($"-> Name, Version: {a.GetName().Name}:{a.GetName().Version}");
+            }
+        }
+
+        private static void LoadAdditionalAssembliesDifferentContexts()
+        {
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ClassLibrary1.dll");
+            AssemblyLoadContext lc1 = new AssemblyLoadContext("NewContext1", false);
+            var cl1 = lc1.LoadFromAssemblyPath(path);
+            var c1 = cl1.CreateInstance("ClassLibrary1.Car");
+
+            AssemblyLoadContext lc2 = new AssemblyLoadContext("NewContext", false);
+            var cl2 = lc2.LoadFromAssemblyPath(path);
+            var c2 = cl2.CreateInstance("ClassLibrary1.Car");
+            Console.WriteLine("*** Loading additional assemblies in Different contexts ***");
+            Console.WriteLine($"Assembly1 Equal(Assembly2) {cl1.Equals(cl2)}");
+            Console.WriteLine($"Assembly1 == Assembly2 {cl1 == cl2}");
+            Console.WriteLine($"Class1.Equals(Class2) {c1.Equals(c2)}");
+            Console.WriteLine($"Class1 ==  Class2 {c1 == c2}");
         }
     }
 }
