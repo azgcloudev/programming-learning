@@ -1,1 +1,0 @@
-/Users/aldair/Programming/Learning/programming-learning/learning-rust/guessing_game/target/debug/guessing_game: /Users/aldair/Programming/Learning/programming-learning/learning-rust/guessing_game/src/main.rs
