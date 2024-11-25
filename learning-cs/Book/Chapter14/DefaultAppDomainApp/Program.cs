@@ -40,12 +40,13 @@ namespace DefaultAppDomainApp
         private static void ListAllAssembliesInAppDomain()
         {
             // get the current AppDomain thread
-            var defaultAD = AppDomain.CurrentDomain;
+            AppDomain defaultAD = AppDomain.CurrentDomain;
 
             // get all the loaded assemblies in the AppDomain
-            var loadedAssemblies = defaultAD.GetAssemblies();
+            Assembly[] loadedAssemblies = defaultAD.GetAssemblies();
 
             Console.WriteLine("***** Here are the assemblies loaded in: {0}", defaultAD.FriendlyName);
+            
             foreach (var a in loadedAssemblies)
             {
                 Console.WriteLine($"-> Name, Version: {a.GetName().Name}:{a.GetName().Version}");
@@ -55,11 +56,10 @@ namespace DefaultAppDomainApp
         private static void ListAllAssembliesInAppDomain2()
         {
             // get current AppDomain
-            var defaultAD = AppDomain.CurrentDomain;
+            AppDomain defaultAD = AppDomain.CurrentDomain;
 
             // get loaded assemblies in the curren domain
-            var loadedAssemblies = defaultAD.GetAssemblies()
-                .OrderBy(x => x.GetName().Name);
+            var loadedAssemblies = defaultAD.GetAssemblies().OrderBy(x => x.GetName().Name);
 
             Console.WriteLine("***** Here are the assemblies loaded in {0} *****\n", defaultAD.FriendlyName);
             foreach(var a in loadedAssemblies)
@@ -70,7 +70,7 @@ namespace DefaultAppDomainApp
 
         private static void LoadAdditionalAssembliesDifferentContexts()
         {
-            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ClassLibrary1.dll");
+            String path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ClassLibrary1.dll");
             AssemblyLoadContext lc1 = new AssemblyLoadContext("NewContext1", false);
             var cl1 = lc1.LoadFromAssemblyPath(path);
             var c1 = cl1.CreateInstance("ClassLibrary1.Car");
