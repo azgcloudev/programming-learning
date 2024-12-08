@@ -10,3 +10,4 @@ primaryThread.Name = "ThePrimaryThread";
 // print out some stats
 Console.WriteLine("ID of current thread: {0}", primaryThread.ManagedThreadId);
 Console.WriteLine("Thread name: {0}", primaryThread.Name);
+Console.WriteLine("Has thread started?: {0}", primaryThread.IsAlive);

@@ -13,6 +13,6 @@ static void ExtractExecutingThread()
 /// Get the AppDomain of the current thread
 static void ExtractAppDomainHostingThread()
 {
-    var ad = Thread.GetDomain();
+    AppDomain ad = Thread.GetDomain();
     Console.WriteLine("Current thread AppDomain: {0}", ad.FriendlyName);
 }
