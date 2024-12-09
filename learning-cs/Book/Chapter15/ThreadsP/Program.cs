@@ -20,5 +20,5 @@ static void ExtractAppDomainHostingThread()
 // obtein the execution context of the current thread
 static void ExtractCurrentThreadExecutionContext()
 {
-    ExecutionContext ctx = Thread.CurrentThread.ExecutionContext;
+    ExecutionContext? ctx = Thread.CurrentThread.ExecutionContext;
 }
