@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="170606ef-ba81-49ec-b2b0-9b6baaa718cf" name="Changes" comment="" />
+    <list default="true" id="170606ef-ba81-49ec-b2b0-9b6baaa718cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AddWithThreads/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AddWithThreads/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +26,9 @@
     <setting file="file://$PROJECT_DIR$/AddParams.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2q0pWx5ciS5dESElxXzdr19rRs3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,7 +46,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,7 +79,8 @@
       <option name="presentableId" value="Default" />
       <updated>1733688662970</updated>
       <workItem from="1733688665095" duration="160000" />
-      <workItem from="1733809383087" duration="1085000" />
+      <workItem from="1733809383087" duration="1178000" />
+      <workItem from="1733848046151" duration="891000" />
     </task>
     <servers />
   </component>
