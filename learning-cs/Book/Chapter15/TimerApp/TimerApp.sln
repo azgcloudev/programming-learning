@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerApp", "TimerApp.csproj", "{528C5C0C-7DB7-44BB-8D21-6A03C751B67B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{528C5C0C-7DB7-44BB-8D21-6A03C751B67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{528C5C0C-7DB7-44BB-8D21-6A03C751B67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{528C5C0C-7DB7-44BB-8D21-6A03C751B67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{528C5C0C-7DB7-44BB-8D21-6A03C751B67B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
