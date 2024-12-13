@@ -31,8 +31,9 @@ public partial class MainWindow : Window
     private void cmdProcess_Click(object sender, RoutedEventArgs e)
     {
         this.Title = $"Starting...";
-        ProcessFiles();
-        this.Title = $"Processing completed";
+        // using task class to avoid blocking the primary thread so the app can still received input text while updating the images
+        Task.Factory.StartNew(() => ProcessFiles());
+        //Task.Factory.StartNew(ProcessFiles); // can be written also like this
     }
 
     private void ProcessFiles()
