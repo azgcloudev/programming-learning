@@ -19,6 +19,9 @@ namespace DataParallelismWithForEach;
 /// </summary>
 public partial class MainWindow : Window
 {
+    // cancellation token private member
+    private CancellationTokenSource _cancelToken = new CancellationTokenSource();
+
     public MainWindow()
     {
         InitializeComponent();
@@ -26,6 +29,7 @@ public partial class MainWindow : Window
 
     private void cmdCancel_Click(object sender, RoutedEventArgs e)
     {
+        _cancelToken.Cancel();
     }
 
     private void cmdProcess_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,11 @@ public partial class MainWindow : Window
 
     private void ProcessFiles()
     {
+        // Parallel options to store the cancellation token
+        ParallelOptions parOpts = new ParallelOptions();
+        parOpts.CancellationToken = _cancelToken.Token;
+        parOpts.MaxDegreeOfParallelism = System.Environment.ProcessorCount;
+
         string basePath = Directory.GetCurrentDirectory();
         string pictureDirectory = @"C:\Users\aldai\Pictures\Screenshots";
         string outputDirectory = Path.Combine(basePath, "modifiedPictures");
