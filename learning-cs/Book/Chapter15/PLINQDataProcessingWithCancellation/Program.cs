@@ -37,11 +37,11 @@
             {
                 Thread.Sleep(4000);
                 modThreeIsZero = (
-                from n in source.AsParallel().
-                    WithCancellation(_cancelToken.Token)// perform parallel task if possible
-                where n % 3 == 0
-                orderby n descending
-                select n).ToArray();
+                    from n in source.AsParallel().
+                        WithCancellation(_cancelToken.Token)// perform parallel task if possible
+                    where n % 3 == 0
+                    orderby n descending
+                    select n).ToArray();
                 Console.WriteLine($"Found {modThreeIsZero.Count()} numbers in the query");
             }
             catch (OperationCanceledException ex)
