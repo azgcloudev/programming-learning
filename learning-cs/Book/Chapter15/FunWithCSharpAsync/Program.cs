@@ -21,10 +21,16 @@
 // await MultipleAwaitWhenAnyAsync();
 
 //// Cancellation async/await with WaitAsync()
-CancellationTokenSource tokenSource = new CancellationTokenSource();
-_ = await DoWorkAsync().WaitAsync(TimeSpan.FromSeconds(5));
-_ = await DoWorkAsync().WaitAsync(tokenSource.Token);
-_ = await DoWorkAsync().WaitAsync(TimeSpan.FromSeconds(5), tokenSource.Token);
+// CancellationTokenSource tokenSource = new CancellationTokenSource();
+// _ = await DoWorkAsync().WaitAsync(TimeSpan.FromSeconds(5));
+// _ = await DoWorkAsync().WaitAsync(tokenSource.Token);
+// _ = await DoWorkAsync().WaitAsync(TimeSpan.FromSeconds(5), tokenSource.Token);
+
+////  Asynchronous streams
+    await foreach (var number in GenerateSequence())
+    {
+        Console.WriteLine(number);
+    }
 
 // Console.WriteLine("Completed");
 
@@ -150,6 +156,16 @@ static async Task<string> MethodWithTryCatch()
         {
             throw new NotImplementedException();
         }
+    }
+}
+
+//// asynchronous stram C# 8
+static async IAsyncEnumerable<int> GenerateSequence()
+{
+    for (int i = 0; i < 20; i++)
+    {
+        await Task.Delay(100);
+        yield return i;
     }
 }
 
