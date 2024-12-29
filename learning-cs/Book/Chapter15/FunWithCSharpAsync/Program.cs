@@ -115,3 +115,35 @@ static async Task MultipleAwaitWhenAnyAsync()
         Console.WriteLine("3rd task completed");
     }));
 }
+
+
+// --> Await in catch and finally Blocks
+static async Task<string> MethodWithTryCatch()
+{
+    try
+    {
+        // do something
+        return "Hello";
+    }
+    catch (Exception ex)
+    {
+        await LogErrors();
+
+        async Task LogErrors()
+        {
+            throw new NotImplementedException();
+        }
+
+        throw;
+    }
+    finally
+    {
+        await DoMagicCleanUp();
+
+        async Task DoMagicCleanUp()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
