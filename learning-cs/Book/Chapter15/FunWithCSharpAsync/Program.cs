@@ -20,6 +20,12 @@
 
 // await MultipleAwaitWhenAnyAsync();
 
+//// Cancellation async/await with WaitAsync()
+CancellationTokenSource tokenSource = new CancellationTokenSource();
+_ = await DoWorkAsync().WaitAsync(TimeSpan.FromSeconds(5));
+_ = await DoWorkAsync().WaitAsync(tokenSource.Token);
+_ = await DoWorkAsync().WaitAsync(TimeSpan.FromSeconds(5), tokenSource.Token);
+
 // Console.WriteLine("Completed");
 
 static string DoWork()
