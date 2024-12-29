@@ -18,7 +18,7 @@
 // await MultipleAwaits();
 // await MultipleAwaitAsync();
 
-await MultipleAwaitWhenAnyAsync();
+// await MultipleAwaitWhenAnyAsync();
 
 // Console.WriteLine("Completed");
 
