@@ -37,11 +37,30 @@ li {
 }
 
 /* descendent selector */
+/*
 footer p {
-    /* all p elements that are child of the footer element */
+    /* all p elements that are child of the footer element
     font-size: 16px;
+}
+*/
+#copyright {
+  font-size: 16px;
 }
 
 article header p {
     font-style: italic;
+}
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related-list {
+  list-style: none;
 }
