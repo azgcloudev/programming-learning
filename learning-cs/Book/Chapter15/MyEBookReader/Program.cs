@@ -1,11 +1,13 @@
 ﻿using System.Net;
 using System.Text;
 
-string _theEbook = "";
-GetBook();
-Console.WriteLine("Downloading book...");
+string theBook = await GetBookAsync();
+
+Console.WriteLine();
+GetStats(theBook);
 Console.ReadLine();
 
+/*
 void GetBook()
 {
     using WebClient wc = new WebClient();
@@ -19,11 +21,25 @@ void GetBook()
 
     wc.DownloadStringAsync(new Uri("http://www.gutenberg.org/files/98/98-0.txt"));
 }
+*/
 
-void GetStats()
+static async Task<string> GetBookAsync()
+{
+    Console.WriteLine("Downloading book...");
+
+    string s = "";
+
+    HttpClient hp = new HttpClient();
+    s = await hp.GetStringAsync("http://www.gutenberg.org/files/98/98-0.txt");
+    
+    Console.WriteLine("Download completed");
+    return s;
+}
+
+void GetStats(string text)
 {
     // get the words from the books
-    string[] words = _theEbook.Split(new char[]
+    string[] words = text.Split(new char[]
     { ' ', '\u000A', ',', '.', ';', ':', '-', '?', '/' },
     StringSplitOptions.RemoveEmptyEntries);
 
