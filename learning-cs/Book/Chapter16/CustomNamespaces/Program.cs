@@ -5,3 +5,5 @@ using ThreeD = CustomNamespaces.My3dShapes;
 
 // create an object from a different namespace
 ThreeD.Circle c = new ThreeD.Circle();
+Hexagon h = new Hexagon();
+Square s = new Square();
