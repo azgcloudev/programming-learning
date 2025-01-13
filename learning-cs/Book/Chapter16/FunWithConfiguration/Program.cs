@@ -23,3 +23,32 @@ catch (Exception e)
     Console.WriteLine(e.GetBaseException().GetType());
     Console.WriteLine(e.Message);
 }
+
+// objects in config files
+Console.WriteLine("\n*** Objects in config files ***");
+Console.Write($"My car object is a {config["Car:Color"]} ");
+Console.WriteLine($"{config["Car:Make"]} named {config["Car:PetName"]}");
+
+// object using GetSection
+IConfigurationSection section = config.GetSection("Car");
+Console.WriteLine("Using GetSection() method:");
+Console.Write($"My car object is a {section["Color"]} ");
+Console.WriteLine($"{section["Make"]} named {section["PetName"]}");
+
+// Bind method for non primitive instances
+Console.WriteLine("\tUsing Bind() method:");
+var c = new Car();
+section.Bind(c);
+Console.WriteLine($"My car is {c.Color} and is a {c.Make} named {c.PetName}");
+
+// using the Get() method
+Console.WriteLine(">> using Get() method:");
+var carFromGet = config.GetSection(nameof(Car)).Get(typeof(Car)) as Car;
+Console.WriteLine($"My car object using Get() is a {carFromGet.Color} {carFromGet.Make}");
+
+public class Car
+{
+    public string Make { get; set; }
+    public string Color { get; set; }
+    public string PetName { get; set; }
+}
