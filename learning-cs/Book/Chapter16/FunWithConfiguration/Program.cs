@@ -45,6 +45,8 @@ Console.WriteLine($"My car is {c.Color} and is a {c.Make} named {c.PetName}");
 Console.WriteLine(">> using Get() method:");
 var carFromGet = config.GetSection(nameof(Car)).Get(typeof(Car)) as Car;
 Console.WriteLine($"My car object using Get() is a {carFromGet.Color} {carFromGet.Make}");
+Car? notFoundCarFromConfig = config.GetSection(nameof(Car)).Get(typeof(Car)) as Car; // If object is not found in config, returns null
+Console.WriteLine($"Car from config is: {notFoundCarFromConfig == null} ");
 
 public class Car
 {
