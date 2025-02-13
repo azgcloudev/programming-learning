@@ -7,7 +7,9 @@ li {
   color: #444;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   color: #1098ad;
 }
 
@@ -52,7 +54,7 @@ footer p {
 }
 
 article header p {
-    font-style: italic;
+  font-style: italic;
 }
 
 #author {
@@ -91,6 +93,26 @@ li:nth-child(2) {
   color: red;
 }
 
-article p:last-child {
+/* Misconception: this won't work */
+article p:first-child {
   color: red;
+}
+
+/* styling links */
+a:link,
+a:visited {
+  /* only target link href */
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
 }
