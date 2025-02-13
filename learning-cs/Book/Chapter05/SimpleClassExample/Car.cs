@@ -24,12 +24,30 @@ namespace SimpleClassExample
         {
             petName = pn;
         }
+        
+        ///// expression bodie constructor (one line only)
+        // public Car(string pn) => petName = pn;
 
         // functionality of the Car
         public void PrintState()
                 => Console.WriteLine("{0} is going {1} MPH", petName, currSpeed);
 
-        public void SpeedUp(int delta)
-            => currSpeed += delta;
+        // expression-bodie function
+        public void SpeedUp(int delta) => currSpeed += delta;
+        
+        // out in constructor
+        public Car(string pn, int speed, out bool inDanger)
+        {
+            petName = pn;
+            currSpeed = speed;
+            if (speed > 100)
+            {
+                inDanger = true;
+            }
+            else
+            {
+                inDanger = false;
+            }
+        }
     }
 }
