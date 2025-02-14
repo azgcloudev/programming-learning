@@ -2,7 +2,7 @@ namespace StaticDataAndMembers;
 
 public class SavingsAccount
 {
-    public static double currInterestRate = 0.04;
+    public static double currInterestRate;
     
     public double currBalance;
 
@@ -10,4 +10,17 @@ public class SavingsAccount
     {
         currBalance = balance;
     }
+    
+    // static constructor
+    static SavingsAccount()
+    {
+        Console.WriteLine("Static constructor");
+        currInterestRate = 0.05;
+    }
+    
+    public static void SetInterestRate(double interestRate) 
+        => currInterestRate = interestRate;
+    
+    public static double GetInterestRate() 
+        => currInterestRate;
 }
