@@ -1,10 +1,13 @@
+using static System.Console; // static import
+using static System.DateTime;
+
 namespace StaticDataAndMembers;
 
 public class TimeUtilsClass
 {
     public static void PrintTime()
-        => Console.WriteLine(DateTime.Now.ToShortTimeString());
+        => WriteLine(Now.ToShortTimeString());
 
     public static void PrintDate()
-        => Console.WriteLine(DateTime.Now.ToShortDateString());
+        => WriteLine(Now.ToShortDateString());
 }
