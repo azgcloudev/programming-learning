@@ -64,10 +64,11 @@ public class Employee
     public void GiveBonus(float amount) =>
         _currPay += amount;
 
-    public void DisplayStats()
+    public void DisplayStats()  
     {
         Console.WriteLine("Name: {0}", _empName);
         Console.WriteLine("ID: {0}", _empId);
+        Console.WriteLine("Age: {0}", _empAge);
         Console.WriteLine("Pat: {0}", _currPay);
     }
 }
