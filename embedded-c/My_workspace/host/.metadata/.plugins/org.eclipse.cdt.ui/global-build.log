@@ -1,0 +1,4 @@
+23:11:01 **** Rebuild of configuration Debug for project TestProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o TestProject.exe main.o 
