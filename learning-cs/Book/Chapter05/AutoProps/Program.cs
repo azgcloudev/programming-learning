@@ -9,6 +9,8 @@ c.Color = "Red";
 
 Garage g = new Garage();
 Console.WriteLine("Number of cars I have: {0}", g.NumerOfCars);
-// Console.WriteLine(g.MyAuto.PetName); // this throws null exception
+Console.WriteLine($"My car name is {g.MyAuto.PetName}");
+g.MyAuto.PetName = "Franky";
+Console.WriteLine($"My car name is {g.MyAuto.PetName}");
 
 Console.ReadLine();

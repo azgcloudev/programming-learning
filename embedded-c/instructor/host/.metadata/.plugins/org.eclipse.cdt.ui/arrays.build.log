@@ -1,5 +1,8 @@
-22:56:30 **** Clean-only build of configuration Debug for project arrays ****
-rm -rf main.d arrays.exe main.o 
+14:52:19 **** Rebuild of configuration Debug for project arrays ****
+Info: Configuration "Debug" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o ../main.c 
+gcc -o arrays.exe main.o 
 
-22:56:31 Build Finished. 0 errors, 0 warnings. (took 282ms)
+14:52:19 Build Finished. 0 errors, 0 warnings. (took 356ms)
 
