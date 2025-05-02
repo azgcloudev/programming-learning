@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstData", "ConstData\Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithPartials", "FunWithPartials\FunWithPartials.csproj", "{B4E54AD3-87CE-4EEA-9074-99AAFC61A18E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithRecords", "FunWithRecords\FunWithRecords.csproj", "{C2453D0D-D385-4226-A43C-59F0C0535F7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{B4E54AD3-87CE-4EEA-9074-99AAFC61A18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E54AD3-87CE-4EEA-9074-99AAFC61A18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E54AD3-87CE-4EEA-9074-99AAFC61A18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2453D0D-D385-4226-A43C-59F0C0535F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2453D0D-D385-4226-A43C-59F0C0535F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2453D0D-D385-4226-A43C-59F0C0535F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2453D0D-D385-4226-A43C-59F0C0535F7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
