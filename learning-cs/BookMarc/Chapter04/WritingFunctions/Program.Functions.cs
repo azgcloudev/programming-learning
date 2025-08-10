@@ -72,4 +72,28 @@ partial class Program
         }
         WriteLine();
     }
+
+    static int Factorial(int number)
+    {
+        if (number < 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                message: $"The factorial functions is defined only for non-negative numbers. Input: {number}",
+                paramName: nameof(number));
+        }
+        else if (number == 0)
+        {
+            return 1;
+        }
+        
+        return number * Factorial(number - 1);
+    }
+
+    static void RunFactorial()
+    {
+        for (int i = 1; i <= 15; i++)
+        {
+            WriteLine($"{i}! = {Factorial(i):N0}");
+        }
+    }
 }
