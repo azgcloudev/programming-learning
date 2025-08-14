@@ -41,6 +41,11 @@ partial class Program
         WriteLine($"CurrentCulture: {CultureInfo.CurrentCulture.DisplayName}");
     }
 
+    /// <summary>
+    /// Pass a 32-bit unsigned integer and it will be converted into is ordinal equivalent.
+    /// </summary>
+    /// <param name="number">Number as a cardinal, e.g 1, 2, 3, etc.</param>
+    /// <returns>Number as an ordinal, e.g. 1st, 2nd, 3rd.</returns>
     static string CardinalToOrdinal(uint number)
     {
         uint lastTwoDigits = number % 100;
@@ -85,15 +90,78 @@ partial class Program
         {
             return 1;
         }
-        
-        return number * Factorial(number - 1);
+
+        checked
+        {
+            return number * Factorial(number - 1);
+        }
     }
 
     static void RunFactorial()
     {
-        for (int i = 1; i <= 15; i++)
+        for (int i = -2; i <= 15; i++)
         {
-            WriteLine($"{i}! = {Factorial(i):N0}");
+            try
+            {
+                WriteLine($"{i}! = {Factorial(i):N0}");
+            }
+            catch (OverflowException)
+            {
+                WriteLine($"{i}! is too long for a 32 bit integer");
+            }
+            catch (Exception ex)
+            {
+                WriteLine($"{i}! throws {ex.GetType()}; {ex.Message}");
+            }
+            
         }
+    }
+
+    static int FibImperative(uint term)
+    {
+        if (term == 0)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
+        if (term == 1)
+        {
+            return 0;
+        }
+        if (term == 2)
+        {
+            return 1;
+        }
+        else
+        {
+            return FibImperative(term - 1) + FibImperative(term - 2);
+        }
+    }
+
+    static void RunFibImperative()
+    {
+        for (uint i = 1; i <= 30; i++)
+        {
+            WriteLine("The {0} term of the fibonacci sequence is {1:N0},",
+                arg0: CardinalToOrdinal(i),
+                arg1: FibImperative(i));
+        }
+    }
+
+    static int FibFunctional(uint term) => term switch
+    {
+        0 => throw new ArgumentOutOfRangeException(term.GetType().Name, "Value of 0 is not valid"),
+        1 => 0,
+        2 => 1,
+        _ => FibFunctional(term - 1) + FibFunctional(term - 2)
+    };
+
+    static void RunFibFunctional()
+    {
+        for (uint i = 1; i <= 30; i++)
+        {
+            WriteLine("The {0} term of the fibonacci sequence is {1:N0},",
+                arg0: CardinalToOrdinal(i),
+                arg1: FibFunctional(i));
+        } 
     }
 }
