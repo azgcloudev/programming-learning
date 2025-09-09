@@ -1,8 +1,8 @@
 ﻿namespace Exercise_PrimeFactorsLib;
 
-public static class PrimeFactorsClass
+public class PrimeFactorsClass
 {
-    public static string PrimeFactors(int number)
+    public string PrimeFactors(int number)
     {
         if (number < 0)
         {
@@ -14,15 +14,58 @@ public static class PrimeFactorsClass
             throw new ArgumentOutOfRangeException(nameof(number), number, "Number must be less than or equal to 1000");
         }
 
+        return PrimeFactorization(number);
+
     }
 
-    private statiic int PrimeFactorization(int number)
+    private static string PrimeFactorization(int number)
     {
         List<int> factors = new List<int>();
         var primes =  Primes(number);
+        var tempNumber = number;
         var index = 0;
+        var isValid = true;
+
+        while (isValid)
+        {
+            if (tempNumber == 1)
+            {
+                isValid = false;
+            }
+            
+            if (number % primes[index] == 0)
+            {
+                var divN = number /= primes[0];
+                factors.Add(divN);
+                tempNumber = divN;
+            }
+            else
+            {
+                index++;
+            }
+        }
+        
+        return ConvertListToString(factors);
     }
 
+    private static string ConvertListToString(List<int> factors)
+    {
+        var factorizationStr = string.Empty;
+        
+        foreach (var n in factors)
+        {
+            factorizationStr += $"{n} x";
+        }
+
+        return factorizationStr;
+    }
+
+    /// <summary>
+    /// Create a list of prime numbers.
+    /// </summary>
+    /// <param name="max">Maximum number to generate prime numbers.</param>
+    /// <returns>A list of prime numbers.</returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
     private static List<int> Primes(int max)
     {
         if (max <= 1)
@@ -33,7 +76,7 @@ public static class PrimeFactorsClass
         var primes = new List<int>();
         
         for (int i = 2; i <= max; i++)
-        {x
+        {
             if (IsPrime(i))
             {
                 primes.Add(i);

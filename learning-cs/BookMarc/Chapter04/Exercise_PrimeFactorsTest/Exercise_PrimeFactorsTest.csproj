@@ -18,4 +18,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Exercise_PrimeFactorsLib\Exercise_PrimeFactorsLib.csproj" />
+    </ItemGroup>
+
 </Project>
