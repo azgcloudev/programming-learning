@@ -7,4 +7,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Exercise_PrimeFactorsLib\Exercise_PrimeFactorsLib.csproj" />
+    </ItemGroup>
+
 </Project>

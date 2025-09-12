@@ -4,95 +4,54 @@ public class PrimeFactorsClass
 {
     public string PrimeFactors(int number)
     {
-        if (number < 0)
+        if (number <= 1)
         {
-            throw new ArgumentOutOfRangeException(nameof(number), number, "Number must be positive");
+            throw new ArgumentOutOfRangeException(nameof(number),number, "Number must be greater than 1");
         }
 
-        if (number > 1000)
+        var divNumber = 2;
+        var newNumber = number;
+        string result = string.Empty;
+        
+        while (newNumber > 1)
         {
-            throw new ArgumentOutOfRangeException(nameof(number), number, "Number must be less than or equal to 1000");
-        }
-
-        return PrimeFactorization(number);
-
-    }
-
-    private static string PrimeFactorization(int number)
-    {
-        List<int> factors = new List<int>();
-        var primes =  Primes(number);
-        var tempNumber = number;
-        var index = 0;
-        var isValid = true;
-
-        while (isValid)
-        {
-            if (tempNumber == 1)
+            if (IsModuloZero(newNumber, divNumber))
             {
-                isValid = false;
-            }
-            
-            if (number % primes[index] == 0)
-            {
-                var divN = number /= primes[0];
-                factors.Add(divN);
-                tempNumber = divN;
+                newNumber /= divNumber;
+                result += $"{divNumber} x ";
             }
             else
             {
-                index++;
+                divNumber++;
             }
         }
-        
-        return ConvertListToString(factors);
+
+        return RemoveLastX(result);
     }
-
-    private static string ConvertListToString(List<int> factors)
-    {
-        var factorizationStr = string.Empty;
-        
-        foreach (var n in factors)
-        {
-            factorizationStr += $"{n} x";
-        }
-
-        return factorizationStr;
-    }
-
+    
     /// <summary>
-    /// Create a list of prime numbers.
+    ///  Check if a number is modulo zero with another number.
     /// </summary>
-    /// <param name="max">Maximum number to generate prime numbers.</param>
-    /// <returns>A list of prime numbers.</returns>
-    /// <exception cref="ArgumentOutOfRangeException"></exception>
-    private static List<int> Primes(int max)
+    /// <param name="number">Number to divide.</param>
+    /// <param name="index">Modulo number.</param>
+    /// <returns>True if result is 0, false if not 0.</returns>
+    private bool IsModuloZero(int number, int index)
     {
-        if (max <= 1)
+        return number % index == 0;
+    }
+    
+    /// <summary>
+    /// Remove the last " x " from a string if it exists.
+    /// </summary>
+    /// <param name="input">String to analyze.</param>
+    /// <returns>New string without the last x if exist, and if it doesn't return the original string.</returns>
+    private string RemoveLastX(string input)
+    {
+        if (string.IsNullOrEmpty(input))
         {
-            throw new ArgumentOutOfRangeException(nameof(max), max, "Max must be greater than 1");
+            return input;
         }
         
-        var primes = new List<int>();
-        
-        for (int i = 2; i <= max; i++)
-        {
-            if (IsPrime(i))
-            {
-                primes.Add(i);
-            }
-        }
-        
-        return primes;
-    }
-
-    private static bool IsPrime(int number)
-    {
-        return Factorial(number) % number == 0;
-    }
-
-    private static int Factorial(int number)
-    {
-        return Factorial(number - 1);
+        return input.EndsWith(" x ") ? input[..^3] : input;
     }
 }

@@ -1,3 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Exercise_PrimeFactorsLib;
 
-Console.WriteLine("Hello, World!");
+int number = 40;
+
+var primeFactorsClass = new PrimeFactorsClass();
+var result = primeFactorsClass.PrimeFactors(number);
+
+Console.WriteLine($"Prime factor of {number} is: {result}");
